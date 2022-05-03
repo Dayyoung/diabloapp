@@ -1,11 +1,11 @@
 ---
-title:  "SwapBTT - Swap BTT on mobile device"
-author: "SwapBTT.com"
+title:  "Decibel - 소개"
+author: "Dayyoung"
 
 categories:
-  - News
+  - Decibel
 tags:
-  - News
+  - Decibel
 ---
 
 "Swap BTT on mobile device."
@@ -14,7 +14,7 @@ The official site(https://wallet.bt.io/swap) does not support BTT swap on mobile
 I have developed a BTT swap that works with the mobile Tron wallet.
 
 1. Open Tronlink on your deive. (Android/iOS)
-<img width="490" src="https://user-images.githubusercontent.com/6928193/153536905-d60b14ce-650d-4678-9e5d-8c9dbf96e3a5.PNG">
+<img style= "width:90%" src="https://user-images.githubusercontent.com/6928193/153536905-d60b14ce-650d-4678-9e5d-8c9dbf96e3a5.PNG">
 
 2. Go to the browser menu. (Android is called Discover menu)
 <img width="490" src="https://user-images.githubusercontent.com/6928193/153536918-ea607476-d5cd-4800-9137-8f4efc707031.PNG">
