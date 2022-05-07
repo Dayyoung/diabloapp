@@ -1,3 +1,18 @@
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script> 
+
+$(function(){
+  $('img').click(function(e) {
+      // prevents the default action of the link's click-event ('e'), above
+      e.preventDefault();
+      var img_to_load = $(this)[0].src,
+          imgWindow = window.open(img_to_load, 'imgWindow');
+  });
+})
+
+</script>
+
 <p>Session 1: Decibel Demo &amp; Intro to Implementation</p>
 
 <p>Decibel Session1 교육에 대한 내용을 간단하게 정리해 본다.</p>
