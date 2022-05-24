@@ -154,6 +154,11 @@
 	}
 
 	@media screen and (max-width: 736px) {
+		
+		iframe {
+			width: 400px;
+			hieght: 200px;
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -181,6 +186,7 @@
 
 	@media screen and (max-width: 480px) {
 
+		
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 112.5%;
