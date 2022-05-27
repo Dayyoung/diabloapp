@@ -7,6 +7,71 @@
 		<link rel="stylesheet" href="./index_files/main.css">
 		<link rel="shortcut icon" href="./images/favicon.png">
 	</head>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script type="text/javascript">
+
+Kakao.init('4b0df8a22e4e20b92b5cbc1eaae634bb');
+Kakao.isInitialized();
+console.log(Kakao.isInitialized());
+
+function goLogin(){
+
+Kakao.Auth.loginForm({
+  success: function(authObj) {
+    console.log(JSON.stringify(authObj))
+
+    Kakao.API.request({
+        url: '/v2/user/me',
+        success: function(res) {
+          //alert(JSON.stringify(res))
+        },
+        fail: function(error) {
+          alert(
+            'login success, but failed to request user information: ' +
+              JSON.stringify(error)
+          )
+        },
+      })
+
+  },
+  fail: function(err) {
+    console.log(JSON.stringify(err))
+  },
+})
+
+}	
+
+</script>
+
+<script type="text/javascript">
+function goLogout(){
+
+	// if (!Kakao.Auth.getAccessToken()) {
+ //      alert('Not logged in.')
+ //      return
+ //    }
+ //    Kakao.Auth.logout(function() {
+ //      alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+ //    })
+
+
+ Kakao.API.request({
+      url: '/v1/user/unlink',
+      success: function(res) {
+        //alert('success: ' + JSON.stringify(res))
+      },
+      fail: function(err) {
+        //alert('fail: ' + JSON.stringify(err))
+      },
+    })
+
+}	
+
+</script>
+
+
 	<body class="landing">
 
 		<!-- Header -->
@@ -16,8 +81,10 @@
 					<ul>
 						<li><a href="./index.html">코어플렉스</a></li>
 						<li><a href="./business.html">실적</a></li>
-						<!--<li><a href="./cx.html">고객경험</a></li>-->
+						<li><a href="./cx.html">고객경험</a></li>
 						<li><a href="./career.html">채용</a></li>
+<!-- 						<li><a onclick="goLogin()">로그인</a></li>
+						<li><a onclick="goLogout()">로그아웃</a></li> -->
 					</ul>
 				</nav>
 			</header>
@@ -27,6 +94,7 @@
 		<!-- Banner -->
 			<section id="banner">
 				<img class="img_co" src="./index_files/logo_w2.png" alt="coreflex">
+				<p>-TEST VERSION-</p>
 				<p>금융에 대한 전문지식과 선도적 IT기술로 차별화된 금융 솔루션을 제공합니다.</p>
 				<div style="font-size:13px">
 					<p style="color:#ddd;margin-bottom:0px;">국내외 금융시스템 구축 프로젝트를 성공적으로 수행한 경험으로 축적된 업무지식과 기술력</p>
@@ -365,6 +433,9 @@
 					</div>
 				</section>
 
+
+
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
@@ -391,7 +462,7 @@
 					<ul>
 						<li><a href="./index.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">코어플렉스</a></li>
 						<li><a href="./business.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">실적</a></li>
-						<!--<li><a href="./cx.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">고객경험</a></li>-->
+						<li><a href="./cx.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">고객경험</a></li>
 						<li><a href="./career.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">채용</a></li>
 					</ul>
 				<a href="./#navPanel" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a></div></body></html>
