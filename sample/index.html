@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+img:hover { background-color:blue; } 
+/* area tag not act in IE8 */ 
+#area1:hover { background-color:red; }
+.c1 { background-color:green; }
+.c2 { width:300px; }
+
+</style>
+</head>
+<body>
+
+<image src="index.png" height="100%" width="100%" class="fixed" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area class="rect" shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area class="rect" red;" shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area class="rect" shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+</body>
+</html>
