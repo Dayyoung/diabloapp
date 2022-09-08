@@ -9,23 +9,21 @@ html, body {
   padding: 0;
 }
 
-img:hover { background-color:blue; } 
-/* area tag not act in IE8 */ 
-#area1:hover { background-color:red; }
-.c1 { background-color:green; }
-.c2 { width:300px; }
-
 </style>
 </head>
 <body>
 
+<div>
 <image src="index.png" height="100%" width="100%" class="fixed" alt="Workplace" usemap="#workmap">
 
-<map name="workmap">
-  <area class="rect" shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
-  <area class="rect" red;" shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
-  <area class="rect" shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
-</map>
+
+ <!-- 자식 div -->
+        <div style="position:absolute;background-color:blueviolet;opacity:0.7;top: 0;left: 10px;" onclick="alert('test')">
+        <p>버튼영역</p>
+        </div>
+
+      </image>
+</div>
 
 </body>
 </html>
