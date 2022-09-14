@@ -311,17 +311,19 @@ var size = {
 
 <script>
 
-$(window).resize(function() { 
-  //console.log("Change.")
-  onCreate()
- });
+// $(window).resize(function() { 
+//   //console.log("Change.")
+//   onCreate()
+//  });
 
+
+setInterval(function(){onCreate()},100);
 
 function onResume() {
 	setTimeout(function(){
 
 		onCreate()
-	},50);
+	},100);
 
 }
 
