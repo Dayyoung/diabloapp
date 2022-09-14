@@ -311,31 +311,21 @@ var size = {
 
 <script>
 
-$(window).resize(function() { 
-  //console.log("Change.")
-  onCreate()
- });
-
-$("#myImg").one("load", function() {
-  // do stuff
-  onCreate()
-}).each(function() {
-  if(this.complete) {
-      $(this).load(); // For jQuery < 3.0 
-      // $(this).trigger('load'); // For jQuery >= 3.0 
-  	onCreate()
-  }
-});
+// $(window).resize(function() { 
+//   //console.log("Change.")
+//   onCreate()
+//  });
 
 
-//setInterval(function(){onCreate()},100);
+setInterval(function(){onCreate()},1000);
 
-function onResume() {
-	setTimeout(function(){
-		onCreate()
-	},100);
+// function onResume() {
+// 	// setTimeout(function(){
 
-}
+// 	// 	onCreate()
+// 	// },50);
+
+// }
 
 function onCreate() {
 
@@ -365,6 +355,7 @@ var endLine = pageHeight - size.height
 		setButton()
 	}else{
 		setButtonForMobile()
+	}
 
 //}
 
