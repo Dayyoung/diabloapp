@@ -39,6 +39,56 @@
 <meta http-equiv="refresh" content="-1">
 <link rel="stylesheet" href="./index_files/main.css">
 <link rel="shortcut icon" href="./favicon.png">
+
+<!-- Scripts -->
+<script src="./jquery.min.js"></script>
+<script src="./skel.min.js"></script>
+<script src="./util.js"></script>
+<script src="./main.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.originalText{
+font-size: 0px;
+
+}
+
+.originalButton { 
+  background-color:transparent !important; 
+  cursor : pointer;
+}
+
+
+#myImg{
+		//content:url("indexm.png");
+		height: 100%;
+		width: 100%;
+}
+/*
+@media screen and (max-width: 820px) {
+	#myImg{
+		//content:url("indexm.png");
+		height: 100%;
+		width: 100%;
+	}
+}
+
+@media all and (min-width:821px) {
+    #myImg{
+		//content:url("index.png");
+		height: 100%;
+		width: 100%;
+	}
+}
+*/
+/* Ta
+
+</style>
  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-91EJDD6TF4"></script>
@@ -142,49 +192,6 @@ function goTo(number) {
 
 </script>
 
-<!-- Scripts -->
-<script src="./jquery.min.js"></script>
-<script src="./skel.min.js"></script>
-<script src="./util.js"></script>
-<script src="./main.js"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-.originalText{
-font-size: 0px;
-
-}
-
-.originalButton { 
-  background-color:transparent !important; 
-  cursor : pointer;
-}
-
-@media screen and (max-width: 820px) {
-	#myImg{
-		content:url("indexm.png");
-		height: 100%;
-		width: 100%;
-	}
-}
-
-@media all and (min-width:821px) {
-    #myImg{
-		content:url("index.png");
-		height: 100%;
-		width: 100%;
-	}
-}
-
-/* Ta
-
-</style>
-
 
 <script type="text/javascript">
 	
@@ -202,7 +209,7 @@ var size = {
 <body>
 
 <div>
-<img onload="onResume()" id="myImg" src="favicon.png" height="100%" width="100%" class="fixed" alt="Workplace" usemap="#workmap">
+<img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed" alt="Workplace" usemap="#workmap">
 
 <div class="originalButton" id="originButton1" style="display: none; position:absolute;background-color:blueviolet;opacity:0.7; top: 0;" onclick="goTo('1')">
         <p class="originalText" style="width: 100%; text-align: center;">1</p>
@@ -311,21 +318,47 @@ var size = {
 
 <script>
 
-// $(window).resize(function() { 
-//   //console.log("Change.")
-//   onCreate()
-//  });
+// url 에서 parameter 추출
+
+function getParam(sname) {
+
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+
+    var sval = "";
+
+    params = params.split("&");
+
+    for (var i = 0; i < params.length; i++) {
+
+        temp = params[i].split("=");
+
+        if ([temp[0]] == sname) { sval = temp[1]; }
+
+    }
+
+    return sval;
+
+}
+
+$(window).resize(function() { 
+  console.log("Change.")
+  onCreate()
+ });
 
 
-setInterval(function(){onCreate()},1000);
+//setInterval(function(){onCreate()},1000);
 
-// function onResume() {
-// 	// setTimeout(function(){
+function onResume() {
+	setTimeout(function(){
+		onCreate()
+	},50);
 
-// 	// 	onCreate()
-// 	// },50);
+}
 
-// }
+setTimeout(function(){
+		onCreate()
+},50);
+
 
 function onCreate() {
 
@@ -340,7 +373,7 @@ var myImg = document.getElementById("myImg");
 const pageWidth  = myImg.width;
 const pageHeight = myImg.height;
 
-//console.log(pageHeight)
+//console.log(size.width)
 
 var endLine = pageHeight - size.height
 
@@ -351,15 +384,33 @@ var endLine = pageHeight - size.height
 
 //4530 - 891 = 3640
 
-	if (size.width > 820){
-		setButton()
+	var mode = getParam('mode')
+
+	console.log(mode)
+	
+	if(mode){
+		if (mode == "desktop"){
+			$("#myImg").attr("src","index.png")
+			setButton()
+		}else{
+			$("#myImg").attr("src","indexm.png")
+			setButtonForMobile()
+		}
 	}else{
-		setButtonForMobile()
+		if (size.width > 820){
+			$("#myImg").attr("src","index.png")
+			setButton()
+		}else{
+			$("#myImg").attr("src","indexm.png")
+			setButtonForMobile()
+		}	
 	}
 
 //}
 
 function setButton(){
+
+	//$("#myImg").attr("src","index.png")
 
 
 	// window.addEventListener("wheel", function(e){
@@ -693,6 +744,7 @@ function setButton(){
 function setButtonForMobile(){
 
 
+	//$("#myImg").attr("src","indexm.png")
 
     var copyButton = $("#originButton1")
     copyButton.hide()
