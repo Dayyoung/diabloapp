@@ -37,7 +37,7 @@
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
 <meta http-equiv="refresh" content="-1">
-<link rel="stylesheet" href="./index_files/main.css">
+<link rel="stylesheet" href="main.css">
 <link rel="shortcut icon" href="./favicon.png">
 
 <!-- Scripts -->
@@ -65,7 +65,6 @@ font-size: 0px;
 
 
 #myImg{
-		//content:url("indexm.png");
 		height: 100%;
 		width: 100%;
 }
@@ -211,7 +210,8 @@ var size = {
 <div>
 <img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed" alt="Workplace" usemap="#workmap">
 
-<div class="originalButton" id="originButton1" style="display: none; position:absolute;background-color:blueviolet;opacity:0.7; top: 0;" onclick="goTo('1')">
+
+<div class="originalButton" id="originButton1" style="display: none; position:absolute;background-color:blueviolet;opacity:0.7; top: 0;" >
         <p class="originalText" style="width: 100%; text-align: center;">1</p>
 </div> 
 
@@ -341,7 +341,7 @@ function getParam(sname) {
 }
 
 $(window).resize(function() { 
-  console.log("Change.")
+  //console.log("Change.")
   onCreate()
  });
 
@@ -386,7 +386,7 @@ var endLine = pageHeight - size.height
 
 	var mode = getParam('mode')
 
-	console.log(mode)
+	//console.log(mode)
 	
 	if(mode){
 		if (mode == "desktop"){
@@ -486,6 +486,11 @@ function setButton(){
     copyButton.show()
     //$('body').append(copyButton)
 
+    copyButton.off('click').click(function(){
+		goTo("1")
+	});
+
+	$(".navPanelToggle").hide()
 
     var copyButton = $("#originButton2")
 
@@ -747,7 +752,25 @@ function setButtonForMobile(){
 	//$("#myImg").attr("src","indexm.png")
 
     var copyButton = $("#originButton1")
-    copyButton.hide()
+
+    var buttonHeight = pageHeight * 0.016
+    var buttonWidth = pageWidth 
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0
+    var marginLeft = pageWidth * 0
+
+
+	$(".navPanelToggle").show()
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+    // var copyButton = $("#originButton1")
+    // copyButton.hide()
 
     var copyButton = $("#originButton2")
     copyButton.hide()

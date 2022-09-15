@@ -2916,7 +2916,7 @@
 	.navPanelToggle {
 		text-decoration: none;
 		text-decoration: none;
-		height: 100%;
+		height: 10%;
 		left: 0;
 		position: absolute;
 		top: 0;
@@ -2931,6 +2931,10 @@
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
+		}
+
+		.navPanelToggle {
+			display: block;
 		}
 
 		@media screen and (max-width: 980px) {
