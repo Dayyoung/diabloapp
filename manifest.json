@@ -1,5 +1,5 @@
 {
- "name": "Coreflex",
+ "name": "coreflex",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -40,5 +40,5 @@
  ],
   "start_url": "/intro.html",
   "display": "fullscreen",
-  "orientation": "landscape"
+  "orientation": "portrait" //landscape
 }
