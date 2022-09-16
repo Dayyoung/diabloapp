@@ -40,5 +40,5 @@
  ],
   "start_url": "/intro.html",
   "display": "fullscreen",
-  "orientation": "any" //portrait,landscape
+  "orientation": "any" 
 }
