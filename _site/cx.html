@@ -17,9 +17,11 @@
 <meta property="og:image" content="https://test.crflx.com/cx.jpg">
 <meta property="og:locale" content="ko_KR">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
 <link rel="apple-touch-icon-precomposed" href="/apple-icon-152x152.png">
 <link rel="apple-touch-startup-image" href="/apple-icon-152x152.png">
@@ -45,6 +47,7 @@
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
 <meta http-equiv="refresh" content="-1">
+
 <link rel="stylesheet" href="main.css">
 <link rel="shortcut icon" href="./favicon.png">
 
@@ -54,7 +57,6 @@
 <script src="./util.js"></script>
 <script src="./main.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
 html, body {
   margin: 0;
@@ -76,6 +78,9 @@ font-size: 0px;
 		height: 100%;
 		width: 100%;
 }
+
+
+video { width: 100%; }
 /*
 @media screen and (max-width: 820px) {
 	#myImg{
@@ -93,7 +98,9 @@ font-size: 0px;
 	}
 }
 */
-/* Ta
+/* 
+
+
 
 </style>
  
@@ -244,6 +251,13 @@ var size = {
 </div> 
 
 <div class="originalButton" id="originButton6" style="display: none; position:absolute;background-color:blueviolet;opacity:1; top: 0;" onclick="goTo('6')">
+      
+      <video id="videoPlayer"  muted autoplay loop>
+        <source src="video.mp4" type="video/mp4">
+        
+      </video>
+
+
         <p class="originalText" style="width: 100%; text-align: center;">6</p>
 </div> 
 
@@ -350,26 +364,49 @@ function getParam(sname) {
 
 $(window).resize(function() { 
   //console.log("Change.")
+  isFirst = true
   onCreate()
  });
 
 
+
 //setInterval(function(){onCreate()},1000);
 
-function onResume() {
-	setTimeout(function(){
-		onCreate()
-	},50);
+var isFirst = true
 
+function onResume() {
+
+  if(isFirst){
+    isFirst = false
+  	setTimeout(function(){
+  		onCreate()
+  	},10);
+  }
 }
 
+
 setTimeout(function(){
-		onCreate()
-},50);
+    onCreate()
+
+    var video = $('#videoPlayer').get(0);
+      //console.log(video)
+    video.currentTime = 20
+      
+
+},10);
+
+setInterval(function(){
+
+      // var video = $('#videoPlayer').get(0);
+      // //console.log(video)
+      // video.currentTime = 20
+      //console.log(video.currentTime)
+},1000);
 
 
 function onCreate() {
 
+ //     console.log($("#videoPlayer").find('video').currentTime)
 
 var size = {
   width: window.innerWidth || document.body.clientWidth,
@@ -381,7 +418,7 @@ var myImg = document.getElementById("myImg");
 const pageWidth  = myImg.width;
 const pageHeight = myImg.height;
 
-//console.log(size.width)
+console.log(pageHeight)
 
 var endLine = pageHeight - size.height
 
