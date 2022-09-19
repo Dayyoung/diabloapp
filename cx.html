@@ -418,7 +418,7 @@ var myImg = document.getElementById("myImg");
 const pageWidth  = myImg.width;
 const pageHeight = myImg.height;
 
-console.log(pageHeight)
+//console.log(pageHeight)
 
 var endLine = pageHeight - size.height
 
@@ -606,11 +606,18 @@ function setButton(){
 
     var copyButton = $("#originButton6")
 
-    var buttonHeight = pageHeight * 0.14
+    var buttonHeight = pageHeight * 0.15
     var buttonWidth = pageWidth
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.15
     var marginLeft = 0
+
+
+
+    var videoPlayer = $('#videoPlayer').get(0);
+    //console.log(videoPlayer)
+    $(videoPlayer).show()
+
 
 
     copyButton.css("width", buttonWidth);
@@ -837,6 +844,11 @@ function setButtonForMobile(){
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.108
     var marginLeft = 0
+
+
+    var videoPlayer = $('#videoPlayer').get(0);
+    //console.log(videoPlayer)
+    $(videoPlayer).hide()
 
 
     copyButton.css("width", buttonWidth);
