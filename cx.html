@@ -80,7 +80,7 @@ font-size: 0px;
 }
 
 
-video { width: 100%; }
+#videoPlayer { width: 100%;}
 /*
 @media screen and (max-width: 820px) {
 	#myImg{
@@ -116,7 +116,7 @@ video { width: 100%; }
 
 function goTo(number) {
 
-//alert(number)
+  //alert(number)
 
   if (number == "1"){
     location.href = "../";
@@ -250,15 +250,15 @@ var size = {
         <p class="originalText" style="width: 100%; text-align: center;">5</p>
 </div> 
 
-<div class="originalButton" id="originButton6" style="display: none; position:absolute;background-color:blueviolet;opacity:1; top: 0;" onclick="goTo('6')">
+<div class="originalButton" id="originButton6" style="display: none; position:absolute;background-color:blueviolet;opacity:1; top: 0;" >
       
-      <video id="videoPlayer"  muted autoplay loop>
+<!--       <video id="videoPlayer"  onclick="this.paused ? this.play() : this.pause();" muted autoplay loop>
         <source src="video.mp4" type="video/mp4">
         
-      </video>
+      </video> -->
+<iframe id="videoPlayer"  width="100%" height="100%" src="https://www.youtube.com/embed/WBc5jRB-d2k?autoplay=1&cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-        <p class="originalText" style="width: 100%; text-align: center;">6</p>
 </div> 
 
 <div class="originalButton" id="originButton7" style="display: none; position:absolute;background-color:blueviolet;opacity:0.7; top: 0;" onclick="goTo('7')">
@@ -387,21 +387,15 @@ function onResume() {
 
 setTimeout(function(){
     onCreate()
-
-    var video = $('#videoPlayer').get(0);
-      //console.log(video)
-    video.currentTime = 20
-      
-
 },10);
 
-setInterval(function(){
+// setInterval(function(){
 
-      // var video = $('#videoPlayer').get(0);
-      // //console.log(video)
-      // video.currentTime = 20
-      //console.log(video.currentTime)
-},1000);
+//       // var video = $('#videoPlayer').get(0);
+//       // //console.log(video)
+//       // video.currentTime = 20
+//       //console.log(video.currentTime)
+// },1000);
 
 
 function onCreate() {
@@ -437,15 +431,21 @@ var endLine = pageHeight - size.height
 		if (mode == "desktop"){
 			$("#myImg").attr("src","index.png")
 			setButton()
-		}else{
+		}else if (mode == "tablet"){
+      $("#myImg").attr("src","indext.png")
+      setButtonForTablet()
+    }else{
 			$("#myImg").attr("src","indexm.png")
 			setButtonForMobile()
 		}
 	}else{
-		if (size.width > 820){
+		if (size.width > 912){
 			$("#myImg").attr("src","index.png")
 			setButton()
-		}else{
+		}else if (size.width >= 768 && size.width <= 912){
+      $("#myImg").attr("src","indext.png")
+      setButtonForTablet()
+    }else{
 			$("#myImg").attr("src","indexm.png")
 			setButtonForMobile()
 		}	
@@ -614,9 +614,9 @@ function setButton(){
 
 
 
-    var videoPlayer = $('#videoPlayer').get(0);
-    //console.log(videoPlayer)
-    $(videoPlayer).show()
+    // var videoPlayer = $('#videoPlayer').get(0);
+    // //console.log(videoPlayer)
+    // $(videoPlayer).show()
 
 
 
@@ -624,8 +624,8 @@ function setButton(){
     copyButton.css("height", buttonHeight);
     copyButton.css("margin-top", marginTop);
     copyButton.css("left", marginLeft);
-    copyButton.css("background-image" , "url(video.gif)"); 
-    copyButton.css("background-size" , "100%"); 
+    //copyButton.css("background-image" , "url(video.gif)"); 
+    //copyButton.css("background-size" , "100%"); 
     copyButton.show()
 
 
@@ -798,6 +798,287 @@ function setButton(){
     copyButton.show()
 }
 
+function setButtonForTablet(){
+
+    var copyButton = $("#originButton1")
+
+    var buttonHeight = pageHeight * 0.01
+    var buttonWidth = pageWidth * 0.17
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.004
+    var marginLeft = pageWidth * 0.003
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+    copyButton.off('click').click(function(){
+    goTo("1")
+  });
+
+  $(".navPanelToggle").hide()
+
+    var copyButton = $("#originButton2")
+
+    var buttonHeight = pageHeight * 0.01
+    var buttonWidth = pageWidth * 0.15
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.004
+    var marginLeft = pageWidth - buttonWidth * 4
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+
+    var copyButton = $("#originButton3")
+
+    var buttonHeight = pageHeight * 0.01
+    var buttonWidth = pageWidth * 0.15
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.004
+    var marginLeft = pageWidth - buttonWidth * 3
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+
+    var copyButton = $("#originButton4")
+
+    var buttonHeight = pageHeight * 0.01
+    var buttonWidth = pageWidth * 0.15
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.004
+    var marginLeft = pageWidth - buttonWidth * 2
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+
+    var copyButton = $("#originButton5")
+
+    var buttonHeight = pageHeight * 0.01
+    var buttonWidth = pageWidth * 0.15
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.004
+    var marginLeft = pageWidth - buttonWidth * 1
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+    //$('body').append(copyButton)
+
+    var copyButton = $("#originButton6")
+
+    var buttonHeight = pageHeight * 0.09
+    var buttonWidth = pageWidth
+    //var marginTop = pageHeight * 0.14
+    var marginTop = pageHeight * 0.12
+    var marginLeft = 0
+
+    // var videoPlayer = $('#videoPlayer').get(0);
+    // //console.log(videoPlayer)
+    // $(videoPlayer).show()
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    //copyButton.css("background-image" , "url(video.gif)"); 
+    //copyButton.css("background-size" , "100%"); 
+    copyButton.show()
+
+
+    var copyButton = $("#originButton7")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.257
+    var marginLeft = pageWidth * 0.28
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton8")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.34
+    var marginLeft = pageWidth * 0.09
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton9")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.34
+    var marginLeft = pageWidth * 0.57
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton10")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.468
+    var marginLeft = pageWidth * 0.045
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton11")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.505
+    var marginLeft = pageWidth * 0.045
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton12")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.545
+    var marginLeft = pageWidth * 0.045
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton13")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.58
+    var marginLeft = pageWidth * 0.045
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+
+    var copyButton = $("#originButton14")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.21
+    var marginTop = pageHeight * 0.68
+    var marginLeft = pageWidth/2 - buttonWidth/2 
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+
+    var copyButton = $("#originButton15")
+
+    var buttonHeight = pageHeight * 0.012
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.784
+    var marginLeft = pageWidth * 0.44
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton16")
+
+    var buttonHeight = pageHeight * 0.012
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.858
+    var marginLeft = pageWidth * 0.21
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton17")
+
+    var buttonHeight = pageHeight * 0.012
+    var buttonWidth = pageWidth * 0.15
+    var marginTop = pageHeight * 0.858
+    var marginLeft = pageWidth * 0.679
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+
+    var copyButton = $("#originButton18")
+
+    var buttonHeight = pageHeight * 0.014
+    var buttonWidth = pageWidth * 0.21
+    var marginTop = pageHeight * 0.923
+    var marginLeft = pageWidth * 0.78
+
+
+    copyButton.css("width", buttonWidth);
+    copyButton.css("height", buttonHeight);
+    copyButton.css("margin-top", marginTop);
+    copyButton.css("left", marginLeft);
+    copyButton.show()
+}
+
 function setButtonForMobile(){
 
 
@@ -842,21 +1123,22 @@ function setButtonForMobile(){
     var buttonHeight = pageHeight * 0.029
     var buttonWidth = pageWidth
     //var marginTop = pageHeight * 0.14
-    var marginTop = pageHeight * 0.108
+    var marginTop = pageHeight * 0.187
     var marginLeft = 0
 
 
-    var videoPlayer = $('#videoPlayer').get(0);
-    //console.log(videoPlayer)
-    $(videoPlayer).hide()
+    // var videoPlayer = $('#videoPlayer').get(0);
+    // //console.log(videoPlayer)
+    // //$(videoPlayer).hide()
+    // $(videoPlayer).show()
 
 
     copyButton.css("width", buttonWidth);
     copyButton.css("height", buttonHeight);
     copyButton.css("margin-top", marginTop);
     copyButton.css("left", marginLeft);
-    copyButton.css("background-image" , "url(video.gif)"); 
-    copyButton.css("background-size" , "100%"); 
+    //copyButton.css("background-image" , "url(video.gif)"); 
+    //copyButton.css("background-size" , "100%"); 
     copyButton.show()
 
 
@@ -864,8 +1146,8 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.19
-    var marginLeft = pageWidth * 0.47
+    var marginTop = pageHeight * 0.28
+    var marginLeft = pageWidth * 0.047
 
 
     copyButton.css("width", buttonWidth);
@@ -878,8 +1160,8 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.265
-    var marginLeft = pageWidth * 0.47
+    var marginTop = pageHeight * 0.315
+    var marginLeft = pageWidth * 0.57
 
 
     copyButton.css("width", buttonWidth);
@@ -892,8 +1174,8 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.325
-    var marginLeft = pageWidth * 0.47
+    var marginTop = pageHeight * 0.355
+    var marginLeft = pageWidth * 0.047
 
 
     copyButton.css("width", buttonWidth);
@@ -906,7 +1188,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.441
+    var marginTop = pageHeight * 0.433
     var marginLeft = pageWidth * 0.55
 
 
@@ -920,7 +1202,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.481
+    var marginTop = pageHeight * 0.474
     var marginLeft = pageWidth * 0.55
 
 
@@ -934,7 +1216,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.4
-    var marginTop = pageHeight * 0.515
+    var marginTop = pageHeight * 0.512
     var marginLeft = pageWidth * 0.55
 
 
@@ -962,7 +1244,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.6
-    var marginTop = pageHeight * 0.637
+    var marginTop = pageHeight * 0.634
     var marginLeft = pageWidth/2 - buttonWidth/2 
 
     copyButton.css("width", buttonWidth);
@@ -976,7 +1258,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.6
-    var marginTop = pageHeight * 0.72
+    var marginTop = pageHeight * 0.716
     var marginLeft = pageWidth/2 - buttonWidth/2 
 
 
@@ -990,7 +1272,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.6
-    var marginTop = pageHeight * 0.782
+    var marginTop = pageHeight * 0.775
     var marginLeft = pageWidth/2 - buttonWidth/2 
 
     copyButton.css("width", buttonWidth);
@@ -1003,7 +1285,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.6
-    var marginTop = pageHeight * 0.844
+    var marginTop = pageHeight * 0.835
     var marginLeft = pageWidth/2 - buttonWidth/2 
 
 
@@ -1017,7 +1299,7 @@ function setButtonForMobile(){
 
     var buttonHeight = pageHeight * 0.009
     var buttonWidth = pageWidth * 0.6
-    var marginTop = pageHeight * 0.943
+    var marginTop = pageHeight * 0.94
     var marginLeft = pageWidth/2 - buttonWidth/2 
 
 
