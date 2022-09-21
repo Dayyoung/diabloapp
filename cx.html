@@ -59,6 +59,8 @@
 <script src="./util.js"></script>
 <script src="./main.js"></script>
 
+<script src = "http://www.youtube.com/player_api"></script>
+
 <style>
 html, body {
   margin: 0;
@@ -112,12 +114,34 @@ font-size: 0px;
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-91EJDD6TF4"></script>
 <script>
+
+
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-91EJDD6TF4');
 
+
+function player_state_changed(state) {
+  /* This event is fired whenever the player's state changes.
+     Possible values are:
+     - unstarted (-1)
+     - ended (0)
+     - playing (1)
+     - paused (2) 
+     - buffering (3)
+     - video cued (5). 
+     When the SWF is first loaded it will broadcast an unstarted (-1) event.
+     When the video is cued and ready to play it will broadcast a video cued event (5).
+  */
+
+  if (state == 1 || state == 2) {
+    alert('the "play" button *might* have been clicked');
+  }
+
+}
 
 function goTo(number) {
 
@@ -262,7 +286,7 @@ var size = {
         <source src="video.mp4" type="video/mp4">
         
       </video> -->
-<iframe id="videoPlayer"  width="100%" height="100%" src="https://www.youtube.com/embed/WBc5jRB-d2k?autoplay=1&cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe onclick="alert('test')" id="youtubePlayer"  width="100%" height="100%" src="https://www.youtube.com/embed/WBc5jRB-d2k?autoplay=1&mute=1&loop=1&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 </div> 
@@ -386,10 +410,17 @@ function onResume() {
     isFirst = false
   	setTimeout(function(){
   		onCreate()
+
+
   	},10);
   }
 }
 
+
+function onYouTubeIframeAPIReady() {
+    //var player = YT.get('youtubePlayer');
+    //player.addEventListener('onStateChange', 'player_state_changed');
+}
 
 setTimeout(function(){
     onCreate()
