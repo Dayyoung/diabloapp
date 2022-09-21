@@ -22,7 +22,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
+
+
 <link rel="apple-touch-icon-precomposed" href="/apple-icon-152x152.png">
 <link rel="apple-touch-startup-image" href="/apple-icon-152x152.png">
 
@@ -42,11 +43,12 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<!-- Chrome, Firefox OS, Opera -->
+<meta name="theme-color" content="#4285f4">
+  
+<!-- <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
-<meta http-equiv="refresh" content="-1">
+<meta http-equiv="refresh" content="-1"> -->
 
 <link rel="stylesheet" href="main.css">
 <link rel="shortcut icon" href="./favicon.png">
@@ -62,6 +64,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: #696969;
+}  
 
 .originalText{
 font-size: 0px;
@@ -69,7 +74,7 @@ font-size: 0px;
 }
 
 .originalButton { 
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
@@ -223,7 +228,8 @@ var size = {
 <body>
 
 <div>
-<img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed">
+<img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1920px; 
+  display: block; margin-left: auto; margin-right: auto;">
 
 
 <div class="originalButton" id="originButton1" style="display: none; position:absolute;background-color:blueviolet;opacity:0.7; top: 0;" >
@@ -412,9 +418,10 @@ var myImg = document.getElementById("myImg");
 const pageWidth  = myImg.width;
 const pageHeight = myImg.height;
 
-//console.log(pageHeight)
 
-var endLine = pageHeight - size.height
+const marginWidth = (size.width - pageWidth ) /2
+console.log(marginWidth)
+const marginHeight = pageHeight - size.height
 
 
 
@@ -521,7 +528,7 @@ function setButton(){
     var buttonWidth = pageWidth * 0.14
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.006
-    var marginLeft = pageWidth * 0.003
+    var marginLeft = pageWidth * 0.003 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -543,7 +550,7 @@ function setButton(){
     var buttonWidth = pageWidth * 0.09
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.006
-    var marginLeft = pageWidth - buttonWidth * 4
+    var marginLeft = pageWidth - buttonWidth * 4 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -560,7 +567,7 @@ function setButton(){
     var buttonWidth = pageWidth * 0.09
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.006
-    var marginLeft = pageWidth - buttonWidth * 3
+    var marginLeft = pageWidth - buttonWidth * 3 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -577,7 +584,7 @@ function setButton(){
     var buttonWidth = pageWidth * 0.09
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.006
-    var marginLeft = pageWidth - buttonWidth * 2
+    var marginLeft = pageWidth - buttonWidth * 2 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -594,7 +601,7 @@ function setButton(){
     var buttonWidth = pageWidth * 0.09
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.006
-    var marginLeft = pageWidth - buttonWidth * 1
+    var marginLeft = pageWidth - buttonWidth * 1 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -610,7 +617,7 @@ function setButton(){
     var buttonWidth = pageWidth
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.15
-    var marginLeft = 0
+    var marginLeft = 0 + marginWidth
 
 
 
@@ -634,7 +641,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.357
-    var marginLeft = pageWidth * 0.04
+    var marginLeft = pageWidth * 0.04 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -648,7 +655,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.357
-    var marginLeft = pageWidth * 0.37
+    var marginLeft = pageWidth * 0.37 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -662,7 +669,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.357
-    var marginLeft = pageWidth * 0.7
+    var marginLeft = pageWidth * 0.7 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -676,7 +683,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.515
-    var marginLeft = pageWidth * 0.04
+    var marginLeft = pageWidth * 0.04 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -690,7 +697,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.515
-    var marginLeft = pageWidth * 0.54
+    var marginLeft = pageWidth * 0.54 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -704,7 +711,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.555
-    var marginLeft = pageWidth * 0.04
+    var marginLeft = pageWidth * 0.04 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -718,7 +725,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.555
-    var marginLeft = pageWidth * 0.54
+    var marginLeft = pageWidth * 0.54 + marginWidth
 
     copyButton.css("width", buttonWidth);
     copyButton.css("height", buttonHeight);
@@ -732,7 +739,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.15
     var marginTop = pageHeight * 0.677
-    var marginLeft = pageWidth/2 - buttonWidth/2 
+    var marginLeft = pageWidth/2 - buttonWidth/2  + marginWidth
 
     copyButton.css("width", buttonWidth);
     copyButton.css("height", buttonHeight);
@@ -746,7 +753,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.8
-    var marginLeft = pageWidth * 0.14
+    var marginLeft = pageWidth * 0.14 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -760,7 +767,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.8
-    var marginLeft = pageWidth * 0.46
+    var marginLeft = pageWidth * 0.46 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -774,7 +781,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.09
     var marginTop = pageHeight * 0.8
-    var marginLeft = pageWidth * 0.77
+    var marginLeft = pageWidth * 0.77 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
@@ -788,7 +795,7 @@ function setButton(){
     var buttonHeight = pageHeight * 0.014
     var buttonWidth = pageWidth * 0.12
     var marginTop = pageHeight * 0.903
-    var marginLeft = pageWidth * 0.75
+    var marginLeft = pageWidth * 0.75 + marginWidth
 
 
     copyButton.css("width", buttonWidth);
