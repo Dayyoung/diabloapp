@@ -67,8 +67,8 @@ html, body {
   padding: 0;
 }
 body {
-  //background-color: #484848; 
-  background-color: white; 
+  background-color: #484848; 
+  //background-color: white; 
 }
 
 .originalText{
@@ -77,7 +77,7 @@ font-size: 0px;
 }
 
 .originalButton { 
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
@@ -260,7 +260,7 @@ var size = {
 </div> 
 
 
-<img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1920px; 
+<img onload="onResume()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; 
   display: block; margin-left: auto; margin-right: auto; z-index: 1000; ">
 
 <!-- 
@@ -417,7 +417,6 @@ $(window).resize(function() {
  });
 
 
-
 //setInterval(function(){onCreate()},1000);
 
 var isFirst = true
@@ -443,14 +442,6 @@ function onYouTubeIframeAPIReady() {
 setTimeout(function(){
     onCreate()
 },10);
-
-// setInterval(function(){
-
-//       // var video = $('#videoPlayer').get(0);
-//       // //console.log(video)
-//       // video.currentTime = 20
-//       //console.log(video.currentTime)
-// },1000);
 
 
 function onCreate() {
@@ -483,40 +474,73 @@ const marginHeight = pageHeight - size.height
   $("#popupLayout").css("width" , "100%");    
   $("#popupLayout").css("height" , pageHeight); 
 
+  //For Background.
+  $("#myLayout").css("background-image" , "url(background.png)"); 
+  $("#myLayout").css("background-size" , "100% 100%"); 
+  $("#myLayout").css("width" , "100%"); 
+  $("#myLayout").css("height" , pageHeight); 
+  $("#myLayout").show()
+
 	if(mode){
-		if (mode == "desktop"){
+    if (mode == "wide"){
+      $("#myImg").attr("src","index.jpg")
+      addSideMargin()
+      setButton()
+    }
+		else if (mode == "desktop"){
 			$("#myImg").attr("src","index.jpg")
-			setButton()
+      addSideMargin()
+      setButton()
 		}else if (mode == "tablet"){
       $("#myImg").attr("src","indext.jpg")
+      addSideMargin()
       setButtonForTablet()
     }else{
 			$("#myImg").attr("src","indexm.jpg")
+      addSideMargin()
 			setButtonForMobile()
 		}
 	}else{
-		if (size.width > 912){
-			$("#myImg").attr("src","index.jpg")
 
-
-      $("#myLayout").css("background-image" , "url(background.png)"); 
-      $("#myLayout").css("background-size" , "100% 100%"); 
-      $("#myLayout").css("width" , "100%"); 
-      $("#myLayout").css("height" , pageHeight); 
-      $("#myLayout").show()
-
-
-			setButton()
-		}else if (size.width >= 768 && size.width <= 912){
+		if (size.width > 1920){
+      $("#myImg").attr("src","index.jpg")
+      addSideMargin()
+      setButton()
+		}else if (size.width >= 912 && size.width <= 1920){
+      $("#myImg").attr("src","index.jpg")
+      addSideMargin()
+      setButton()
+    }else if (size.width >= 768 && size.width <= 912){
       $("#myImg").attr("src","indext.jpg")
+      addSideMargin()
       setButtonForTablet()
     }else{
 			$("#myImg").attr("src","indexm.jpg")
+      addSideMargin()
 			setButtonForMobile()
 		}	
 	}
 
 //}
+
+function addSideMargin() {
+
+  // var sideWidth = size.width
+
+  // var maxMargin = size.width - size.width / 6
+  // //console.log(maxMargin)
+  
+  //   if (size.width > 1920){
+  //   $("#myImg").css("max-width",'1920px')
+  //   }else if (size.width >= 912 && size.width <= 1920){
+  //   $("#myImg").css("max-width",maxMargin+"px")
+  //   }else if (size.width >= 768 && size.width <= 912){
+  //   $("#myImg").css("max-width",'9999px')
+  //   }else{
+  //   $("#myImg").css("max-width",'9999px')
+  //   } 
+
+}
 
 function setButton(){
 
