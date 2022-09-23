@@ -1,136 +1,93 @@
-<!DOCTYPE html>
-<!-- saved from url=(0017)./ -->
-<html lang="en-US">
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>coreflex</title> 
+    <meta charset="utf-8" />
+    <meta name="application-name" content="coreflex"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
+    <meta name="description" content="코어플렉스 - 고객경험 솔루션 메달리아 서비스 소개">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="CX솔루션, CX 솔루션, CX, 고객경험, 메달리아, 코어플렉스, Medallia, MEC, Decibel" />
 
-<head>
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="코어플렉스 - 고객경험 솔루션 메달리아 서비스 소개">
+    <meta property="og:site_name" content="코어플렉스 - 고객경험">
+    <meta property="og:url" content="https://test.crflx.com/cx.html">
+    <meta property="og:title" content="코어플렉스 - 고객경험">
+    <meta property="og:image" content="https://test.crflx.com/cx.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!-- Chrome, Firefox OS, Opera -->
+    <meta name="theme-color" content="#484848">
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta http-equiv="refresh" content="-1">
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-91EJDD6TF4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-91EJDD6TF4');
-</script>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>coreflex</title>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="./main.css">
-		<link rel="shortcut icon" href="./images/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-startup-image" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="./favicon.png">
+	<link rel="stylesheet" href="/assets/css/main.css">
 	</head>
 
-<!-- Decibel - www.crflx.com -->
-<link rel="dns-prefetch" href="//cdn.decibelinsight.net">
-<link rel="dns-prefetch" href="//collection.decibelinsight.net">
-<script type="text/javascript">
-// <![CDATA[
-	(function(d,e,c,i,b,el,it) {
-		d._da_=d._da_||[];_da_.oldErr=d.onerror;_da_.err=[];
-		d.onerror=function(){_da_.err.push(arguments);_da_.oldErr&&_da_.oldErr.apply(d,Array.prototype.slice.call(arguments));};
-		d.DecibelInsight=b;d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments);};
-		el=e.createElement(c),it=e.getElementsByTagName(c)[0];el.async=1;el.src=i;it.parentNode.insertBefore(el,it);
-	})(window,document,'script','https://cdn.decibelinsight.net/i/14089/939431/di.js','decibelInsight');
-// ]]>
-</script>
-
-
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-<script type="text/javascript">
-
-Kakao.init('4b0df8a22e4e20b92b5cbc1eaae634bb');
-Kakao.isInitialized();
-//console.log(Kakao.isInitialized());
-
-function goLogin(){
-
-Kakao.Auth.loginForm({
-  success: function(authObj) {
-    //console.log(JSON.stringify(authObj))
-
-    Kakao.API.request({
-        url: '/v2/user/me',
-        success: function(res) {
-          //alert(JSON.stringify(res))
-        },
-        fail: function(error) {
-          alert(
-            'login success, but failed to request user information: ' +
-              JSON.stringify(error)
-          )
-        },
-      })
-
-  },
-  fail: function(err) {
-    console.log(JSON.stringify(err))
-  },
-})
-
-}	
-
-</script>
-
-<script type="text/javascript">
-function goLogout(){
-
-	// if (!Kakao.Auth.getAccessToken()) {
- //      alert('Not logged in.')
- //      return
- //    }
- //    Kakao.Auth.logout(function() {
- //      alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
- //    })
-
-
- Kakao.API.request({
-      url: '/v1/user/unlink',
-      success: function(res) {
-        //alert('success: ' + JSON.stringify(res))
-      },
-      fail: function(err) {
-        //alert('fail: ' + JSON.stringify(err))
-      },
-    })
-
-}	
-
-</script>
+	<!-- Decibel - www.crflx.com -->
+	<link rel="dns-prefetch" href="//cdn.decibelinsight.net">
+	<link rel="dns-prefetch" href="//collection.decibelinsight.net">
+	<script type="text/javascript">
+	// <![CDATA[
+		(function(d,e,c,i,b,el,it) {
+			d._da_=d._da_||[];_da_.oldErr=d.onerror;_da_.err=[];
+			d.onerror=function(){_da_.err.push(arguments);_da_.oldErr&&_da_.oldErr.apply(d,Array.prototype.slice.call(arguments));};
+			d.DecibelInsight=b;d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments);};
+			el=e.createElement(c),it=e.getElementsByTagName(c)[0];el.async=1;el.src=i;it.parentNode.insertBefore(el,it);
+		})(window,document,'script','https://cdn.decibelinsight.net/i/14089/939431/di.js','decibelInsight');
+	// ]]>
+	</script>
 
 
 	<body class="landing">
 
+		<img src="headerback.png" width="100%" id="hatchBack">
+		<a href="#navPanel"><img src="header.png" width="100%" id="headerMenu"></a>
+		<img src="headerback.png" width="100%" id="headerBack"> 
 
-<img src="headerback.png" width="100%" id="headerBack">
-<img src="header.png" width="100%" id="headerMenu">
+	  <!-- Header -->
+	      <header id="header" class="alt">
+	        <h1><a href="./index.html" style="text-transform: none;">coreflex</a></h1>
+	        <nav id="nav">
+	          <ul>
+	            <li><a href="./index.html">회사소개</a></li>
+	            <li><a href="./business.html">금융솔루션</a></li>
+	            <li><a href="./cx.html">고객경험솔루션</a></li>
+	            <li><a href="./career.html">채용</a></li>
+	<!--            <li><a onclick="goLogin()">로그인</a></li>
+	            <li><a onclick="goLogout()">로그아웃</a></li> -->
+	          </ul>
+	        </nav>
+	      </header>
 
-</div> 
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="./index.html" style="text-transform: none;">coreflex</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="./index.html">회사소개</a></li>
-						<li><a href="./business.html">금융솔루션</a></li>
-						<li><a href="./cx.html">고객경험솔루션</a></li>
-						<li><a href="./career.html">채용</a></li>
-<!-- 						<li><a onclick="goLogin()">로그인</a></li>
-						<li><a onclick="goLogout()">로그아웃</a></li> -->
-					</ul>
-				</nav>
-			</header>
-
-			<a href="./#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
 		<!-- Banner -->
 			<section id="banner">
-				<img class="img_co" src="./index_files/logo_w2.png" alt="coreflex">
-				<p>-TEST VERSION-</p>
+				<img class="img_co" src="images/logo_w2.png" alt="coreflex" />
 				<p>금융에 대한 전문지식과 선도적 IT기술로 차별화된 금융 솔루션을 제공합니다.</p>
 				<div style="font-size:13px">
 					<p style="color:#ddd;margin-bottom:0px;">국내외 금융시스템 구축 프로젝트를 성공적으로 수행한 경험으로 축적된 업무지식과 기술력</p>
@@ -143,64 +100,64 @@ function goLogout(){
 				<section id="one" class="wrapper style1">
 					<div class="container 85%">
 						<div class="row 200%">
-							<header class="hd">
-								<h2>사업분야 &amp; Solution</h2>
+							<header class ="hd">
+								<h2>사업분야 & Solution</h2>
 							</header>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>해외주식시스템</h4>
 									<p class="txt_sb">국내증권사의 해외주식 중개매매 시스템</p>
 								</header>
-								<p class="txt">매매, 결제, 고객잔고관리, CA 및 후선 등 해외주식 업무 전반을 커버</p>
-								<p class="txt">미국, 중국(홍콩, 상해A/B, 심천A/B), 일본, 영국, 프랑스, 독일 등 해외시장 접근</p>
-								<p class="txt">예탁결제원과 연동한 결제 및 CA지원 시스템</p>
-								<p class="txt">해외주식담보대출, 통합증거금, Fractional 매매 등 지원</p>
+								<p class ="txt">매매, 결제, 고객잔고관리, CA 및 후선 등 해외주식 업무 전반을 커버</p>
+								<p class ="txt">미국, 중국(홍콩, 상해A/B, 심천A/B), 일본, 영국, 프랑스, 독일 등 해외시장 접근</p>
+								<p class ="txt">예탁결제원과 연동한 결제 및 CA지원 시스템</p>
+								<p class ="txt">해외주식담보대출, 통합증거금, Fractional 매매 등 지원</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>외화채권시스템</h4>
 									<p class="txt_sb">외화표시채권 상품 운용 및 리테일 판매시스템</p>
 								</header>
-								<p class="txt">외화채권 발행정보, 이자, 상환, 평가관리</p>
-								<p class="txt">상품 매매,결제 및 원장 관리, 자동회계처리</p>
-								<p class="txt">계좌매매, 협의공시매매</p>
+								<p class ="txt">외화채권 발행정보, 이자, 상환, 평가관리</p>
+								<p class ="txt">상품 매매,결제 및 원장 관리, 자동회계처리</p>
+								<p class ="txt">계좌매매, 협의공시매매</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>외화RP시스템</h4>
 									<p class="txt_sb">외화표시채권 RP 운용 시스템</p>
 								</header>
-								<p class="txt">공시관리</p>
-								<p class="txt">편입/편출, 종목교체 관리</p>
-								<p class="txt">고객 RP 매매, 계좌출납 시스템과 연계</p>
+								<p class ="txt">공시관리</p>
+								<p class ="txt">편입/편출, 종목교체 관리</p>
+								<p class ="txt">고객 RP 매매, 계좌출납 시스템과 연계</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>해외파생시스템</h4>
 									<p class="txt_sb">국내증권사의 해외파생상품 중개매매 시스템</p>
 								</header>
-								<p class="txt">해외선물, 해외옵션, FX마진</p>
-								<p class="txt">FCM을 통한 시장 접근</p>
-								<p class="txt">이종통화 대용지정, 다양한 주문유형 지원</p>
+								<p class ="txt">해외선물, 해외옵션, FX마진</p>
+								<p class ="txt">FCM을 통한 시장 접근</p>
+								<p class ="txt">이종통화 대용지정, 다양한 주문유형 지원</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>해외 증권원장시스템</h4>
 									<p class="txt_sb">해외증권사를 위한 종합원장 시스템</p>
 								</header>
-								<p class="txt">베트남, 라오스, 캄보디아, 아제르바이잔, 우즈벡, 인도네시아 등 다수 실적</p>
-								<p class="txt">계좌, 출납, 매매, 유가증권, 후선, 정보계 등 원장 전체 업무</p>
-								<p class="txt">FIX 시장 접근, 현지 CSD, 현지 은행, Market data feeding 등 대외 I/F 지원</p>
-								<p class="txt">Open source 기반의 저비용 고효율 아키텍처</p>
+								<p class ="txt">베트남, 라오스, 캄보디아, 아제르바이잔, 우즈벡, 인도네시아 등 다수 실적</p>
+								<p class ="txt">계좌, 출납, 매매, 유가증권, 후선, 정보계 등 원장 전체 업무</p>
+								<p class ="txt">FIX 시장 접근, 현지 CSD, 현지 은행, Market data feeding 등 대외 I/F 지원</p>
+								<p class ="txt">Open source 기반의 저비용 고효율 아키텍처</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>기타</h4>
 									<p class="txt_sbt" style="margin-bottom:5px;">종합증권원장시스템 (업무 전반)</p>
 									<p class="txt_sbt" style="margin-bottom:5px;">CFD 원장 시스템</p>
@@ -212,147 +169,147 @@ function goLogout(){
 							</div>
 						</div>
 						
-						<hr>
+						<hr />
 						<div class="row 200%">
-							<header class="hd">
+							<header class ="hd">
 								<h2>History</h2>
 							</header>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2022</h4>
 								</header>
-								<p class="txt">메리츠증권 해외주식 CFD시스템 구축</p>
-								<p class="txt">한화투자증권 해외주식 소수점매매 구축</p>
-								<p class="txt">하나금융투자 해외주식 소수점매매 구축</p>
+								<p class ="txt">메리츠증권 해외주식 CFD시스템 구축</p>
+								<p class ="txt">한화투자증권 해외주식 소수점매매 구축</p>
+								<p class ="txt">하나금융투자 해외주식 소수점매매 구축</p>
 							</div>
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2021</h4>
 								</header>
-								<p class="txt">DB금융투자 해외주식시스템 구축</p>
-								<p class="txt">신영증권 해외주식시스템 구축</p>
-								<p class="txt">SK증권 외화원장시스템 구축</p>
-								<p class="txt">현대차증권 외화원장시스템 구축</p>
+								<p class ="txt">DB금융투자 해외주식시스템 구축</p>
+								<p class ="txt">신영증권 해외주식시스템 구축</p>
+								<p class ="txt">SK증권 외화원장시스템 구축</p>
+								<p class ="txt">현대차증권 외화원장시스템 구축</p>
 							</div>
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2020</h4>
 								</header>
-								<p class="txt">베트남 Pinetree 증권 원장 시스템 구축</p>
-								<p class="txt">현대차증권 해외주식시스템 구축</p>
-								<p class="txt">신한금융투자 해외주식, 해외파생시스템 고도화</p>
-								<p class="txt">한화투자증권 외화원장시스템 구축</p>
+								<p class ="txt">베트남 Pinetree 증권 원장 시스템 구축</p>
+								<p class ="txt">현대차증권 해외주식시스템 구축</p>
+								<p class ="txt">신한금융투자 해외주식, 해외파생시스템 고도화</p>
+								<p class ="txt">한화투자증권 외화원장시스템 구축</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2019</h4>
 								</header>
-								<p class="txt">청년친화강소기업 선정</p>
-								<p class="txt">신한금융투자 해외파생시스템 구축</p>
-								<p class="txt">참비트 암호화폐거래소 시스템 구축</p>
+								<p class ="txt">청년친화강소기업 선정</p>
+								<p class ="txt">신한금융투자 해외파생시스템 구축</p>
+								<p class ="txt">참비트 암호화폐거래소 시스템 구축</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2018</h4>
 								</header>
-								<p class="txt">메리츠증권 해외주식시스템 구축</p>
-								<p class="txt">한화투자증권 해외주식시스템 구축</p>
-								<p class="txt">미래대우 차세대 해외파생시스템, 채권시스템 구축</p>
-								<p class="txt">한국가상화폐거래소 매칭 및 원장시스템 구축</p>
+								<p class ="txt">메리츠증권 해외주식시스템 구축</p>
+								<p class ="txt">한화투자증권 해외주식시스템 구축</p>
+								<p class ="txt">미래대우 차세대 해외파생시스템, 채권시스템 구축</p>
+								<p class ="txt">한국가상화폐거래소 매칭 및 원장시스템 구축</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2017</h4>
 								</header>
-								<p class="txt">삼성 SAAT 리테일시스템 구축</p>
-								<p class="txt">코스콤 자본시장 공동 오픈 API FIX 게이트웨이 구축</p>
-								<p class="txt">SK증권 외화RP 구축</p>
-								<p class="txt">유진투자증권 해외채권시스템 구축</p>
-								<p class="txt">한국예탁결제원 전자증권제도 도입 컨설팅</p>
+								<p class ="txt">삼성 SAAT 리테일시스템 구축</p>
+								<p class ="txt">코스콤 자본시장 공동 오픈 API FIX 게이트웨이 구축</p>
+								<p class ="txt">SK증권 외화RP 구축</p>
+								<p class ="txt">유진투자증권 해외채권시스템 구축</p>
+								<p class ="txt">한국예탁결제원 전자증권제도 도입 컨설팅</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2016</h4>
 								</header>
-								<p class="txt">아제르바이잔 증권위원회 원장시스템 구축</p>
-								<p class="txt">우즈벡 국유자산위원회 원장시스템 구축</p>
-								<p class="txt">하나금융투자 차세대 매매시스템 구축</p>
-								<p class="txt">교보증권 해외주식시스템 구축</p>
-								<p class="txt">SK증권 해외주식시스템 구축</p>
+								<p class ="txt">아제르바이잔 증권위원회 원장시스템 구축</p>
+								<p class ="txt">우즈벡 국유자산위원회 원장시스템 구축</p>
+								<p class ="txt">하나금융투자 차세대 매매시스템 구축</p>
+								<p class ="txt">교보증권 해외주식시스템 구축</p>
+								<p class ="txt">SK증권 해외주식시스템 구축</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2015</h4>
 								</header>
-								<p class="txt">KB투자증권 해외주식 시스템 구축</p>
-								<p class="txt">삼성 SAAT 시스템 구축</p>
-								<p class="txt">대우증권 해외선물 고도화</p>
+								<p class ="txt">KB투자증권 해외주식 시스템 구축</p>
+								<p class ="txt">삼성 SAAT 시스템 구축</p>
+								<p class ="txt">대우증권 해외선물 고도화</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2014</h4>
 								</header>
-								<p class="txt">신한금융투자 정보계 통합 구축</p>
-								<p class="txt">SK증권 외화채권시스템 구축</p>
-								<p class="txt">하나대투증권 차세대 PI</p>
+								<p class ="txt">신한금융투자 정보계 통합 구축</p>
+								<p class ="txt">SK증권 외화채권시스템 구축</p>
+								<p class ="txt">하나대투증권 차세대 PI</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2013</h4>
 								</header>
-								<p class="txt">INNO-BIZ 기술혁신 중소기업 인증</p>
-								<p class="txt">대우증권 전자단기사채시스템 구축</p>
-								<p class="txt">메리츠종금증권 전자단기사채시스템 구축</p>
-								<p class="txt">현대증권 외화매도가능채권매매시스템 구축</p>
-								<p class="txt">한화투자증권 고속주문시스템 구축</p>
+								<p class ="txt">INNO-BIZ 기술혁신 중소기업 인증</p>
+								<p class ="txt">대우증권 전자단기사채시스템 구축</p>
+								<p class ="txt">메리츠종금증권 전자단기사채시스템 구축</p>
+								<p class ="txt">현대증권 외화매도가능채권매매시스템 구축</p>
+								<p class ="txt">한화투자증권 고속주문시스템 구축</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2012</h4>
 								</header>
-								<p class="txt">캄보디아거래소 원장시스템 구축</p>
-								<p class="txt">부국증권 차세대시스템 구축</p>
-								<p class="txt">하나대투증권 해외주식시스템 구축</p>
-								<p class="txt">하나대투증권 외화채권시스템 구축</p>
+								<p class ="txt">캄보디아거래소 원장시스템 구축</p>
+								<p class ="txt">부국증권 차세대시스템 구축</p>
+								<p class ="txt">하나대투증권 해외주식시스템 구축</p>
+								<p class ="txt">하나대투증권 외화채권시스템 구축</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2011</h4>
 								</header>
-								<p class="txt">라오스거래소 원장시스템 구축</p>
-								<p class="txt">대우증권 외화RP시스템 구축</p>
-								<p class="txt">신한금융투자 해외선물, FX마진 고도화</p>
+								<p class ="txt">라오스거래소 원장시스템 구축</p>
+								<p class ="txt">대우증권 외화RP시스템 구축</p>
+								<p class ="txt">신한금융투자 해외선물, FX마진 고도화</p>
 							</div>
 						</div>
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2010</h4>
 								</header>
-								<p class="txt">벤처기업 인증</p>
-								<p class="txt">한국산업기술진흥협회 기업부설 연구소 인증</p>
-								<p class="txt">오사카거래소 J-GATE 시험툴</p>
-								<p class="txt">토쿄공업품거래소 회원시스템 프로토타이핑</p>
+								<p class ="txt">벤처기업 인증</p>
+								<p class ="txt">한국산업기술진흥협회 기업부설 연구소 인증</p>
+								<p class ="txt">오사카거래소 J-GATE 시험툴</p>
+								<p class ="txt">토쿄공업품거래소 회원시스템 프로토타이핑</p>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<header class="hd">
+								<header class ="hd">
 									<h4>2009</h4>
 								</header>
-								<p class="txt">㈜ ICM에서 IT사업부문이 분리된 ㈜GNSk로부터 금융사업부문 양수 ㈜코어플렉스 설립</p>
+								<p class ="txt">㈜ ICM에서 IT사업부문이 분리된 ㈜GNSk로부터 금융사업부문 양수 ㈜코어플렉스 설립</p>
 							</div>
 						</div>
 					</div>
-					<hr>
+					<hr />
 				</section>
 				
 			<!-- Two -->
@@ -363,47 +320,46 @@ function goLogout(){
 							<h4>국내</h4>
 						</header>
 						<div class="ct">
-							<img class="img_co" src="./index_files/krx.png" alt="KRX" style="max-width: 135px;">
-							<img class="img_co" src="./index_files/db.jpg" alt="DB금융투자" style="max-width: 150px;">
-							<img class="img_co" src="./index_files/kb.jpg" alt="KB증권">
-							<img class="img_co" src="./index_files/koscom.jpg" alt="koscom">
-							<img class="img_co" src="./index_files/sk.jpg" alt="SK증권" style="max-width: 140px;">
-							<img class="img_co" src="./index_files/kyobo.png" alt="교보증권">
-							<img class="img_co" src="./index_files/meritz.jpg" alt="메리츠증권" style="max-width: 130px;">
-							<img class="img_co" src="./index_files/mirae.png" alt="미래대우증권" style="max-width: 170px;">
-							<img class="img_co" src="./index_files/bukuk.jpg" alt="부국증권" style="max-height: 160px;padding-top:20px;">
-							<img class="img_co" src="./index_files/samsung.png" alt="삼성증권">
-							<img class="img_co" src="./index_files/shin.png" alt="신한금융투자" style="max-width: 140px;">
-							<img class="img_co" src="./index_files/shinyoung.png" alt="신영증권" style="max-width: 140px;">
-							<img class="img_co" src="./index_files/ujin.jpg" alt="유진투자증권" style="max-width: 180px;">
-							<img class="img_co" src="./index_files/korbit.png" alt="코빗" style="max-width: 150px;">
-							<img class="img_co" src="./index_files/toss.jpg" alt="토스준비법인" style="padding-top:10px;">
-							<img class="img_co" src="./index_files/hana.jpg" alt="하나금융투자">
-							<img class="img_co" src="./index_files/hanhwa.jpg" alt="한화증권" style="max-width: 180px;">
-							<img class="img_co" src="./index_files/hd.png" alt="현대차증권">
+							<img class="img_co" src="images/krx.png" alt="KRX" style="max-width: 135px;"/>
+							<img class="img_co" src="images/db.jpg" alt="DB금융투자" style="max-width: 150px;"/>
+							<img class="img_co" src="images/kb.jpg" alt="KB증권" />
+							<img class="img_co" src="images/koscom.jpg" alt="koscom" />
+							<img class="img_co" src="images/sk.jpg" alt="SK증권" style="max-width: 140px;"/>
+							<img class="img_co" src="images/kyobo.png" alt="교보증권" />
+							<img class="img_co" src="images/meritz.jpg" alt="메리츠증권" style="max-width: 130px;"/>
+							<img class="img_co" src="images/mirae.png" alt="미래대우증권" style="max-width: 170px;"/>
+							<img class="img_co" src="images/bukuk.jpg" alt="부국증권" style="max-height: 160px;padding-top:20px;"/>
+							<img class="img_co" src="images/samsung.png" alt="삼성증권" />
+							<img class="img_co" src="images/shin.png" alt="신한금융투자"  style="max-width: 140px;"/>
+							<img class="img_co" src="images/shinyoung.png" alt="신영증권"  style="max-width: 140px;"/>
+							<img class="img_co" src="images/ujin.jpg" alt="유진투자증권" style="max-width: 180px;"/>
+							<img class="img_co" src="images/korbit.png" alt="코빗" style="max-width: 150px;"/>
+							<img class="img_co" src="images/toss.jpg" alt="토스준비법인" style="padding-top:10px;"/>
+							<img class="img_co" src="images/hana.jpg" alt="하나금융투자" />
+							<img class="img_co" src="images/hanhwa.jpg" alt="한화증권" style="max-width: 180px;"/>
+							<img class="img_co" src="images/hd.png" alt="현대차증권" />
 						</div>
-						<hr>
+						<hr />
 						<header>
 							<h4>해외</h4>
 						</header>
 						<div class="ct">
-							<img class="img_co" src="./index_files/ntt.png" alt="NTT Data">
-							<img class="img_co" src="./index_files/lao.jpg" alt="라오스거래소" style="max-width: 150px;">
-							<img class="img_co" src="./index_files/pine.png" alt="베트남 Pinetree증권" style="max-width: 190px;">
-							<img class="img_co" src="./index_files/baku.jpg" alt="아제르바이잔 증권위원회 (SCS)" style="max-width: 200px;">
+							<img class="img_co" src="images/ntt.png" alt="NTT Data" />
+							<img class="img_co" src="images/lao.jpg" alt="라오스거래소" style="max-width: 150px;"/>
+							<img class="img_co" src="images/pine.png" alt="베트남 Pinetree증권" style="max-width: 190px;"/>
+							<img class="img_co" src="images/baku.jpg" alt="아제르바이잔 증권위원회 (SCS)" style="max-width: 200px;"/>
 	<!-- 						<img class="img_co" src="images/.png" alt="일본 유니콤" /> -->
-							<img class="img_co" src="./index_files/osaka.jpg" alt="오사카거래소">
-							<img class="img_co" src="./index_files/scc.png" alt="우즈벡 국유자산위원회 (SCC)" style="max-height: 100px;">
+							<img class="img_co" src="images/osaka.jpg" alt="오사카거래소" />
+							<img class="img_co" src="images/scc.png" alt="우즈벡 국유자산위원회 (SCC)" style="max-height: 100px;"/>
 <!-- 							<img class="img_co" src="images/csk.jpg" alt="일본 CSK SS" /> -->
 	<!-- 						<img class="img_co" src="images/.png" alt="일본 센추리증권" /> -->
-							<img class="img_co" src="./index_files/okasan.png" alt="일본 오카산증권" style="max-height: 100px;">
-							<img class="img_co" src="./index_files/cam.png" alt="캄보디아거래소" style="max-width: 140px;">
-							<img class="img_co" src="./index_files/medallia.png" alt="메달리아" style="max-width: 140px;">
+							<img class="img_co" src="images/okasan.png" alt="일본 오카산증권" style="max-height: 100px;"/>
+							<img class="img_co" src="images/cam.png" alt="캄보디아거래소" style="max-width: 140px;"/>
 						</div>
-						<a href="./business.html" class="button big center">납품실적</a>
+						<a href="business.html" class="button big center">납품실적</a>
 					</div>
 				</section>
-				<hr>
+				<hr />
 
 			<!-- Three -->
 				<section id="three" class="wrapper style1">
@@ -414,7 +370,7 @@ function goLogout(){
 						</header>
 						<div class="feature-grid">
 							<div class="feature">
-								<div class="image rounded"><img src="./index_files/pic_4.jpg" alt=""></div>
+								<div class="image rounded"><img src="images/pic_4.jpg" alt="" /></div>
 								<div class="content">
 									<header>
 										<h4>업무수행자세</h4>
@@ -424,7 +380,7 @@ function goLogout(){
 								</div>
 							</div>
 							<div class="feature">
-								<div class="image rounded"><img src="./index_files/pic_2.jpg" alt=""></div>
+								<div class="image rounded"><img src="images/pic_2.jpg" alt="" /></div>
 								<div class="content">
 									<header>
 										<h4>풍부한 개발경험</h4>
@@ -434,7 +390,7 @@ function goLogout(){
 								</div>
 							</div>
 							<div class="feature">
-								<div class="image rounded"><img src="./index_files/pic_3.jpg" alt=""></div>
+								<div class="image rounded"><img src="images/pic_3.jpg" alt="" /></div>
 								<div class="content">
 									<header>
 										<h4>검증된 기술력</h4>
@@ -444,7 +400,7 @@ function goLogout(){
 								</div>
 							</div>
 							<div class="feature">
-								<div class="image rounded"><img src="./index_files/pic_1.jpg" alt=""></div>
+								<div class="image rounded"><img src="images/pic_1.jpg" alt="" /></div>
 								<div class="content">
 									<header>
 										<h4>다양한 플랫폼 지원</h4>
@@ -464,13 +420,10 @@ function goLogout(){
 							<p>선도적 금융솔루션 전문회사인 ㈜코어플렉스와 함께할 참신한 인재를 모십니다.</p>
 						</header>
 						<ul class="actions">
-							<li><a href="./career.html" class="button special big">인재채용</a></li>
+							<li><a href="career.html" class="button special big">인재채용</a></li>
 						</ul>
 					</div>
 				</section>
-
-
-
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -482,27 +435,16 @@ function goLogout(){
 						<li>Email . admin@crflx.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tel . 02-782-3960 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax . 02-782-3960 </li>
 					</ul>
 					<ul class="copyright">
-						<li><img class="img_ft" src="./index_files/logo.png" alt="coreflex">&nbsp;&nbsp;ⓒ Copyright coreflex corp. All rights reserved.</li>
+						<li><img class="img_ft" src="images/logo.png" alt="coreflex" />&nbsp;&nbsp;ⓒ Copyright coreflex corp. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="./jquery.min.js"></script>
-			<script src="./skel.min.js"></script>
-			<script src="./util.js"></script>
-			<script src="./main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-	
-				<a href="./#navPanel" class="navPanelToggle"></a><div id="navPanel">
-					<ul>
-						<li><a href="./index.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">코어플렉스</a></li>
-						<li><a href="./business.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">실적</a></li>
-						<li><a href="./cx.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">고객경험</a></li>
-						<li><a href="./career.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">채용</a></li>
-					</ul>
-				<a href="./#navPanel" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
-
-
-
-			</div></body></html>
+	</body>
+</html>
