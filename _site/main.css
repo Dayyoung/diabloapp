@@ -2978,6 +2978,9 @@
 			#headerBack {
 				display: none;
 			}
+			#hatchBack {
+				display: none;
+			}
 
 		.navPanelToggle:before {
 			-moz-osx-font-smoothing: grayscale;
@@ -2993,7 +2996,8 @@
 
 			.navPanelToggle {
 				display: block;
-				  top: 0;
+				  //position: fixed;
+				  top: env(safe-area-inset-top);
 				  left: 0;
 				  right: 0;
     			 z-index: 9998;
@@ -3003,13 +3007,21 @@
 				display: block;
 
 				  position: fixed;
-				  top: 0;
+				  top: env(safe-area-inset-top);
 				  left: 0;
 				  right: 0;
     			 z-index: 9997;
 			}
 			#headerBack {
 				display: block;
+			}
+			#hatchBack {
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+    			z-index: 9997;
 			}
 		}
 

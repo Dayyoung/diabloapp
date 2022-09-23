@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://test.crflx.com/cx.jpg">
 <meta property="og:locale" content="ko_KR">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -86,6 +86,17 @@ font-size: 0px;
 		height: 100%;
 		width: 100%;
 }
+
+
+ /* 메인 컨테이너에 다음과 같이 설정 */
+#mainLayout {
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+}
+
 
 
 #videoPlayer { width: 100%;}
@@ -253,7 +264,11 @@ var size = {
 <body>
 
 
-<img src="header.png" width="100%" id="headerMenu">
+<img src="headerback.png" width="100%" id="hatchBack">
+<a href="#navPanel"><img src="header.png" width="100%" id="headerMenu"></a>
+<!-- 
+<img src="header.png" width="100%" id="headerMenu"> -->
+
 <!-- 
 <header id="header">
         <h1><a href="./index.html" style="text-transform: none;">coreflex</a></h1>
