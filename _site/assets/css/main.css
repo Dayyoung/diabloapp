@@ -3014,6 +3014,7 @@
 			}
 			#headerBack {
 				display: block;
+				padding-top: env(safe-area-inset-top);
 			}
 			#hatchBack {
 				display: block;
@@ -3054,7 +3055,7 @@
 		overflow-y: auto;
 		position: fixed;
 		left: 0;
-		top: 0;
+		top: env(safe-area-inset-top);
 		background: #222;
 		color: #fff;
 		height: 100%;
@@ -3154,6 +3155,8 @@
 			transform: translateX(0);
 			box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
 			visibility: visible;
+		    //margin-top: env(safe-area-inset-top);
+		    margin-top: 0;
 		}
 
 /* Banner */
@@ -3249,7 +3252,8 @@
 		@media screen and (max-width: 736px) {
 
 			#main {
-				padding-top: 2em;
+				  padding-top: 2em;
+				  //padding-top : calc(2em + env(safe-area-inset-top))
 			}
 
 		}
