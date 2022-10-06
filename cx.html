@@ -72,17 +72,17 @@ font-size: 0px;
 }
 
 #captionLayout {
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
 .originalButton { 
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
 
-#myImg{1800
+#myImg{
 		height: 100%;
 		width: 100%;
 }
@@ -541,17 +541,18 @@ function onCreate() {
 
 
 var size = {
-  width: window.innerWidth || document.body.clientWidth,
+  width: document.body.innerWidth || document.body.clientWidth, // for except scroll
+  //width: window.innerWidth || document.body.clientWidth,
   height: window.innerHeight || document.body.clientHeight 
 };
 
 var myImg = document.getElementById("myImg");
-//console.log(myImg)
 var pageWidth  = myImg.width;
 var pageHeight = myImg.height;
 
 
 var marginWidth = (size.width - pageWidth ) / 2
+
 const marginHeight = pageHeight - size.height
 
 // 1200 / 4530
@@ -792,19 +793,14 @@ function setButton(){
     var copyButton = $("#originButton6")
 
     var buttonHeight = pageHeight * 0.140
-    var buttonWidth = pageWidth - 1
+    var buttonWidth = pageWidth 
     //var marginTop = pageHeight * 0.14
     var marginTop = pageHeight * 0.147
     //var marginLeft = 0 + marginWidth 
 
     var marginLeft = pageWidth/2 - buttonWidth/2  + marginWidth
 
-
-    // var videoPlayer = $('#videoPlayer').get(0);
-    // //console.log(videoPlayer)
-    // $(videoPlayer).show()
-
-
+    
     copyButton.css("width", buttonWidth);
     copyButton.css("height", buttonHeight);
     copyButton.css("margin-top", marginTop);
