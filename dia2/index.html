@@ -666,8 +666,9 @@ const marginHeight = pageHeight - size.height
 
 	var mode = getParam('mode')
 
-	//console.log(pageHeight)
-	 
+	console.log(pageWidth)
+  console.log(pageHeight)
+   
 
   //For Prevent Copy!
   $("#popupLayout").css("width" , "100%");    
@@ -677,9 +678,14 @@ const marginHeight = pageHeight - size.height
   $("#myLayout").css("background-color" , "#F6F6F6"); 
   //$("#myLayout").css("background-image" , "url(index.jpg)"); 
   $("#myLayout").css("background-size" , "100% 100%"); 
-  $("#myLayout").css("width" , "100%"); 
+  $("#myLayout").css("width" , pageWidth); 
   $("#myLayout").css("height" , pageHeight); 
   $("#myLayout").show()
+
+
+  //$("#myImg").css("width" , pageWidth); 
+  //$("#myImg").css("height" , pageWidth * 0.5); 
+
 
 	if(mode){
     if (mode == "wide"){
