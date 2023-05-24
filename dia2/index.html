@@ -72,12 +72,12 @@ font-size: 0px;
 }
 
 #captionLayout {
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
 .originalButton { 
-  background-color:transparent !important; 
+  //background-color:transparent !important; 
   cursor : pointer;
 }
 
@@ -273,6 +273,13 @@ var pageWidth  = myImg.width;
 var pageHeight = myImg.height;
 
 
+  if(size.width<size.height){
+    //myImg.css("width","750px";
+
+  $(myImg).css("width" , pageWidth*2);  
+  }
+
+
 var marginWidth = (size.width - pageWidth ) / 2
 
 var marginHeight = pageHeight - size.height
@@ -297,6 +304,7 @@ var marginHeight = pageHeight - size.height
   $("#myLayout").css("width" , "100%"); 
   $("#myLayout").css("height" , pageHeight); 
   $("#myLayout").show()
+
 
 
   //$("#myImg").css("width" , pageWidth); 
@@ -350,7 +358,14 @@ var marginWidth = (size.width - pageWidth ) / 2
 
 var marginHeight = pageHeight - size.height
 
+
+  // if(size.width<size.height){
+  //   weightRate = weightRate * 2
+  // }
+
+
 var weightRate = pageWidth / 1680
+
 
 //weightRate = 1
 
