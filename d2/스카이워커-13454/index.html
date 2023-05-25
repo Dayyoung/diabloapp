@@ -416,7 +416,7 @@ var itemList = [{"id":1,"w":108,"h":206,"x":875,"y":178,"caption":""},{"id":2,"w
       copyCaption.css("width", captionItem.w * weightRate);
       copyCaption.css("height", captionItem.h * weightRate);
       copyCaption.css("left", captionItem.x * weightRate);
-      copyCaption.css("margin-top", captionItem.y * weightRate);
+      copyCaption.css("margin-top", captionItem.y * weightRate + marginTopForIphoneX);
 
       copyCaption.find(".tooltiptext").html(captionItem.caption)
       copyCaption.draggable({ disabled: true });  
