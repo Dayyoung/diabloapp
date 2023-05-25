@@ -1,359 +1,229 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
 
-   <html lang="ko">
-  <head>
-      <title>Diablo2</title> 
-  <meta charset="utf-8" />
-  <meta name="application-name" content="coreflex"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
-  <meta name="description" content="Diablo2 Profile">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="Diablo2 Profile" />
+  <title>Intro</title>
+  <meta charset="UTF-8">
+  <meta name="Description" CONTENT="Intro">
 
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Diablo2 Profile Page.">
-  <meta property="og:site_name" content="Diablo2 Profile">
-  <meta property="og:url" content="https://dayyoung.github.io/diabloapp/d2/">
-  <meta property="og:title" content="Diablo2 Profile">
-  <meta property="og:image" content="https://dayyoung.github.io/diabloapp/d2/previewlogo.jpg">
-  <meta property="og:locale" content="ko_KR">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
-  <!-- Chrome, Firefox OS, Opera -->
-  <meta name="theme-color" content="#484848">
-  <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
-  <meta HTTP-EQUIV="Expires" CONTENT="-1">
-  <meta http-equiv="refresh" content="-1">
-
-  <link rel="apple-touch-icon-precomposed" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-startup-image" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-  <link rel="manifest" href="../manifest.json">
-  <link rel="shortcut icon" href="../favicon.png">
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
-
-  <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-color: #484848; 
-    //background-color: white; 
-  }
-
-
-  #captionLayout {
-    //background-color:transparent !important; 
-    cursor : pointer;
-  }
-
-
-  #myImg{
-      height: 100%;
-      width: 100%;
-  }
-
-
-   /* 메인 컨테이너에 다음과 같이 설정 */
-  #mainLayout {
-    padding:
-      env(safe-area-inset-top)
-      env(safe-area-inset-right)
-      env(safe-area-inset-bottom)
-      env(safe-area-inset-left);
-  }
-
-  :root {
-      --sat2: 100;
-      --sat: env(safe-area-inset-top);
-      --sar: env(safe-area-inset-right);
-      --sab: env(safe-area-inset-bottom);
-      --sal: env(safe-area-inset-left);
-  }
-
-  </style>
-     
-  </head>
-  <body>
-
-  <div id="mainLayout">
-
-  <center>
-  <div id="header">
-   <font color="white"><h1>디아블로2 - Skywalker#13454</h1></font>
-  </div>
-  </center>
-  <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 1000; ">
-
-  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 99999;top: 0; margin-left: 10; margin-top: 10;" >
-
-          <span class="tooltiptext" onclick="addNewLayout()">!!</span>
-  </div> 
-
-  <script>
-
-  var itemList = [{"id":1,"w":108,"h":206,"x":875,"y":178,"caption":""},{"id":2,"w":107,"h":104,"x":869,"y":412,"caption":""},{"id":3,"w":61,"h":64,"x":992,"y":408,"caption":""},{"id":4,"w":102,"h":100,"x":1073,"y":110,"caption":""},{"id":5,"w":101,"h":147,"x":1076,"y":234,"caption":""},{"id":6,"w":109,"h":52,"x":1070,"y":411,"caption":""},{"id":7,"w":56,"h":52,"x":1195,"y":159,"caption":""},{"id":8,"w":56,"h":52,"x":1195,"y":410,"caption":""},{"id":9,"w":100,"h":194,"x":1286,"y":185,"caption":""},{"id":10,"w":103,"h":102,"x":1278,"y":412,"caption":""}];
-
-  // url 에서 parameter 추출
-
-  function getParam(sname) {
-
-      var params = location.search.substr(location.search.indexOf("?") + 1);
-
-      var sval = "";
-
-      params = params.split("&");
-
-      for (var i = 0; i < params.length; i++) {
-
-          temp = params[i].split("=");
-
-          if ([temp[0]] == sname) { sval = temp[1]; }
-
-      }
-      return sval;
-
-  }
-
-  function addNewLayout(){
-        //var captionItem = cationpList[i]
-
-        //if($('.caption'+i).length == 0){
-          var copyCaption = $("#captionLayout").clone();
-          //copyCaption.hide()
-
-          copyCaption.css("z-index",100)
-          copyCaption.attr('caption', (itemList.length+1))
-
-
-          copyCaption.hover(function(){
-              console.log(JSON.stringify(itemList))
-
-              var index = copyCaption.attr('caption')
-
-              $("#myImg").attr("src","./"+index+".png")
-
-          }, function() {
-              //console.log(cationpList)
-          });
-
-          $("#mainLayout").append(copyCaption)
-
-          //cationpList.push(copyCaption)
-
-          var obj = copyCaption
-          var width = obj.width();
-          var height = obj.height();
-          var offset = copyCaption.offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
-
-          captionItem = {};
-          captionItem.id = itemList.length+1;
-          captionItem.w = width;
-          captionItem.h = height;
-          captionItem.x = xPos;
-          captionItem.y = yPos;
-          captionItem.caption = ''; 
-
-          itemList.push(captionItem)
-  }
-
-  $(function(){
-
-    let images = [];
-
-    function preload() {
-      for(let i = 0; i < preload.arguments.lenght; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments.src;
-      }
-    }
-
-    preload(
-      "./0.png",
-      "./1.png",
-      "./2.png",
-      "./3.png",
-      "./4.png",
-      "./5.png",
-      "./6.png",
-      "./7.png",
-      "./8.png",
-      "./9.png",
-      "./10.png"
-    )
-
-    // 실행할 기능을 정의해주세요.
-    var mode = getParam('mode')
-
-    if(mode){
-        $("#myImg").attr("src","./0.png")
-    }else{
-        $("#myImg").attr("src","./0.png")
-    }
-  });
-
-  var refreshTimer;
+  <meta name="mobile-web-app-capable" content="yes">
   
-  $(window).resize(function() { 
-      onCreate()
-  });
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e130c">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'><!-- 
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> -->
+    <link rel="apple-touch-icon-precomposed" href="./favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->  
 
-  var isFirst = true;
-  var weightRate = 1;
-  var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat")
+    <!-- Chrome, Firefox OS, Opera -->
+    <meta name="theme-color" content="#4285f4">
 
-  function onCreate() {
+</head>
+<script type="text/javascript">
+  
+       setTimeout(function() {
+         //location.href = "./map"
+         location.replace("./")
+       }, 3000); 
 
-  marginTopForIphoneX = parseInt($("#mainLayout").css("padding-top"))
-  marginTopForIphoneX += parseInt($("#header").height())
+</script>
 
-  console.log("marginTop " + marginTopForIphoneX)
+<style>
+    html, body {
+        margin: 0;
+        height: 100%;
+        background: black;
+    }
 
-  var size = {
-    width: document.body.innerWidth || document.body.clientWidth, // for except scroll
-    //width: window.innerWidth || document.body.clientWidth,
-    height: window.innerHeight || document.body.clientHeight 
-  };
+    header {
+        width: 100%;
+        height: 15%;
+        box-sizing: border-box;
+        //background-color: teal;
+        //background: rgb(0, 100, 62);
+    }
+    main {
+        width: 100%;
+        height: 28%;
+        //background-color: olive;
+        //background: rgb(0, 100, 62);
+        //display: inline-block;
+        box-sizing: border-box;
+    }
+    footer {
+        width: 100%;
+        height: 55%;
+        //background: rgb(0, 100, 62);
+        //background-color: orange;
+        box-sizing: border-box;
+    }
+    img {
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+.sk-circle {
 
-  var myImg = document.getElementById("myImg");
-  var pageWidth  = size.width;
-  //var pageWidth  = myImg.width;
-  var pageHeight = myImg.height;
+    margin-left: auto;
+    margin-right: auto;
+   // margin-top: 30px;
+  //margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.sk-circle .sk-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sk-circle .sk-child:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: white;
+  border-radius: 100%;
+  -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+          animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+}
+.sk-circle .sk-circle2 {
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg); }
+.sk-circle .sk-circle3 {
+  -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotate(60deg); }
+.sk-circle .sk-circle4 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg); }
+.sk-circle .sk-circle5 {
+  -webkit-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+          transform: rotate(120deg); }
+.sk-circle .sk-circle6 {
+  -webkit-transform: rotate(150deg);
+      -ms-transform: rotate(150deg);
+          transform: rotate(150deg); }
+.sk-circle .sk-circle7 {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg); }
+.sk-circle .sk-circle8 {
+  -webkit-transform: rotate(210deg);
+      -ms-transform: rotate(210deg);
+          transform: rotate(210deg); }
+.sk-circle .sk-circle9 {
+  -webkit-transform: rotate(240deg);
+      -ms-transform: rotate(240deg);
+          transform: rotate(240deg); }
+.sk-circle .sk-circle10 {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg); }
+.sk-circle .sk-circle11 {
+  -webkit-transform: rotate(300deg);
+      -ms-transform: rotate(300deg);
+          transform: rotate(300deg); }
+.sk-circle .sk-circle12 {
+  -webkit-transform: rotate(330deg);
+      -ms-transform: rotate(330deg);
+          transform: rotate(330deg); }
+.sk-circle .sk-circle2:before {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s; }
+.sk-circle .sk-circle3:before {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; }
+.sk-circle .sk-circle4:before {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s; }
+.sk-circle .sk-circle5:before {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s; }
+.sk-circle .sk-circle6:before {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s; }
+.sk-circle .sk-circle7:before {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s; }
+.sk-circle .sk-circle8:before {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s; }
+.sk-circle .sk-circle9:before {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s; }
+.sk-circle .sk-circle10:before {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s; }
+.sk-circle .sk-circle11:before {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s; }
+.sk-circle .sk-circle12:before {
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s; }
 
-  if(size.width<size.height){
-    pageWidth = pageWidth * 2
-    $(myImg).css("width" , pageWidth);  
-  }else{
-    $(myImg).css("width" , pageWidth);  
+@-webkit-keyframes sk-circleBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
+}
 
-  weightRate = pageWidth / 1680
-
-  //console.log(pageWidth)
-  //console.log(pageHeight)
-  console.log(marginTopForIphoneX)
-
-  var marginWidth = (size.width - pageWidth ) / 2
-  var marginHeight = pageHeight - size.height
-
-  if(!isFirst){ 
-    drawItem()
-    return;
+@keyframes sk-circleBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
+}
 
-  isFirst = false;
+//https://tobiasahlin.com/spinkit/
 
-     $( "#captionLayout" ).draggable({
-        start: function() {
-          
-        },
-        drag: function() {
-          
+</style>
+<body>
+<header></header>
+<!--    <nav>NAV</nav>-->
+<main>
+  <img src="./logo.png" style="width:350px;height: 175px;">
+</main>
+<footer>
 
-          var obj = $(this)
-          var width = obj.width();
-          var height = obj.height();
-          var offset = $(this).offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br>
 
-          $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-          var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-          console.log(JSON.stringify(sample))
-
-        },
-        stop: function() {
-        }
-      });
-
-     $( "#captionLayout" ).resizable({
-        start: function() {
-          
-        },
-        resize: function() {
-          
-
-          var obj = $(this)
-          var width = obj.width();
-          var height = obj.height();
-          var offset = $(this).offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
-
-          $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-          var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-          console.log(JSON.stringify(sample))
-
-        },
-        stop: function() {
-        }
-      });
-
-     drawItem();
-  }
-
-  function drawItem(){
-
-        for(i in itemList)
-        {
-        var captionItem = itemList[i]
-
-        if($('.caption'+i).length == 0){
-          var copyCaption = $( "#captionLayout" ).clone();
-          copyCaption.addClass('caption'+i)
-          $("#mainLayout").append(copyCaption)
-        }else{
-          var copyCaption = $('.caption'+i)
-        }
-        copyCaption.attr('caption', captionItem.id);
-
-        copyCaption.css("width", captionItem.w * weightRate);
-        copyCaption.css("height", captionItem.h * weightRate);
-        copyCaption.css("left", captionItem.x * weightRate);
-        copyCaption.css("margin-top", captionItem.y * weightRate + marginTopForIphoneX);
-
-        copyCaption.find(".tooltiptext").html(captionItem.caption)
-        copyCaption.draggable({ disabled: true });  
-        copyCaption.resizable({ disabled: true });  
-        copyCaption.show()
-
-        copyCaption.hover(function(){
-       
-            var index = $(this).attr('caption')
-
-            $("#myImg").attr("src","./"+index+".png")
-
-        }, function() {
-            $("#myImg").attr("src","./0.png")
-        });
-
-      }
-  }
-    
-  </script>
-
-        </img>
+  <div class="sk-circle">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
   </div>
-  </body>
-  </html>  
+
+</footer>
+
+
+
+</div>
+</body>
+</html>
