@@ -158,11 +158,7 @@ font-size: 0px;
 
 <script>
 
-var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat");
 
-marginTopForIphoneX = $("#myImg").css("padding-top")
-
-alert("XR " + marginTopForIphoneX)
 
 // url 에서 parameter 추출
 
@@ -295,6 +291,11 @@ function onResume() {
 
 function onCreate() {
 
+var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat");
+
+marginTopForIphoneX = $("#mainLayout").css("padding-top")
+
+alert("XR " + marginTopForIphoneX)
 
 var size = {
   width: document.body.innerWidth || document.body.clientWidth, // for except scroll
