@@ -66,7 +66,7 @@
 
 
   #captionLayout {
-    //background-color:transparent !important; 
+    background-color:transparent !important; 
     cursor : pointer;
   }
 
@@ -102,18 +102,32 @@
   <div id="mainLayout">
 
   <center>
-  <div id="header">
+  <div id="header" style="position: absolute; width : 100% ">
    <font color="white"><h1>디아블로2 - Skywalker#13454</h1></font>
+   <input type="button" value="Share" onclick="clip()" style="width:70px; height: 70px;" />
   </div>
   </center>
   <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 1000; ">
 
-  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 99999;top: 0; margin-left: 10; margin-top: 10;" >
+  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 99999;top: 0; margin-left: 10; margin-top: 0;" >
 
           <span class="tooltiptext" onclick="addNewLayout()">!!</span>
   </div> 
 
   <script>
+
+  function clip(){
+
+    var url = '';
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.document.location.href;
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("URL이 복사되었습니다.")
+  }
 
   var itemList = [{"id":1,"w":108,"h":206,"x":875,"y":178,"caption":""},{"id":2,"w":107,"h":104,"x":869,"y":412,"caption":""},{"id":3,"w":61,"h":64,"x":992,"y":408,"caption":""},{"id":4,"w":102,"h":100,"x":1073,"y":110,"caption":""},{"id":5,"w":101,"h":147,"x":1076,"y":234,"caption":""},{"id":6,"w":109,"h":52,"x":1070,"y":411,"caption":""},{"id":7,"w":56,"h":52,"x":1195,"y":159,"caption":""},{"id":8,"w":56,"h":52,"x":1195,"y":410,"caption":""},{"id":9,"w":100,"h":194,"x":1286,"y":185,"caption":""},{"id":10,"w":103,"h":102,"x":1278,"y":412,"caption":""}];
 
@@ -230,7 +244,7 @@
   function onCreate() {
 
   marginTopForIphoneX = parseInt($("#mainLayout").css("padding-top"))
-  marginTopForIphoneX += parseInt($("#header").height())
+  //marginTopForIphoneX += parseInt($("#header").height())
 
   console.log("marginTop " + marginTopForIphoneX)
 
