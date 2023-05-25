@@ -87,7 +87,7 @@ font-size: 0px;
 
 
  /* 메인 컨테이너에 다음과 같이 설정 */
-#mainLayout2 {
+#mainLayout {
   padding:
     env(safe-area-inset-top)
     env(safe-area-inset-right)
@@ -270,8 +270,12 @@ var size = {
 
 $(window).resize(function() { 
   //console.log("Change.")
-  isFirst = true
-  onCreate()
+  if(isFirst){
+    isFirst = false
+    setTimeout(function(){
+      onCreate()
+    },10);
+  }
 });
 
 
