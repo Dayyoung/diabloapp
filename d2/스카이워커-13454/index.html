@@ -158,7 +158,9 @@ font-size: 0px;
 
 <script>
 
-var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sal");
+var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat");
+
+marginTopForIphoneX = $("#mainLayout").css("padding-top")
 
 alert("XR " + marginTopForIphoneX)
 
