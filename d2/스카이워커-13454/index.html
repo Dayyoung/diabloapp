@@ -126,6 +126,7 @@ font-size: 0px;
 }
 
 :root {
+    --sat2: 100;
     --sat: env(safe-area-inset-top);
     --sar: env(safe-area-inset-right);
     --sab: env(safe-area-inset-bottom);
@@ -157,7 +158,7 @@ font-size: 0px;
 
 <script>
 
-var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat");
+var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sal");
 
 alert("XR " + marginTopForIphoneX)
 
