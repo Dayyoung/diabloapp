@@ -11,7 +11,7 @@
   <meta name="keywords" content="Diablo2 Profile" />
 
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Diablo2 Profile">
+  <meta property="og:description" content="Diablo2 Profile Page.">
   <meta property="og:site_name" content="Diablo2 Profile">
   <meta property="og:url" content="https://dayyoung.github.io/diabloapp/d2/">
   <meta property="og:title" content="Diablo2 Profile">
@@ -21,39 +21,35 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
   <!-- Chrome, Firefox OS, Opera -->
   <meta name="theme-color" content="#484848">
   <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
   <meta HTTP-EQUIV="Expires" CONTENT="-1">
   <meta http-equiv="refresh" content="-1">
 
-  <link rel="apple-touch-icon-precomposed" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-startup-image" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="../apple-icon-152x152.png">
+  <link rel="apple-touch-startup-image" href="../apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="shortcut icon" href="../favicon.png">
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
 
-  <!-- <script src="/assets/js/skel.min.js"></script>
-  <script src="/assets/js/util.js"></script>
-  <script src="/assets/js/main.js"></script>
-   -->
   <style>
   html, body {
     margin: 0;
@@ -126,7 +122,7 @@
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
-    alert("URL이 복사되었습니다.")
+    alert("Copied.")
   }
 
   var itemList = [{"id":1,"w":108,"h":206,"x":875,"y":178,"caption":""},{"id":2,"w":107,"h":104,"x":869,"y":412,"caption":""},{"id":3,"w":61,"h":64,"x":992,"y":408,"caption":""},{"id":4,"w":102,"h":100,"x":1073,"y":110,"caption":""},{"id":5,"w":101,"h":147,"x":1076,"y":234,"caption":""},{"id":6,"w":109,"h":52,"x":1070,"y":411,"caption":""},{"id":7,"w":56,"h":52,"x":1195,"y":159,"caption":""},{"id":8,"w":56,"h":52,"x":1195,"y":410,"caption":""},{"id":9,"w":100,"h":194,"x":1286,"y":185,"caption":""},{"id":10,"w":103,"h":102,"x":1278,"y":412,"caption":""}];
@@ -196,18 +192,8 @@
           itemList.push(captionItem)
   }
 
-  $(function(){
 
-    let images = [];
-
-    function preload() {
-      for(let i = 0; i < preload.arguments.lenght; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments.src;
-      }
-    }
-
-    preload(
+var images = [
       "./0.png",
       "./1.png",
       "./2.png",
@@ -218,8 +204,30 @@
       "./7.png",
       "./8.png",
       "./9.png",
-      "./10.png"
-    )
+      "./10.png"];
+
+
+const preload = (imageArray, index) => {
+    index = index || 0;
+    if (imageArray && imageArray.length > index) {
+        const img = new Image();
+        img.onload = () => {
+            if(index+1 == imageArray.length){
+              console.log("end2")
+            }
+            preload(imageArray, index + 1);
+        }
+        img.src = imageArray[index];
+    }
+}
+
+console.log("start")
+preload(images);
+
+console.log("end1")
+
+
+  $(function(){
 
     // 실행할 기능을 정의해주세요.
     var mode = getParam('mode')
