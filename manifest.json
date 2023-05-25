@@ -1,5 +1,5 @@
 {
- "name": "Diablo App",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -35,10 +35,7 @@
    "src": "\/android-icon-192x192.png",
    "sizes": "192x192",
    "type": "image\/png",
-   "density": "4.0"   
+   "density": "4.0"
   }
- ],
-  "start_url": "/intro.html",
-  "display": "fullscreen",
-  "orientation": "any" 
+ ]
 }
