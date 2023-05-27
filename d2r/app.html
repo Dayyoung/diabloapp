@@ -47,6 +47,10 @@
   <link rel="shortcut icon" href="../favicon.png">
 
 
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -109,6 +113,11 @@
           <span class="tooltiptext" onclick="addNewLayout()">!!!</span>
   </div> 
 
+  </div>
+
+
+  <div id="mainLayout2">
+
   <center>
   <div id="header" style="position: absolute; width : 100% ">
    <font color="black"><h3 style="background-color: white; width: 200px">- Diablo2 - <br> Skywalker#13454</h3></font>
@@ -123,7 +132,20 @@
 
   </div>
 
-
+  <ons-tabbar position="auto" animation="none">
+    <ons-tab onClick="goHome()" label="Home" icon="fa-home" page2="home.html">
+    </ons-tab>
+    <ons-tab onClick="goWallet()" label="Wallet" icon="fa-wallet" page2="home.html">
+    </ons-tab>
+    <ons-tab onClick="goMining()" label="Mining" icon="fa-mountain" page2="home.html">
+    </ons-tab>
+    <ons-tab onClick="goTrade()" label="Trade" icon="fa-balance-scale" page2="home.html" >
+    </ons-tab>
+    <ons-tab onClick="goMetabus()" label="Metabus" icon="fa-globe" page2="home.html" >
+    </ons-tab>
+<!--     <ons-tab onClick="goBlockChain()" label="BlockChain" icon="fa-dice-d20" page="chain.html">
+    </ons-tab>
+ -->    
 
   <script>
 

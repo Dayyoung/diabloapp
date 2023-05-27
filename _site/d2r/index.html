@@ -45,24 +45,36 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="./manifest.json">
   <link rel="shortcut icon" href="../favicon.png">
+
+<!-- 
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+ -->
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
 
   <style>
+
+.tabbar:not(.tabbar--top) {
+    padding-bottom: 0;
+    position: fixed;
+}
+
+
   html, body {
     margin: 0;
     padding: 0;
   }
   body {
     background-color: #484848; 
-    //background-color: white; 
   }
 
 
   #captionLayout {
-    background-color:transparent !important; 
+    //background-color:transparent !important; 
     cursor : pointer;
   }
 
@@ -97,20 +109,97 @@
 
   <div id="mainLayout">
 
+ <!--  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;">
+          <span class="tooltiptext" onclick="addNewLayout()">!!!</span>
+  </div> 
+ -->
+
   <center>
-  <div id="header" style="position: absolute; width : 100% ">
-   <font color="black"><h3 style="background-color: white; width: 200px">- Diablo2 - <br> Skywalker#13454</h3></font>
-   <input type="button" value="Share" onclick="clip()" style="width:60px; height: 40px;" />
+  <div id="header" style="position: block; width : 100%; height:50px">
+   <font size=6 color="white">- Diablo2 Reseraction -</font>
   </div>
   </center>
-  <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 1000; ">
 
-  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 99999;top: 0; margin-left: 10; margin-top: 0;" >
+  <div id="body">
+  <img onload="onCreate();getBase64Image(this);" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
 
-          <span class="tooltiptext" onclick="addNewLayout()">!!</span>
-  </div> 
+  <img onload="getBase64Image(this)" id="downloadImg" src="" height="100%" width="100%" style="display: none;">
+  </img>
+  </div>
+
+  <center>
+  <div id="footer" style="width : 100%; height:50px">
+   <input type="button" value="Home" onclick="drawItem(1)" style="width:60px; height: 40px;" />
+   <input type="button" value="Image" onclick="drawItem(2)" style="width:60px; height: 40px;" />
+   <input type="button" value="Position" onclick="drawItem(3)" style="width:60px; height: 40px;" />
+   <input type="button" value="Share" onclick="alert('Comming soon!')" style="width:60px; height: 40px;" />
+  </div>
+  </center>
+
+  </div>
+
 
   <script>
+
+function readURL(id, input) {
+
+  console.log(id)
+
+ if (input.files && input.files[0]) {
+  var reader = new FileReader();
+  
+  reader.onload = function (e) {
+   $('#myImg').attr('src', e.target.result); 
+    console.log(e.target.result)
+    localStorage.setItem("imgData", e.target.result.replace(/^data:image\/(png|jpg);base64,/, ""));
+
+  }
+  
+  reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function getBase64Image(img) {
+
+  return;
+
+  var canvas = document.createElement("canvas");
+
+  var img = document.getElementById("myImg");
+
+  var size = {
+    width: document.body.innerWidth || document.body.clientWidth, // for except scroll
+    //width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight 
+  };
+
+  var myImg = document.getElementById("myImg");
+  var pageWidth  = size.width;
+  //var pageWidth  = myImg.width;
+  var pageHeight = myImg.height;
+
+
+  if(size.width<size.height){
+    pageWidth = pageWidth * 2
+    $("#mainLayout").css("width" , pageWidth);  
+  }else{
+    $("#mainLayout").css("width" , pageWidth);  
+  }
+
+    canvas.width = pageWidth;
+    canvas.height = pageHeight;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    console.log(dataURL)
+
+    localStorage.setItem("imgData", dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
   function clip(){
 
@@ -125,7 +214,7 @@
     alert("Copied.")
   }
 
-  var itemList = [{"id":1,"w":108,"h":206,"x":875,"y":178,"caption":""},{"id":2,"w":107,"h":104,"x":869,"y":412,"caption":""},{"id":3,"w":61,"h":64,"x":992,"y":408,"caption":""},{"id":4,"w":102,"h":100,"x":1073,"y":110,"caption":""},{"id":5,"w":101,"h":147,"x":1076,"y":234,"caption":""},{"id":6,"w":109,"h":52,"x":1070,"y":411,"caption":""},{"id":7,"w":56,"h":52,"x":1195,"y":159,"caption":""},{"id":8,"w":56,"h":52,"x":1195,"y":410,"caption":""},{"id":9,"w":100,"h":194,"x":1286,"y":185,"caption":""},{"id":10,"w":103,"h":102,"x":1278,"y":412,"caption":""}];
+  var itemList = [{"id":1,"w":103,"h":196,"x":1051,"y":213,"caption":""},{"id":2,"w":104,"h":103,"x":1051,"y":421,"caption":""},{"id":3,"w":53,"h":57,"x":1170,"y":467,"caption":""},{"id":4,"w":102,"h":101,"x":1236,"y":188,"caption":""},{"id":5,"w":102,"h":151,"x":1234,"y":302,"caption":""},{"id":6,"w":99,"h":56,"x":1237,"y":468,"caption":""},{"id":7,"w":57,"h":54,"x":1348,"y":266,"caption":""},{"id":8,"w":57,"h":54,"x":1346,"y":468,"caption":""},{"id":9,"w":101,"h":191,"x":1420,"y":215,"caption":""},{"id":10,"w":99,"h":96,"x":1419,"y":424,"caption":""}];
 
   // url 에서 parameter 추출
 
@@ -148,30 +237,34 @@
 
   }
 
+  var copyList = []
+
   function addNewLayout(){
         //var captionItem = cationpList[i]
 
         //if($('.caption'+i).length == 0){
-          var copyCaption = $("#captionLayout").clone();
+          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span></div>').clone();
           //copyCaption.hide()
 
-          copyCaption.css("z-index",100)
-          copyCaption.attr('caption', (itemList.length+1))
+          copyCaption.css("z-index",99)
+          copyCaption.attr('caption', (copyList.length+1))
 
 
-          copyCaption.hover(function(){
-              console.log(JSON.stringify(itemList))
+          // copyCaption.hover(function(){
+          //     console.log(JSON.stringify(copyList))
 
-              var index = copyCaption.attr('caption')
+          //     var index = copyCaption.attr('caption')
 
-              $("#myImg").attr("src","./"+index+".png")
+          //     $("#myImg").attr("src","./"+index+".png")
 
-          }, function() {
-              //console.log(cationpList)
-          });
+          // }, function() {
+          //     //console.log(cationpList)
+          // });
 
-          $("#mainLayout").append(copyCaption)
+          $("body").append(copyCaption)
 
+          copyCaption.resizable();
+          copyCaption.draggable();
           //cationpList.push(copyCaption)
 
           var obj = copyCaption
@@ -182,14 +275,15 @@
           var yPos = offset.top;
 
           captionItem = {};
-          captionItem.id = itemList.length+1;
+          captionItem.id = copyList.length+1;
           captionItem.w = width;
           captionItem.h = height;
           captionItem.x = xPos;
           captionItem.y = yPos;
           captionItem.caption = ''; 
 
-          itemList.push(captionItem)
+
+          copyList.push(captionItem)
   }
 
 
@@ -237,6 +331,13 @@ console.log("end1")
     }else{
         $("#myImg").attr("src","./0.png")
     }
+
+  var dataImage = localStorage.getItem('imgData');
+  if(dataImage){
+    bannerImg = document.getElementById('myImg');
+    bannerImg.src = "data:image/png;base64," + dataImage;
+  }
+
   });
 
   var refreshTimer;
@@ -246,13 +347,15 @@ console.log("end1")
   });
 
   var isFirst = true;
+  var isEdit = false;
+  var isUpload = false;
   var weightRate = 1;
   var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat")
 
   function onCreate() {
 
   marginTopForIphoneX = parseInt($("#mainLayout").css("padding-top"))
-  //marginTopForIphoneX += parseInt($("#header").height())
+  marginTopForIphoneX += parseInt($("#header").height())
 
   console.log("marginTop " + marginTopForIphoneX)
 
@@ -267,12 +370,16 @@ console.log("end1")
   //var pageWidth  = myImg.width;
   var pageHeight = myImg.height;
 
+
   if(size.width<size.height){
     pageWidth = pageWidth * 2
-    $(myImg).css("width" , pageWidth);  
+    $("#mainLayout").css("width" , pageWidth);  
   }else{
-    $(myImg).css("width" , pageWidth);  
+    $("#mainLayout").css("width" , pageWidth);  
   }
+
+// console.log()
+//   $('#home').height(pageHeight)
 
   weightRate = pageWidth / 1680
 
@@ -283,72 +390,85 @@ console.log("end1")
   var marginWidth = (size.width - pageWidth ) / 2
   var marginHeight = pageHeight - size.height
 
-  if(!isFirst){ 
-    drawItem()
+  if(isUpload){
+    //drawItem(1)
+    return;
+  }
+
+  if(isEdit){
+    //drawItem(1)
+    return;
+  }
+  if(!isFirst){
+    drawItem(1)
     return;
   }
 
   isFirst = false;
 
-     $( "#captionLayout" ).draggable({
-        start: function() {
+     // $( "#captionLayout" ).draggable({
+     //    start: function() {
           
-        },
-        drag: function() {
-          
-
-          var obj = $(this)
-          var width = obj.width();
-          var height = obj.height();
-          var offset = $(this).offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
-
-          $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-          var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-          console.log(JSON.stringify(sample))
-
-        },
-        stop: function() {
-        }
-      });
-
-     $( "#captionLayout" ).resizable({
-        start: function() {
-          
-        },
-        resize: function() {
+     //    },
+     //    drag: function() {
           
 
-          var obj = $(this)
-          var width = obj.width();
-          var height = obj.height();
-          var offset = $(this).offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
+     //      var obj = $(this)
+     //      var width = obj.width();
+     //      var height = obj.height();
+     //      var offset = $(this).offset();
+     //      var xPos = offset.left;
+     //      var yPos = offset.top;
 
-          $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-          var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-          console.log(JSON.stringify(sample))
+     //      $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
+     //      var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
+     //      console.log(JSON.stringify(sample))
 
-        },
-        stop: function() {
-        }
-      });
+     //    },
+     //    stop: function() {
+     //    }
+     //  });
 
-     drawItem();
-  }
+     // $( "#captionLayout" ).resizable({
+     //    start: function() {
+          
+     //    },
+     //    resize: function() {
+          
 
-  function drawItem(){
+     //      var obj = $(this)
+     //      var width = obj.width();
+     //      var height = obj.height();
+     //      var offset = $(this).offset();
+     //      var xPos = offset.left;
+     //      var yPos = offset.top;
+
+     //      $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
+     //      var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
+     //      console.log(JSON.stringify(sample))
+
+     //    },
+     //    stop: function() {
+     //    }
+     //  });
+$( "#captionLayout" ).resizable();
+$( "#captionLayout" ).draggable();
+     drawItem(1); 
+}
+
+  function drawItem(mode){
 
         for(i in itemList)
         {
         var captionItem = itemList[i]
 
+
+        //background-color:transparent !important;
+
         if($('.caption'+i).length == 0){
-          var copyCaption = $( "#captionLayout" ).clone();
+          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span><input type="file" class="imgInput" style="display:none"/></div>').clone();
           copyCaption.addClass('caption'+i)
-          $("#mainLayout").append(copyCaption)
+          $("body").append(copyCaption)
         }else{
           var copyCaption = $('.caption'+i)
         }
@@ -360,26 +480,129 @@ console.log("end1")
         copyCaption.css("margin-top", captionItem.y * weightRate + marginTopForIphoneX);
 
         copyCaption.find(".tooltiptext").html(captionItem.caption)
-        copyCaption.draggable({ disabled: true });  
-        copyCaption.resizable({ disabled: true });  
+        
+        console.log("MODE >> " + mode)
+
+        if(mode == 1){
+        isEdit = false
+        isUpload = false
+        copyCaption.css("background-color","transparent")
+        //copyCaption.css("opacity","0.7")
+        copyCaption.find(".imgInput").hide()
+        }
+        if(mode == 2){
+        isEdit = false
+        isUpload = true
+        copyCaption.css("background-color","red")
+        copyCaption.css("opacity","0.7")
+        copyCaption.find(".imgInput").show()
+        copyCaption.find(".imgInput").change(function(){
+           readURL(captionItem.id, this);
+        });
+        }
+        if(mode == 3){
+        isEdit = true
+        isUpload = false
+        copyCaption.css("background-color","greenyellow")
+        copyCaption.css("opacity","0.7")
+        copyCaption.find(".imgInput").hide()
+        }
+
+        if(mode == 3){
+
+           copyCaption.draggable({
+              start: function() {
+                
+              },
+              drag: function() {
+              },
+              stop: function() {
+
+                var obj = $(this)
+
+                var id = obj.attr('caption')
+                var width = obj.width();
+                var height = obj.height();
+                var offset = obj.offset();
+                var xPos = offset.left;
+                var yPos = offset.top;
+
+                
+                for(i in itemList)
+                {
+                  var captionItem = itemList[i]
+                  if(captionItem.id == id){
+                    captionItem.w = width;
+                    captionItem.h = height;
+                    captionItem.x = xPos;
+                    captionItem.y = yPos;
+                  }
+                }
+                
+
+                console.log(JSON.stringify(itemList))
+
+
+              }, disabled : false
+            });
+
+           copyCaption.resizable({
+              start: function() {
+                
+              },
+              resize: function() {
+     
+              },
+              stop: function() {
+
+           
+                var obj = $(this)
+
+                var id = obj.attr('caption')
+                var width = obj.width();
+                var height = obj.height();
+                var offset = obj.offset();
+                var xPos = offset.left;
+                var yPos = offset.top;
+
+            
+                for(i in itemList)
+                {
+                  var captionItem = itemList[i]
+                  if(captionItem.id == id){
+                    captionItem.w = width;
+                    captionItem.h = height;
+                    captionItem.x = xPos;
+                    captionItem.y = yPos;
+                  }
+                }
+                console.log(JSON.stringify(itemList))
+
+              }, disabled : false
+            });
+
+        }else{
+          copyCaption.draggable({ disabled: true });  
+          copyCaption.resizable({ disabled: true });  
+        }
+
         copyCaption.show()
 
-        copyCaption.hover(function(){
+        // copyCaption.hover(function(){
        
-            var index = $(this).attr('caption')
+        //     var index = $(this).attr('caption')
 
-            $("#myImg").attr("src","./"+index+".png")
+        //     $("#myImg").attr("src","./"+index+".png")
 
-        }, function() {
-            $("#myImg").attr("src","./0.png")
-        });
+        // }, function() {
+        //     $("#myImg").attr("src","./0.png")
+        // });
 
       }
   }
     
   </script>
 
-        </img>
-  </div>
+
   </body>
   </html>  
