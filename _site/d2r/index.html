@@ -5,7 +5,7 @@
       <title>Diablo2</title> 
   <meta charset="utf-8" />
   <meta name="application-name" content="coreflex"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover ,user-scalable=no">
   <meta name="description" content="Diablo2 Profile">
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="Diablo2 Profile" />
@@ -141,20 +141,55 @@
 
   <script>
 
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
+    //event.preventDefault();
+}
+
+
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+}
+
 function readURL(id, input) {
 
   console.log(id)
 
  if (input.files && input.files[0]) {
+
+
   var reader = new FileReader();
   
   reader.onload = function (e) {
    $('#myImg').attr('src', e.target.result); 
     console.log(e.target.result)
-    localStorage.setItem("imgData", e.target.result.replace(/^data:image\/(png|jpg);base64,/, ""));
+    //let tmpPath = URL.createObjectURL(event.target.files[0]);
+    //localStorage.setItem("imgData", e.target.result.replace(/^data:image\/(png|jpg);base64,/, ""));
 
   }
-  
+
+    $("input[type=file]").change(function(event) {
+      let tmpPath = URL.createObjectURL(event.target.files[0]);
+      alert(tmpPath);
+    });
+
+  //alert(JSON.stringify(input.files[0].value))
+
   reader.readAsDataURL(input.files[0]);
   }
 }
@@ -323,6 +358,8 @@ console.log("end1")
 
   $(function(){
 
+    init();
+
     // 실행할 기능을 정의해주세요.
     var mode = getParam('mode')
 
@@ -332,11 +369,11 @@ console.log("end1")
         $("#myImg").attr("src","./0.png")
     }
 
-  var dataImage = localStorage.getItem('imgData');
-  if(dataImage){
-    bannerImg = document.getElementById('myImg');
-    bannerImg.src = "data:image/png;base64," + dataImage;
-  }
+  // var dataImage = localStorage.getItem('imgData');
+  // if(dataImage){
+  //   bannerImg = document.getElementById('myImg');
+  //   bannerImg.src = "data:image/png;base64," + dataImage;
+  // }
 
   });
 
