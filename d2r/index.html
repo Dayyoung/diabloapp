@@ -510,12 +510,12 @@ preload(images);
   var pageHeight = myImg.height;
 
 
-  // if(size.width<size.height){
-  //   pageWidth = pageWidth * 2
-  //   $("#mainLayout").css("width" , pageWidth);  
-  // }else{
-  //   $("#mainLayout").css("width" , pageWidth);  
-  // }
+  if(size.width<size.height){
+    pageWidth = pageWidth * 2
+    $("#mainLayout").css("width" , pageWidth);  
+  }else{
+    $("#mainLayout").css("width" , pageWidth);  
+  }
 
 // console.log()
 //   $('#home').height(pageHeight)
