@@ -121,9 +121,9 @@
   </center>
 
   <div id="body">
-  <img onload="onCreate();getBase64Image(this);" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
+  <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
 
-  <img onload="getBase64Image(this)" id="downloadImg" src="" height="100%" width="100%" style="display: none;">
+  <img onload="getBase64Image(this)" id="downloadImg" src="" height="30%" width="30%" style="position: absolute; display: inline-block;">
   </img>
   </div>
 
@@ -176,7 +176,8 @@ function readURL(id, input) {
   var reader = new FileReader();
   
   reader.onload = function (e) {
-   $('#myImg').attr('src', e.target.result); 
+   //$('#myImg').attr('src', e.target.result); 
+   $('#downloadImg').attr('src', e.target.result); 
     console.log(e.target.result)
     //let tmpPath = URL.createObjectURL(event.target.files[0]);
     //localStorage.setItem("imgData", e.target.result.replace(/^data:image\/(png|jpg);base64,/, ""));
@@ -194,47 +195,6 @@ function readURL(id, input) {
   }
 }
 
-function getBase64Image(img) {
-
-  return;
-
-  var canvas = document.createElement("canvas");
-
-  var img = document.getElementById("myImg");
-
-  var size = {
-    width: document.body.innerWidth || document.body.clientWidth, // for except scroll
-    //width: window.innerWidth || document.body.clientWidth,
-    height: window.innerHeight || document.body.clientHeight 
-  };
-
-  var myImg = document.getElementById("myImg");
-  var pageWidth  = size.width;
-  //var pageWidth  = myImg.width;
-  var pageHeight = myImg.height;
-
-
-  if(size.width<size.height){
-    pageWidth = pageWidth * 2
-    $("#mainLayout").css("width" , pageWidth);  
-  }else{
-    $("#mainLayout").css("width" , pageWidth);  
-  }
-
-    canvas.width = pageWidth;
-    canvas.height = pageHeight;
-
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    var dataURL = canvas.toDataURL("image/png");
-
-    console.log(dataURL)
-
-    localStorage.setItem("imgData", dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
 
   function clip(){
 
