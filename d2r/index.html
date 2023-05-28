@@ -118,14 +118,17 @@
   <div id="header" style="position: block; width : 100%; height:100px">
    <!-- <font size=6 color="white">- Diablo2 Reseraction -</font> -->
 
+<a href="./">
   <img src="./logo.png" height="100px" width="200px" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
-
+</a>
 
   </div>
   </center>
 
-  <div id="body">
-  <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
+  <div id="body" caption="0">
+    <input type="file" id="imgInput" style="display:block;position:absolute;margin-right: 10px; margin-top: 10px;"/>
+
+  <img onload="onCreate()" id="myImg" onclick="getImageFile(0)" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block; ">
 
 <!--   <img onload="getBase64Image(this)" id="downloadImg" src="" style="width: 100px;height: 100px;  position:absolute; background-color:greenyellow; opacity:0.7; z-index: 100; margin-right:10px; margin-bottom: 0px;">
   </img> -->
@@ -147,20 +150,23 @@
 
 
         getImageFile = function (id) {
-
-
           var transaction = db.transaction(["elephants"], "readonly");
           var store_variable = transaction.objectStore('elephants');  
           let query_variable = store_variable.get(id);  
           query_variable.onsuccess = (event) => {  
           console.log("JavaScript IndexedDb Demo");  
-          console.table(event.target.result);  
-          bannerImg = document.getElementById('myImg');
-          bannerImg.src = event.target.result;
 
+            if(event.target.result){
+            console.table(event.target.result);  
+            bannerImg = document.getElementById('myImg');
+            bannerImg.src = event.target.result;
+            }else{
+            bannerImg = document.getElementById('myImg');
+            bannerImg.src = "./logo.png";
+            }
 
+          };   
 
-          };  
           // transaction.oncomplete = function () {  
           // db_variable.close();  
           // };  
@@ -230,15 +236,15 @@ var request,db;
                 var setVersion = db.setVersion(dbVersion);
                 setVersion.onsuccess = function () {
                     createObjectStore(db);
-                    //getImageFile();
+                    getImageFile(0);
                 };
             }
             else {
-                //getImageFile();
+                getImageFile(0);
             }
         }
         else {
-            //getImageFile();
+            getImageFile(0);
         }
     }
     
@@ -426,34 +432,34 @@ function getBase64Image(img) {
   }
 
 
-var images = [
-      "./0.png",
-      "./1.png",
-      "./2.png",
-      "./3.png",
-      "./4.png",
-      "./5.png",
-      "./6.png",
-      "./7.png",
-      "./8.png",
-      "./9.png",
-      "./10.png"];
+// var images = [
+//       "./0.png",
+//       "./1.png",
+//       "./2.png",
+//       "./3.png",
+//       "./4.png",
+//       "./5.png",
+//       "./6.png",
+//       "./7.png",
+//       "./8.png",
+//       "./9.png",
+//       "./10.png"];
 
 
-const preload = (imageArray, index) => {
-    index = index || 0;
-    if (imageArray && imageArray.length > index) {
-        const img = new Image();
-        img.onload = () => {
-            if(index+1 == imageArray.length){
-            }
-            preload(imageArray, index + 1);
-        }
-        img.src = imageArray[index];
-    }
-}
+// const preload = (imageArray, index) => {
+//     index = index || 0;
+//     if (imageArray && imageArray.length > index) {
+//         const img = new Image();
+//         img.onload = () => {
+//             if(index+1 == imageArray.length){
+//             }
+//             preload(imageArray, index + 1);
+//         }
+//         img.src = imageArray[index];
+//     }
+// }
 
-preload(images);
+// preload(images);
 
   $(function(){
 
@@ -467,16 +473,6 @@ preload(images);
     }else{
         $("#myImg").attr("src","./0.png")
     }
-
-  var imgData1 = localStorage.getItem('imgData1');
-  var imgData2 = localStorage.getItem('imgData2');
-  
-  if(imgData1&&imgData2){
-    bannerImg = document.getElementById('myImg');
-    bannerImg.src = "data:image/png;base64," + imgData1 + imgData2;
-  }
-
-
 
   });
 
@@ -639,6 +635,7 @@ $( "#captionLayout" ).draggable();
         copyCaption.css("background-color","transparent")
         //copyCaption.css("opacity","0.7")
         copyCaption.find(".imgInput").hide()
+        $("#imgInput").hide()
 
           copyCaption.hover(function(){
          
@@ -649,15 +646,26 @@ $( "#captionLayout" ).draggable();
               //$("#myImg").attr("src","./"+index+".png")
 
           }, function() {
-              $("#myImg").attr("src","./0.png")
+              //$("#myImg").attr("src","./0.png")
+
+              getImageFile(0)
           });
 
         }
+
         if(mode == 2){
         isEdit = false
         isUpload = true
         copyCaption.css("background-color","red")
         copyCaption.css("opacity","0.7")
+        $("#imgInput").show()
+        $("#imgInput").change(function(){
+
+          //console.log($(this).parent().attr('caption'))
+
+           readURL(0, this);
+        });
+
         copyCaption.find(".imgInput").show()
         copyCaption.find(".imgInput").change(function(){
 
@@ -671,6 +679,7 @@ $( "#captionLayout" ).draggable();
         isUpload = false
         copyCaption.css("background-color","greenyellow")
         copyCaption.css("opacity","0.7")
+        $("#imgInput").hide()
         copyCaption.find(".imgInput").hide()
         }
 
