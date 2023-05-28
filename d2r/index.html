@@ -115,8 +115,12 @@
  -->
 
   <center>
-  <div id="header" style="position: block; width : 100%; height:50px">
-   <font size=6 color="white">- Diablo2 Reseraction -</font>
+  <div id="header" style="position: block; width : 100%; height:100px">
+   <!-- <font size=6 color="white">- Diablo2 Reseraction -</font> -->
+
+  <img src="./logo.png" height="100px" width="200px" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
+
+
   </div>
   </center>
 
@@ -132,7 +136,7 @@
    <input type="button" value="Home" onclick="drawItem(1)" style="width:60px; height: 40px;" />
    <input type="button" value="Image" onclick="drawItem(2)" style="width:60px; height: 40px;" />
    <input type="button" value="Position" onclick="drawItem(3)" style="width:60px; height: 40px;" />
-   <input type="button" value="Share" onclick="alert('Comming soon!')" style="width:60px; height: 40px;" />
+   <!-- <input type="button" value="Share" onclick="alert('Comming soon!')" style="width:60px; height: 40px;" /> -->
   </div>
   </center>
 
@@ -142,39 +146,34 @@
   <script>
 
 
-        getImageFile = function () {
-            // Create XHR
-            var xhr = new XMLHttpRequest(),
-                blob;
+        getImageFile = function (id) {
 
-            xhr.open("GET", "elephant.png", true);
-            // Set the responseType to blob
-            xhr.responseType = "blob";
 
-            xhr.addEventListener("load", function () {
-                if (xhr.status === 200) {
-                    console.log("Image retrieved");
-                    
-                    // Blob as response
-                    blob = xhr.response;
-                    console.log("Blob:" + blob);
+          var transaction = db.transaction(["elephants"], "readonly");
+          var store_variable = transaction.objectStore('elephants');  
+          let query_variable = store_variable.get(id);  
+          query_variable.onsuccess = (event) => {  
+          console.log("JavaScript IndexedDb Demo");  
+          console.table(event.target.result);  
+          bannerImg = document.getElementById('myImg');
+          bannerImg.src = event.target.result;
 
-                    // Put the received blob into IndexedDB
-                    putElephantInDb(blob);
-                }
-            }, false);
-            // Send XHR
-            xhr.send();
+
+
+          };  
+          // transaction.oncomplete = function () {  
+          // db_variable.close();  
+          // };  
         },
 
-        putElephantInDb = function (blob) {
+        putElephantInDb = function (id, blob) {
             console.log("Putting elephants in IndexedDB");
 
             // Open a transaction to the database
-            var transaction = db.transaction(["elephants"], IDBTransaction.READ_WRITE);
+            var transaction = db.transaction(["elephants"], "readwrite");
 
             // Put the blob into the dabase
-            var put = transaction.objectStore("elephants").put(blob, "image");
+            var put = transaction.objectStore("elephants").put(blob, id);
 
             // Retrieve the file that was just stored
             transaction.objectStore("elephants").get("image").onsuccess = function (event) {
@@ -182,17 +181,17 @@
                 console.log("Got elephant!" + imgFile);
 
                 // Get window.URL object
-                var URL = window.URL || window.webkitURL;
+                //var URL = window.URL || window.webkitURL;
 
                 // Create and revoke ObjectURL
-                var imgURL = URL.createObjectURL(imgFile);
+                //var imgURL = URL.createObjectURL(imgFile);
 
                 // Set img src to ObjectURL
-                var imgElephant = document.getElementById("elephant");
-                imgElephant.setAttribute("src", imgURL);
+                //var imgElephant = document.getElementById("myImg");
+                //imgElephant.setAttribute("src", imgURL);
 
                 // Revoking ObjectURL
-                URL.revokeObjectURL(imgURL);
+                //URL.revokeObjectURL(imgURL);
             };
         };
 
@@ -231,15 +230,15 @@ var request,db;
                 var setVersion = db.setVersion(dbVersion);
                 setVersion.onsuccess = function () {
                     createObjectStore(db);
-                    getImageFile();
+                    //getImageFile();
                 };
             }
             else {
-                getImageFile();
+                //getImageFile();
             }
         }
         else {
-            getImageFile();
+            //getImageFile();
         }
     }
     
@@ -304,7 +303,7 @@ function readURL(id, input) {
     //let tmpPath = URL.createObjectURL(event.target.files[0]);
 
   // Put the received blob into IndexedDB
-  putElephantInDb(e.target.result);
+  putElephantInDb(id , e.target.result);
 
   //  var imgData = e.target.result.replace(/^data:image\/(png|jpg);base64,/, "")
 
@@ -330,15 +329,11 @@ function getBase64Image(img) {
     canvas.width = img.width;
     canvas.height = img.height;
 
-    console.log(canvas.width)
-    console.log(canvas.height)
 
     var ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
 
     var dataURL = canvas.toDataURL("image/png");
-
-    console.log(dataURL)
 
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
@@ -387,7 +382,7 @@ function getBase64Image(img) {
         //var captionItem = cationpList[i]
 
         //if($('.caption'+i).length == 0){
-          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span></div>').clone();
+          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;"></div>').clone();
           //copyCaption.hide()
 
           copyCaption.css("z-index",99)
@@ -405,7 +400,7 @@ function getBase64Image(img) {
           //     //console.log(cationpList)
           // });
 
-          $("body").append(copyCaption)
+          $("#mainLayout").append(copyCaption)
 
           copyCaption.resizable();
           copyCaption.draggable();
@@ -416,7 +411,7 @@ function getBase64Image(img) {
           var height = obj.height();
           var offset = copyCaption.offset();
           var xPos = offset.left;
-          var yPos = offset.top;
+          var yPos = offset.top ;
 
           captionItem = {};
           captionItem.id = copyList.length+1;
@@ -451,7 +446,6 @@ const preload = (imageArray, index) => {
         const img = new Image();
         img.onload = () => {
             if(index+1 == imageArray.length){
-              console.log("end2")
             }
             preload(imageArray, index + 1);
         }
@@ -459,11 +453,7 @@ const preload = (imageArray, index) => {
     }
 }
 
-console.log("start")
 preload(images);
-
-console.log("end1")
-
 
   $(function(){
 
@@ -486,6 +476,8 @@ console.log("end1")
     bannerImg.src = "data:image/png;base64," + imgData1 + imgData2;
   }
 
+
+
   });
 
   var refreshTimer;
@@ -503,9 +495,8 @@ console.log("end1")
   function onCreate() {
 
   marginTopForIphoneX = parseInt($("#mainLayout").css("padding-top"))
-  marginTopForIphoneX += parseInt($("#header").height())
+  marginTopForIphoneX = marginTopForIphoneX + parseInt($("#header").height())
 
-  console.log("marginTop " + marginTopForIphoneX)
 
   var size = {
     width: document.body.innerWidth || document.body.clientWidth, // for except scroll
@@ -531,10 +522,7 @@ console.log("end1")
 
   weightRate = pageWidth / 1680
 
-  //console.log(pageWidth)
-  //console.log(pageHeight)
-  console.log(marginTopForIphoneX)
-
+  
   var marginWidth = (size.width - pageWidth ) / 2
   var marginHeight = pageHeight - size.height
 
@@ -613,10 +601,16 @@ $( "#captionLayout" ).draggable();
 
         //background-color:transparent !important;
 
+
+        if($('.caption'+i).length != 0){
+          $('.caption'+i).remove()
+        }
+
         if($('.caption'+i).length == 0){
           var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span><input type="file" class="imgInput" style="display:none"/></div>').clone();
+                    
           copyCaption.addClass('caption'+i)
-          $("body").append(copyCaption)
+          $("#mainLayout").append(copyCaption)
         }else{
           var copyCaption = $('.caption'+i)
         }
@@ -625,6 +619,14 @@ $( "#captionLayout" ).draggable();
         copyCaption.css("width", captionItem.w * weightRate);
         copyCaption.css("height", captionItem.h * weightRate);
         copyCaption.css("left", captionItem.x * weightRate);
+
+
+        console.log("captionItem.y " + captionItem.y)
+        console.log("marginTopForIphoneX " + marginTopForIphoneX)
+
+
+//        copyCaption.css("inset", "0px");
+
         copyCaption.css("margin-top", captionItem.y * weightRate + marginTopForIphoneX);
 
         copyCaption.find(".tooltiptext").html(captionItem.caption)
@@ -637,6 +639,19 @@ $( "#captionLayout" ).draggable();
         copyCaption.css("background-color","transparent")
         //copyCaption.css("opacity","0.7")
         copyCaption.find(".imgInput").hide()
+
+          copyCaption.hover(function(){
+         
+              var index = $(this).attr('caption')
+
+              getImageFile(index)
+
+              //$("#myImg").attr("src","./"+index+".png")
+
+          }, function() {
+              $("#myImg").attr("src","./0.png")
+          });
+
         }
         if(mode == 2){
         isEdit = false
@@ -645,7 +660,10 @@ $( "#captionLayout" ).draggable();
         copyCaption.css("opacity","0.7")
         copyCaption.find(".imgInput").show()
         copyCaption.find(".imgInput").change(function(){
-           readURL(captionItem.id, this);
+
+          //console.log($(this).parent().attr('caption'))
+
+           readURL($(this).parent().attr('caption'), this);
         });
         }
         if(mode == 3){
@@ -674,7 +692,6 @@ $( "#captionLayout" ).draggable();
                 var offset = obj.offset();
                 var xPos = offset.left;
                 var yPos = offset.top;
-
                 
                 for(i in itemList)
                 {
@@ -683,11 +700,10 @@ $( "#captionLayout" ).draggable();
                     captionItem.w = width;
                     captionItem.h = height;
                     captionItem.x = xPos;
-                    captionItem.y = yPos;
+                    captionItem.y = yPos - marginTopForIphoneX;
                   }
                 }
                 
-
                 console.log(JSON.stringify(itemList))
 
 
@@ -712,7 +728,6 @@ $( "#captionLayout" ).draggable();
                 var offset = obj.offset();
                 var xPos = offset.left;
                 var yPos = offset.top;
-
             
                 for(i in itemList)
                 {
@@ -721,7 +736,7 @@ $( "#captionLayout" ).draggable();
                     captionItem.w = width;
                     captionItem.h = height;
                     captionItem.x = xPos;
-                    captionItem.y = yPos;
+                    captionItem.y = yPos - marginTopForIphoneX;
                   }
                 }
                 console.log(JSON.stringify(itemList))
@@ -736,15 +751,6 @@ $( "#captionLayout" ).draggable();
 
         copyCaption.show()
 
-        // copyCaption.hover(function(){
-       
-        //     var index = $(this).attr('caption')
-
-        //     $("#myImg").attr("src","./"+index+".png")
-
-        // }, function() {
-        //     $("#myImg").attr("src","./0.png")
-        // });
 
       }
   }
