@@ -667,6 +667,11 @@ $( "#captionLayout" ).draggable();
         });
 
         copyCaption.find(".imgInput").show()
+
+        if(i==2 || i==6 || i==7){
+          copyCaption.find(".imgInput").css("padding-top", "50px");
+        }
+
         copyCaption.find(".imgInput").change(function(){
 
           //console.log($(this).parent().attr('caption'))
