@@ -505,18 +505,20 @@ function getBase64Image(img) {
   //var pageWidth  = myImg.width;
   var pageHeight = myImg.height;
 
-
   if(size.width<size.height){
     pageWidth = pageWidth * 2
-    $("#mainLayout").css("width" , pageWidth);  
+    $("#mainLayout").css("width" , pageWidth); 
   }else{
     $("#mainLayout").css("width" , pageWidth);  
   }
 
+  weightRate = pageWidth / 1680
+
+  console.log(weightRate + " weightRate")
+
 // console.log()
 //   $('#home').height(pageHeight)
 
-  weightRate = pageWidth / 1680
 
   
   var marginWidth = (size.width - pageWidth ) / 2
@@ -617,6 +619,7 @@ $( "#captionLayout" ).draggable();
         copyCaption.css("left", captionItem.x * weightRate);
 
 
+
         console.log("captionItem.y " + captionItem.y)
         console.log("marginTopForIphoneX " + marginTopForIphoneX)
 
@@ -711,14 +714,22 @@ $( "#captionLayout" ).draggable();
                 {
                   var captionItem = itemList[i]
                   if(captionItem.id == id){
-                    captionItem.w = width;
-                    captionItem.h = height;
-                    captionItem.x = xPos;
-                    captionItem.y = yPos - marginTopForIphoneX;
+                    if(weightRate > 1){
+                    captionItem.w = width/weightRate;
+                    captionItem.h = height/weightRate;
+                    captionItem.x = xPos/weightRate;
+                    captionItem.y = (yPos+marginTopForIphoneX)/weightRate;
+                    }
+                    else{
+                    captionItem.w = width*weightRate;
+                    captionItem.h = height*weightRate;
+                    captionItem.x = xPos*weightRate;
+                    captionItem.y = (yPos+marginTopForIphoneX)*weightRate;
+                    }
                   }
                 }
                 
-                console.log(JSON.stringify(itemList))
+                //console.log(JSON.stringify(itemList))
 
 
               }, disabled : false
@@ -745,12 +756,21 @@ $( "#captionLayout" ).draggable();
             
                 for(i in itemList)
                 {
+                  
                   var captionItem = itemList[i]
                   if(captionItem.id == id){
-                    captionItem.w = width;
-                    captionItem.h = height;
-                    captionItem.x = xPos;
-                    captionItem.y = yPos - marginTopForIphoneX;
+                    if(weightRate > 1){
+                    captionItem.w = width/weightRate;
+                    captionItem.h = height/weightRate;
+                    captionItem.x = xPos/weightRate;
+                    captionItem.y = (yPos+marginTopForIphoneX)/weightRate;
+                    }
+                    else{
+                    captionItem.w = width*weightRate;
+                    captionItem.h = height*weightRate;
+                    captionItem.x = xPos*weightRate;
+                    captionItem.y = (yPos+marginTopForIphoneX)*weightRate;
+                    }
                   }
                 }
                 console.log(JSON.stringify(itemList))
