@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://diablo4countdown.com/Season -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <link rel="icon" type="image/svg+xml" href="https://diablo4countdown.com/ddjiug4-46e30fdb-ddca-4712-a32d-17f4d14cc6be.png">
+  <!-- <link rel="canonical" href="https://diablo4countdown.com/"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diablo 4 Countdown timer for season 1: Season of the Malignant, helltides and livestreams.">
+  <meta name="author" content="Khostic">
+  <meta name="keywords" content="Vue, timer, countdown, releasedate, Diablo, Diablo IV, Diablo 4, D4, HTML, CSS, JavaScript, Blizzard, release, early, access, count, down, world, boss,bosses,worldboss, worldbosses, ashava, pestilent, beta, server, slam, weekend, livestream, pre, load, game, helltide, season, malignent">
+  <meta>
+  <title>Diablo 4 Countdown</title>
+  <meta property="og:title" content="Diablo 4 countdown">
+  <meta property="og:type" content="timer.countdown">
+  <meta property="og:url" content="https://diablo4countdown.com/">
+  <meta property="og:image" content="/ddjiug4-46e30fdb-ddca-4712-a32d-17f4d14cc6be.png">
+  <script type="module" crossorigin="" src="./Diablo 4 Countdown_files/index-60f6e41d.js"></script>
+  <link rel="stylesheet" href="./Diablo 4 Countdown_files/index-119a7cef.css">
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+    <div id="app" data-v-app=""><picture class=""><source srcset="./Diablo 4 Countdown_files/Diablo_IV_Logo-3d97e5ac.png"><img class="logo" src="./Diablo 4 Countdown_files/Diablo_IV_Logo-3d97e5ac.png" alt="Diablo IV"></picture><div data-v-e46e6cfe="" class="buttons">
+
+      <!-- <a data-v-e46e6cfe="" href="https://diablo4countdown.com/Helltide" class="">Helltide</a> -->
+
+      <a data-v-e46e6cfe="" href="" class="router-link-active router-link-exact-active" aria-current="page">Season</a>
+
+      <!-- <a data-v-e46e6cfe="" href="https://diablo4countdown.com/Livestream" class="">Livestream</a> -->
+
+    </div><hr data-v-e46e6cfe="" style="width: 100%;">
+
+      <div class="main">
+
+      <script type="text/javascript">
+  setInterval(function(){
+
+  
+        let nowTime = new Date();
+
+        let launchTime = new Date(2023, 7, 21, 2, 0, 0); 
+
+        console.log(nowTime);
+        console.log(launchTime);
+
+        var timeDiff = launchTime.getTime() - nowTime.getTime();
+        // 시간차이 밀리초를 초로 변환
+        timeDiff = timeDiff / 1000;
+        let seconds = Math.floor(timeDiff % 60);
+        // 결과 값이 한 자리면 0 패딩
+        let secondsAsString = seconds < 10 ? "0" + seconds : seconds;
+        console.log(secondsAsString);
+        document.getElementById("secound").innerHTML = secondsAsString;
+
+
+        // 초 단위의 시간차를 분 단위로 변환
+        timeDiff = Math.floor(timeDiff / 60);
+        // 모듈러 연산으로 정수 분 구하기
+        let minutes = timeDiff % 60;
+        // 한자리면 0으로 패딩
+        let minutesAsString = minutes < 10 ? "0" + minutes : minutes;
+        console.log(minutesAsString);
+        document.getElementById("min").innerHTML = minutesAsString;
+
+
+        // 시간차를 분 단위에서 시간 단위로 변환
+        timeDiff = Math.floor(timeDiff / 60);
+        // 모듈러 연산으로 정수형 시간 추출
+        let hours = timeDiff % 24;
+        console.log(hours);
+        document.getElementById("hour").innerHTML = hours;
+
+},1000)
+
+      </script>
+      <div data-v-e27353fe="" class="countdown"><h1 data-v-e27353fe=""><!---->시즌1: 악의 종자</h1><p data-v-e27353fe="" class="localtime">2023. 7. 21. 오전 02:00</p><!----><!----><div data-v-e27353fe="" class="countdownTimer"><!----><!----><!----><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="hour"></time><p data-v-e27353fe="" class="timeDescr">시간</p></section><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="min"></time><p data-v-e27353fe="" class="timeDescr">분</p></section><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="secound"></time><p data-v-e27353fe="" class="timeDescr">초</p></section></div><a data-v-e27353fe="" href="https://news.blizzard.com/en-us/diablo4/23967322/malignance-runs-rampant-in-the-first-season-of-diablo-iv" class="link" target="”_blank”">Read More</a><!----></div><!----></div><!----><footer><p>By three they come. By three, thy way opens. By the blood of the willing, we call thee home. Hail, Daughter of Hatred. Creator of Sanctuary. Hail...Lilith.</p></footer></div>
+  <!-- </div> -->
+
+  
+<!-- Cloudflare Pages Analytics --><script defer="" src="./Diablo 4 Countdown_files/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;51cf3fcb6adb4e4d888140a9417ff270&quot;}"></script><!-- Cloudflare Pages Analytics -->
+
+</body></html>
