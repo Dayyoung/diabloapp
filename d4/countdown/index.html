@@ -36,14 +36,22 @@
   setInterval(function(){
 
   
-        let nowTime = new Date();
+        
+        //var nowTime = new Date(2023, 6, 21, 11, 36, 0); 
+        var nowTime = new Date();
 
-        let launchTime = new Date(2023, 7, 21, 2, 0, 0); 
+        let launchTime = new Date(2023, 6, 21, 2, 0, 0); 
 
         console.log(nowTime);
         console.log(launchTime);
 
+        if(nowTime < launchTime){
         var timeDiff = launchTime.getTime() - nowTime.getTime();
+        }else{
+        var timeDiff = nowTime.getTime() - launchTime.getTime();
+        }
+
+
         // 시간차이 밀리초를 초로 변환
         timeDiff = timeDiff / 1000;
         let seconds = Math.floor(timeDiff % 60);
@@ -69,11 +77,33 @@
         let hours = timeDiff % 24;
         console.log(hours);
         document.getElementById("hour").innerHTML = hours;
+        
+        // 남은 timeDiff는 일 수
+        let days = parseInt(timeDiff / 24);
+        console.log(days);
+        //days = 3;
+        if(days>0){
+         var con = document.getElementById("timeDiv");  
+            if(con.style.display=='none'){    
+              con.style.display = 'block';  
+              document.getElementById("Day").innerHTML = days;
+            }
+        }
 
 },1000)
 
       </script>
-      <div data-v-e27353fe="" class="countdown"><h1 data-v-e27353fe=""><!---->시즌1: 악의 종자</h1><p data-v-e27353fe="" class="localtime">2023. 7. 21. 오전 02:00</p><!----><!----><div data-v-e27353fe="" class="countdownTimer"><!----><!----><!----><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="hour"></time><p data-v-e27353fe="" class="timeDescr">시간</p></section><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="min"></time><p data-v-e27353fe="" class="timeDescr">분</p></section><section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="secound"></time><p data-v-e27353fe="" class="timeDescr">초</p></section></div><a data-v-e27353fe="" href="https://news.blizzard.com/en-us/diablo4/23967322/malignance-runs-rampant-in-the-first-season-of-diablo-iv" class="link" target="”_blank”">Read More</a><!----></div><!----></div><!----><footer><p>By three they come. By three, thy way opens. By the blood of the willing, we call thee home. Hail, Daughter of Hatred. Creator of Sanctuary. Hail...Lilith.</p></footer></div>
+      <div data-v-e27353fe="" class="countdown"><h1 data-v-e27353fe=""><!---->시즌1: 악의 종자</h1><p data-v-e27353fe="" class="localtime">2023. 7. 21. 오전 02:00</p><!----><!----><div data-v-e27353fe="" class="countdownTimer"><!----><!----><!---->
+
+        <section data-v-e27353fe="" id="timeDiv" style="display: none;"><time data-v-e27353fe="" class="time" id="Day"></time><p data-v-e27353fe="" class="timeDescr">일</p></section>
+
+        <section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="hour"></time><p data-v-e27353fe="" class="timeDescr">시간</p></section>
+
+        <section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="min"></time><p data-v-e27353fe="" class="timeDescr">분</p></section>
+
+        <section data-v-e27353fe=""><time data-v-e27353fe="" class="time" id="secound"></time><p data-v-e27353fe="" class="timeDescr">초</p></section>
+
+      </div><a data-v-e27353fe="" href="https://news.blizzard.com/en-us/diablo4/23967322/malignance-runs-rampant-in-the-first-season-of-diablo-iv" class="link" target="”_blank”">Read More</a><!----></div><!----></div><!----><footer><p>By three they come. By three, thy way opens. By the blood of the willing, we call thee home. Hail, Daughter of Hatred. Creator of Sanctuary. Hail...Lilith.</p></footer></div>
   <!-- </div> -->
 
   
