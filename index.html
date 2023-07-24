@@ -2,19 +2,19 @@
 
    <html lang="ko">
   <head>
-      <title>Diablo App</title> 
+      <title>DiabloApp</title> 
   <meta charset="utf-8" />
-  <meta name="application-name" content="coreflex"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover ,user-scalable=no">
-  <meta name="description" content="Diablo2 Profile">
+  <meta name="application-name" content="DiabloApp"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
+  <meta name="description" content="DiabloApp">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="Diablo2 Profile" />
+  <meta name="keywords" content="DiabloApp Profile" />
 
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Diablo2 Profile Page.">
-  <meta property="og:site_name" content="Diablo2 Profile">
+  <meta property="og:description" content="DiabloApp Profile Page.">
+  <meta property="og:site_name" content="DiabloApp Profile">
   <meta property="og:url" content="https://dayyoung.github.io/diabloapp/d2/">
-  <meta property="og:title" content="Diablo2 Profile">
+  <meta property="og:title" content="DiabloApp Profile">
   <meta property="og:image" content="https://dayyoung.github.io/diabloapp/d2/previewlogo.jpg">
   <meta property="og:locale" content="ko_KR">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,19 +63,23 @@
 
  <style>
 
- html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+    body {
+      background-color: #484848; 
+      //background-color: white; 
+    }
+
+     /* 메인 컨테이너에 다음과 같이 설정 */
+    #mainLayout {
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
     }
 
     .swiper {
@@ -87,6 +91,7 @@
       text-align: center;
       font-size: 18px;
       background: #fff;
+      background: #484848; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -111,14 +116,14 @@
       background: white;
     }
 *, *:before, *:after {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+   //box-sizing: border-box;
+   //margin: 0;
+   //padding: 0;
 }
  body {
    background-color: #222;
    background-color: black;
-   letter-spacing: 0.5px;
+   //letter-spacing: 0.5px;
 }
  input[type="radio"] {
    position: fixed;
@@ -558,15 +563,6 @@
   }
 }
  
-   /* 메인 컨테이너에 다음과 같이 설정 */
-  #mainLayout {
-    padding:
-      env(safe-area-inset-top)
-      env(safe-area-inset-right)
-      env(safe-area-inset-bottom)
-      env(safe-area-inset-left);
-  }
-
 
   </style>
      
