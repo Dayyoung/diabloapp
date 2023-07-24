@@ -99,6 +99,15 @@
       object-fit: cover;
     }
 
+    .swiper-pagination-bullet {
+      //color: #fff;
+      background: white;
+    }
+
+    .swiper-pagination-bullet-active {
+      //color: #fff;
+      background: white;
+    }
 *, *:before, *:after {
    box-sizing: border-box;
    margin: 0;
@@ -150,12 +159,15 @@
    font-size: 12px;
    font-weight: 300;
    line-height: 20px;
-   margin: 1.5em auto 0 auto;
+   //margin: 1.5em auto 0 auto;
    overflow: hidden;
    position: relative;
    transform-style: preserve-3d;
-   width: 320px;
-   height: 568px;
+   //width: 320px;
+
+   width: 100%;
+   max-width: 500px;
+   height: 100%;
 }
  .status, .pages, .pagination, .bg-blur, .bottom-bar {
    position: absolute;
@@ -164,9 +176,9 @@
  .status {
    display: flex;
    align-items: center;
-   padding: 0 4px;
+   padding: 0 24px;
    width: 100%;
-   height: 20px;
+   height: 50px;
 }
  .status > div {
    width: 33.33%;
@@ -226,10 +238,13 @@
 }
  .page {
    display: inline-flex;
+   justify-content: space-around;
    align-content: flex-start;
    flex-wrap: wrap;
-   padding: 27px 8px 7px 8px;
-   width: 320px;
+   padding: 57px 8px 7px 8px;
+   //width: 320px;
+   width: 100%;
+   max-width: 500px;
    height: 100%;
 }
  .page .folder:nth-child(1) .folder-apps:focus {
@@ -546,380 +561,22 @@
 
   <body>
 
-<!--
-<div class="screen">
-  <input type="radio" id="_p0" name="pg" checked="checked"/>
-  <input type="radio" id="_p1" name="pg"/>
-  <div class="status">
-    <div class="carrier">No Service</div>
-    <div class="clock">12:00 AM</div>
-    <div class="battery">
-      <div class="battery-meter">
-        <div class="battery-meter-inner"></div>
-      </div>
-    </div>
-  </div>
-  <div class="pages">
-    <div class="page">
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-    </div>
-    <div class="page">
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-        <div class="app-name">App</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-    </div>
-    <div class="bottom-bar">
-      <div class="folder">
-        <div class="folder-apps" tabindex="0">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">App</div>
-          </div>
-        </div>
-        <div class="bg-blur"></div>
-        <div class="folder-name">Folder</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-      </div>
-    </div>
-  </div>
-  <div class="pagination">
-    <label for="_p0"><span></span></label>
-    <label for="_p1"><span></span></label>
-  </div>
-</div>
-
--->
-
-
-
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
 
       <div class="swiper-slide">
+    <div class="screen">
+        <div class="status">
+          <div class="carrier">Diabloapp.com</div>
+          <div class="clock"><script>var d = new Date();
+var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
+          <div class="battery">
+            <div class="battery-meter">
+              <div class="battery-meter-inner"></div>
+            </div>
+          </div>
+        </div>
+
         <div class="page" style="background-color: black;">
           <div class="app">
             <div class="app-icon"></div>
@@ -936,32 +593,24 @@
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo IV</div>
+          </div>
           </div>
           </div>
         </div>
 
-      <div class="swiper-slide">
-        <div class="page" style="background-color: black;">
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
+              <div class="swiper-slide">
+    <div class="screen">
+        <div class="status">
+          <div class="carrier">Diabloapp.com</div>
+          <div class="clock"><script>var d = new Date();
+var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
+          <div class="battery">
+            <div class="battery-meter">
+              <div class="battery-meter-inner"></div>
+            </div>
           </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
-          </div>
-          </div>
-        </div>        
+        </div>
 
-      <div class="swiper-slide">
         <div class="page" style="background-color: black;">
           <div class="app">
             <div class="app-icon"></div>
@@ -978,11 +627,48 @@
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo IV</div>
+          </div>
           </div>
           </div>
         </div>
+
+              <div class="swiper-slide">
+    <div class="screen">
+        <div class="status">
+          <div class="carrier">Diabloapp.com</div>
+          <div class="clock"><script>var d = new Date();
+var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
+          <div class="battery">
+            <div class="battery-meter">
+              <div class="battery-meter-inner"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" style="background-color: black;">
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo I</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo II</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo III</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo IV</div>
+          </div>
+          </div>
+          </div>
+        </div>
+
 
     </div>
+  </div>
     <div class="swiper-pagination"></div>
   </div>
   <!-- Swiper JS -->
