@@ -553,6 +553,14 @@
   }
 }
  
+   /* 메인 컨테이너에 다음과 같이 설정 */
+  #mainLayout {
+    padding:
+      env(safe-area-inset-top)
+      env(safe-area-inset-right)
+      env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
 
 
   </style>
@@ -560,13 +568,13 @@
   </head>
 
   <body>
-
-  <div class="swiper mySwiper">
+    
+  <div class="swiper mySwiper" id="mainLayout">
     <div class="swiper-wrapper">
 
       <div class="swiper-slide">
     <div class="screen">
-        <div class="status">
+        <div class="status" style="display:none;">
           <div class="carrier">Diabloapp.com</div>
           <div class="clock"><script>var d = new Date();
 var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
@@ -600,7 +608,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
 
               <div class="swiper-slide">
     <div class="screen">
-        <div class="status">
+        <div class="status" style="display:none;">
           <div class="carrier">Diabloapp.com</div>
           <div class="clock"><script>var d = new Date();
 var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
@@ -634,7 +642,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
 
               <div class="swiper-slide">
     <div class="screen">
-        <div class="status">
+        <div class="status" style="display:none;">
           <div class="carrier">Diabloapp.com</div>
           <div class="clock"><script>var d = new Date();
 var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
@@ -682,8 +690,5 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       },
     });
   </script>
-
-
-
   </body>
   </html>  
