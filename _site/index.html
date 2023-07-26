@@ -72,16 +72,24 @@
       background-color: #484848; 
       //background-color: white; 
     }
-
-     /* 메인 컨테이너에 다음과 같이 설정 */
     #mainLayout {
+      height: 100%;
+      padding-top: env(safe-area-inset-top);
+      /*padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);*/
+    }
+     /* 메인 컨테이너에 다음과 같이 설정 */
+    /*#mainLayout {
       padding:
         env(safe-area-inset-top)
         env(safe-area-inset-right)
         env(safe-area-inset-bottom)
         env(safe-area-inset-left);
     }
-
+*/
     .swiper {
       width: 100%;
       height: 100%;

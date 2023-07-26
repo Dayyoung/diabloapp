@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Diablo 4 Helltide Event Tracker and Chest Locations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Diablo 4 tool to get notifications for upcoming Helltide events and Tortured Gifts of Mysteries Chest locations.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="https://unpkg.com/feedbackfin@^1" defer=""></script>
+    <script>
+      window.feedbackfin = {
+        config: {},
+        ...window.feedbackfin
+      };
+      window.feedbackfin.config.url = "/api/feedback";
+      window.feedbackfin.config.user = {
+        site: "helltides.com"
+      }
+    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-0H1PGEMM59" async=""></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-0H1PGEMM59');
+    </script>
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TP56KV9');
+    </script>
+    <link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/entry.835ffa8e.js">
+    <link rel="preload" as="style" href="/_nuxt/entry.50b36591.css">
+    <link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/index.578e7bbf.js">
+    <link rel="preload" as="style" href="/_nuxt/index.90e6079d.css">
+    <link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/index.08a6fd82.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/_nuxt/QuestionMarkCircleIcon.b59e4ede.js">
+    <link rel="prefetch" as="script" crossorigin="" href="/_nuxt/marker-icon-2x.e148f0f7.js">
+    <link rel="prefetch" as="script" crossorigin="" href="/_nuxt/marker-icon.d6994ad0.js">
+    <link rel="prefetch" as="script" crossorigin="" href="/_nuxt/marker-shadow.a7f70f89.js">
+    <link rel="prefetch" as="script" crossorigin="" href="/_nuxt/leaflet-src.esm.9c358b30.js">
+    <link rel="prefetch" as="script" crossorigin="" href="/_nuxt/error-component.10306bb9.js">
+    <link rel="stylesheet" href="/_nuxt/entry.50b36591.css">
+    <link rel="stylesheet" href="/_nuxt/index.90e6079d.css">
+    <style>
+      @import "https://rsms.me/inter/inter.css";
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+      #__nuxt,
+      body,
+      html {
+        height: 100%;
+        width: 100%
+      }
+
+      body {
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+        background-color: #1f2937;
+        background-color: rgb(31 41 55/var(--tw-bg-opacity));
+        color: #fff;
+        color: rgb(255 255 255/var(--tw-text-opacity))
+      }
+
+      .ad.active {
+        display: flex;
+        justify-content: center;
+        padding: 1rem
+      }
+    </style>
+  </head>
+
+  <body data-theme="dark"><noscript type="text/plain"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TP56KV9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div id="__nuxt">
+      <!--[-->
+      <nav data-headlessui-state="" class="bg-gray-800">
+        <div class="mx-auto max-w-7xl p-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden"><button id="headlessui-disclosure-button-1925001" type="button" aria-expanded="false" data-headlessui-state="" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"><span class="sr-only">Open main menu</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="block h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                </svg></button></div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center"><img class="block cursor-pointer h-12 w-auto lg:hidden" src="/images/logo.png" alt="Helltides.com"><img class="hidden cursor-pointer h-12 w-auto lg:block" src="/images/logo.png" alt="Helltides.com"></div>
+              <div class="hidden sm:ml-6 sm:flex items-center">
+                <div class="flex space-x-4">
+                  <!--[--><a aria-current="page" href="/" class="router-link-active router-link-exact-active bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Helltide</a>
+                  <!--]--><a href="/discord" class="cursor-pointer inline-flex items-center gap-x-2 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium shadow-sm"><svg role="img" viewBox="0 0 24 24" class="h-4 w-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+                      <title>Discord</title>
+                      <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path>
+                    </svg>Discord Bot </a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex gap-4 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div class="cursor-pointer hidden lg:block"><span class="inline-flex items-center rounded-md bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-500 ring-1 ring-inset ring-yellow-400/20">Ad Free</span></div><span></span>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </nav>
+      <div class="flex flex-col justify-between h-full">
+        <!--[-->
+        <div id="main" class="pt-2"><span></span>
+          <div class="flex flex-col items-center lg:items-start lg:flex-row lg:gap-12 max-w-screen-2xl mx-auto">
+            <div class="lg:grow w-full sm:max-w-[425px] order-1"><span></span></div>
+            <div class="grow order-3 lg:order-2"><span></span></div>
+            <div class="lg:grow w-full sm:max-w-[425px] order-2 lg:order-3"><span></span></div>
+          </div>
+          <div class="flex flex-col w-full items-center justify-center"><span></span>
+            <div class="flex flex-col p-4 text-center justify-center items-center h-screen w-full lg:w-4/5 max-w-[1200px] max-h-[750px] bg-gray-700 text-gray-400">
+              <div id="ad_inactive_map_top" class="ad"></div>
+              <div class="py-16 text-2xl">Map will appear when a Helltide is active.</div>
+              <div id="ad_inactive_map_bottom" class="ad"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-900 mt-12">
+          <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+              <h2 class="text-2xl font-bold leading-10 tracking-tight text-white"> Diablo 4 Helltide FAQ </h2>
+            </div>
+            <div class="mt-20">
+              <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:gap-x-10">
+                <!--[-->
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">How to use the Helltide Tracker and Mystery Chest Locator</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">To use the Helltide Tracker and Mystery Chest locator, watch the countdown on the website for the Helltide to begin. Tap the Speaker icon on the top of the page for an audio alert when a Helltide goes active. When the Helltide is active, watch the interactive map for active Mystery Chest pings. If you have 250 Cinders, you can visit an active chest and open it for Legendary loot. Helltides.com is community-driven, so users can log in via Battle.net or Discord to help vote on active chests and help make things run more smoothly.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">What are Mystery Chests?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Tortured Gifts of Mysteries are chests that spawn during Helltide events in Diablo 4. They cost 250 Aberrant Cinders to open and have a chance to drop between 1 to 5 Legendary items, including Sacred Legendaries in World Tier 3 and Ancestral Legendaries in World Tier 4. Unlike other Tortured Gifts chests, these chests do not show up on the map until you are near them.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">How many Mystery Chests spawn during a Helltide?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Four possible Mystery Chest spawn locations exist in Fractured Peaks, Hawezar, Dry Steppes, and Scosglen. Two of these will be active at any given time. Kehjistan has more than four Mystery Chest spawn locations, with three active at any given time.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">When do Mystery Chests reset?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Mystery Chests reset on the hour. If a Helltide is active from 1:15 to 2:15, the chests will reset at 2:00. This allows you to loot more overall Mystery Chests in a single Helltide. A Helltide that begins at the top of the hour (i.e., 1:00 to 2:00) will not have a chest reset.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">How many Mystery Chests can you open during a Helltide event?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Players can loot up to four Mystery Chests in Fractured Peaks, Hawezar, Dry Steppes, and Scosglen within a single Helltide event if the Helltide event does not start at the top of an hour. The exception is if a Helltide event takes place in the Kehjistan region, in which case players can potentially loot up to six Mystery Chests in a single Helltide event.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">What is a Helltide?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">A Helltide is a region-wide event in Diablo 4 that becomes available starting in World Tier 3 difficulty. Helltides feature empowered servants of Lilith with increased difficulty and loot. Helltides can occur in any of the five regions of Sanctuary. Monsters in a Helltide drop a currency called Cinders, which can be spent to open Helltide Chests within the event zone. Dying will result in losing a large portion of your Cinders.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">When do Helltide events start in Diablo 4?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Helltide events begin every 2 hours and 15 minutes. Each Helltide event lasts one hour. See the <a class="text-indigo-400 hover:text-indigo-300" href="https://helltides.com">Diablo 4 Helltides timer</a> for the next Helltide start time.</dd>
+                </div>
+                <div>
+                  <dt class="text-base font-semibold leading-7 text-white">Can Legion Events and World Bosses spawn in Helltide zones?</dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-300">Yes, both Legion Events and World Bosses can spawn in Helltide regions. The monsters in these events will have an increased level.</dd>
+                </div>
+                <!--]-->
+              </dl>
+            </div>
+          </div>
+        </div>
+        <!--]-->
+        <footer class="flex justify-center py-20 lg:py-12 px-4">
+          <div class="max-w-screen-lg">
+            <p class="text-center mb-4"> Helltides.com is a fan-made Helltide event timer and Mystery Chest tracker for Diablo 4. Find out when Helltides go live and which hidden Tortured Gift of Mysteries Chests are active within the zones. </p>
+            <div class="mt-8 mb-4 flex items-center justify-center space-x-4 text-sm leading-6 text-gray-400"><a href="/privacy-policy" class="">Privacy Policy</a><a href="/terms" class="">Terms and Conditions</a></div>
+            <p class="text-center text-sm text-gray-400"> Not affiliated with Activision or Blizzard Entertainment. </p>
+            <div class="site-version text-center text-sm text-gray-400 mt-12">v1.6</div>
+          </div>
+        </footer>
+      </div>
+      <div class="vm-placement" data-id="648b3a06c9287952bd0a2cc0" style="display:none;"></div><span></span>
+      <!--]-->
+    </div>
+    <script type="application/json" id="__NUXT_DATA__" data-ssr="true">
+      [
+        ["Reactive", 1], {
+          "data": 2,
+          "state": 3,
+          "_errors": 7,
+          "serverRendered": 8,
+          "pinia": 9
+        }, {}, {
+          "$sauth:data": 4,
+          "$sauth:lastRefreshedAt": 5,
+          "$sauth:loading": 6
+        },
+        null, ["Date", "2023-07-25T23:32:41.615Z"], false, {},
+        true, {
+          "HelltideStore": 10,
+          "WorldBossStore": 17,
+          "LegionStore": 18
+        }, {
+          "helltide": 4,
+          "active": 6,
+          "muted": 8,
+          "showEvents": 8,
+          "markers": 11,
+          "predictions": 12,
+          "eventMarkers": 13,
+          "zone": 6,
+          "feed_upvotes": 14,
+          "votes": 15,
+          "user_votes": 16
+        },
+        [],
+        [],
+        [],
+        [], {},
+        [], {
+          "zone": 6,
+          "boss": 4,
+          "id": 4,
+          "startTime": 4,
+          "nextTime": 4,
+          "active": 6,
+          "visible": 8,
+          "muted": 8
+        }, {
+          "id": 4,
+          "zone": 6,
+          "active": 6,
+          "visible": 8,
+          "muted": 8,
+          "startTime": 4,
+          "nextTime": 4
+        }
+      ]
+    </script>
+    <script>
+      window.__NUXT__ = {};
+      window.__NUXT__.config = {
+        public: {
+          firebase_apiKey: "AIzaSyC9uzrpnpbQHMvhcp0h1EJFUkufi-kA9JM",
+          firebase_authDomain: "helltides-7e530.firebaseapp.com",
+          firebase_projectId: "helltides-7e530",
+          firebase_storageBucket: "helltides-7e530.appspot.com",
+          firebase_messagingSenderId: "869671171747",
+          firebase_appId: "1:869671171747:web:dd127d787b4d61d505b116",
+          firebase_dbRead_1: "https://helltides-7e530-r1.firebaseio.com/",
+          firebase_dbRead_2: "https://helltides-7e530-r2.firebaseio.com/",
+          firebase_dbRead_3: "https://helltides-7e530-r3.firebaseio.com/",
+          auth: {
+            computed: {
+              origin: "",
+              pathname: "/api/auth",
+              fullBaseUrl: "/api/auth"
+            },
+            isEnabled: true,
+            session: {
+              enableRefreshPeriodically: false,
+              enableRefreshOnWindowFocus: true
+            },
+            globalAppMiddleware: {
+              isEnabled: false,
+              allow404WithoutAuth: true,
+              addDefaultCallbackUrl: true
+            },
+            origin: "https://helltides.com",
+            provider: {
+              type: "authjs",
+              trustHost: false,
+              defaultProvider: "",
+              addDefaultCallbackUrl: true
+            }
+          }
+        },
+        app: {
+          baseURL: "/",
+          buildAssetsDir: "/_nuxt/",
+          cdnURL: ""
+        }
+      }
+    </script>
+    <script type="module" src="/_nuxt/entry.835ffa8e.js" crossorigin=""></script>
+  </body>
+
+</html>
