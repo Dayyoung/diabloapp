@@ -399,6 +399,42 @@
    background-repeat: no-repeat;
    background-size:100% 100%;
 }
+ .app-icon-bt1 {
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
+   width: 60px;
+   height: 60px;
+   background-image: url('./dia1ico.png');
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+}
+ .app-icon-bt2 {
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
+   width: 60px;
+   height: 60px;
+   background-image: url('./dia2ico.png');
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+}
+ .app-icon-bt3 {
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
+   width: 60px;
+   height: 60px;
+   background-image: url('./dia3ico.png');
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+}
+ .app-icon-bt4 {
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
+   width: 60px;
+   height: 60px;
+   background-image: url('./dia4ico.png');
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+}
 /* .app:nth-child(6n + 2) .app-icon {
    background-image: linear-gradient(#eddf44, #ecba45);
 }
@@ -490,7 +526,7 @@
  .app-name, .folder-name {
    text-align: center;
    color : white;
-   font-size: 10px;
+   font-size: 15px;
 }
  .folder-name {
    transform: translateY(-244px);
@@ -520,12 +556,15 @@
 }
 
 .bottom-bar-item{
+    margin: 20px;
     width: 100%;
     max-width: 1024px;
     height: 110px;
     display: flex;
     justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.3);
+    //background-color: gray;
+    border-radius: 20px;
     backdrop-filter: blur(15px);
 }
 
@@ -759,19 +798,19 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       <div class="bottom-bar">
       <div class="bottom-bar-item">
       <div onClick="goScreen(0)" class="app">
-        <div class="app-icon"></div>
+        <div class="app-icon app-icon-bt1"></div>
             <div class="app-name">Diablo I</div>
       </div>
       <div onClick="goScreen(1)" class="app">
-        <div class="app-icon"></div>
+        <div class="app-icon app-icon-bt2"></div>
             <div class="app-name">Diablo II</div>
       </div>
       <div onClick="goScreen(2)" class="app">
-        <div class="app-icon"></div>
+        <div class="app-icon app-icon-bt3"></div>
             <div class="app-name">Diablo III</div>
       </div>
       <div onClick="goScreen(3)" class="app">
-        <div class="app-icon"></div>
+        <div class="app-icon app-icon-bt4"></div>
             <div class="app-name">Diablo IV</div>
       </div>
       </div>
