@@ -72,24 +72,22 @@
       background-color: #484848; 
       //background-color: white; 
     }
+
+     /* 메인 컨테이너에 다음과 같이 설정 */
     #mainLayout {
-      height: 100%;
-      padding-top: env(safe-area-inset-top);
-      /*padding:
+      position: block;
+/*      padding:
         env(safe-area-inset-top)
         env(safe-area-inset-right)
         env(safe-area-inset-bottom)
         env(safe-area-inset-left);*/
-    }
-     /* 메인 컨테이너에 다음과 같이 설정 */
-    /*#mainLayout {
       padding:
         env(safe-area-inset-top)
-        env(safe-area-inset-right)
-        env(safe-area-inset-bottom)
-        env(safe-area-inset-left);
+        0
+        0
+        0;
     }
-*/
+
     .swiper {
       width: 100%;
       height: 100%;
@@ -112,7 +110,7 @@
       object-fit: cover;
     }
     .swiper-pagination{
-      padding-bottom: 120px;
+      padding-bottom: 110px;
     }
     .swiper-pagination-bullet {
       //color: #fff;
@@ -257,7 +255,7 @@
    justify-content: space-around;
    align-content: flex-start;
    flex-wrap: wrap;
-   padding: 57px 8px 7px 8px;
+   padding: 27px 8px 7px 8px;
    //width: 320px;
    width: 100%;
    max-width: 500px;
@@ -393,12 +391,15 @@
    margin: auto;
 }
  .app-icon {
-   background-image: linear-gradient(#dde, #aab);
-   border-radius: 9px;
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
    width: 60px;
    height: 60px;
+   background-image: url('./favicon.png');
+   background-repeat: no-repeat;
+   background-size:100% 100%;
 }
- .app:nth-child(6n + 2) .app-icon {
+/* .app:nth-child(6n + 2) .app-icon {
    background-image: linear-gradient(#eddf44, #ecba45);
 }
  .app:nth-child(6n + 3) .app-icon {
@@ -421,7 +422,7 @@
 }
  .app:nth-child(6n + 9) .app-icon {
    background-image: linear-gradient(#70e4ff, #0aa5ff);
-}
+}*/
  .bg-blur {
    backdrop-filter: blur(0px);
    -webkit-backdrop-filter: blur(0px);
@@ -502,22 +503,32 @@
    width: 100%;
    height: 24px;
 }
+
 /** Bottom Bar **/
  .bottom-bar {
-   background-color: rgba(255, 255, 255, 0.3);
-   backdrop-filter: blur(15px);
-   -webkit-backdrop-filter: blur(15px);
-   top: calc(100% + 24px);
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
    display: flex;
    justify-content: center;
    justify-content: space-around;
    align-items: center;
-   padding: 0 6px;
-   width: 100%;
-   height: 102px;
+   height: 110px;
    transform-style: preserve-3d;
-   padding-bottom: 20px;
+   z-index: 10000;
 }
+
+.bottom-bar-item{
+    width: 100%;
+    max-width: 500px;
+    height: 110px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+}
+
  .bottom-bar .app, .bottom-bar .folder {
    margin: 11px 8px;
    max-height: 60px;
@@ -614,25 +625,6 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
           </div>
           </div>
 
-
-    <div class="bottom-bar">
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
-      </div>
-    </div>
     </div>
 
           </div>
@@ -674,24 +666,6 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
           </div>
 
 
-    <div class="bottom-bar">
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
-      </div>
-    </div>
     </div>
 
           </div>
@@ -730,30 +704,48 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
           </div>
           </div>
 
-
-    <div class="bottom-bar">
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
-      </div>
-      <div class="app">
-        <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
-      </div>
-    </div>
     </div>
 
           </div>
         </div>
 
+      <div class="swiper-slide">
+    <div class="screen">
+        <div class="status" style="display:none;">
+          <div class="carrier">Diabloapp.com</div>
+          <div class="clock"><script>var d = new Date();
+var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
+          <div class="battery">
+            <div class="battery-meter">
+              <div class="battery-meter-inner"></div>
+            </div>
+          </div>
+        </div>
+
+      <div class="pages">
+        <div class="page" style="background-color: black;">
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo I</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo II</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo III</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">Diablo IV</div>
+          </div>
+          </div>
+
+    </div>
+
+          </div>
+        </div>
 
 
     </div>
@@ -762,7 +754,34 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
 
 
     <div class="swiper-pagination"></div>
+
+
+      <div class="bottom-bar">
+      <div class="bottom-bar-item">
+      <div onClick="goScreen(0)" class="app">
+        <div class="app-icon"></div>
+            <div class="app-name">Diablo I</div>
+      </div>
+      <div onClick="goScreen(1)" class="app">
+        <div class="app-icon"></div>
+            <div class="app-name">Diablo II</div>
+      </div>
+      <div onClick="goScreen(2)" class="app">
+        <div class="app-icon"></div>
+            <div class="app-name">Diablo III</div>
+      </div>
+      <div onClick="goScreen(3)" class="app">
+        <div class="app-icon"></div>
+            <div class="app-name">Diablo IV</div>
+      </div>
+      </div>
+    </div>
+
+
   </div>
+
+
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -773,6 +792,13 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         el: ".swiper-pagination",
       },
     });
+
+      swiper.slideTo(3);
+
+    function goScreen(index){
+      console.log(index);
+      swiper.slideTo(index);
+    }
   </script>
   </body>
   </html>  
