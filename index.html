@@ -251,6 +251,8 @@
    z-index: 2;
 }
  .page {
+   background: url(./D4_LilithWallpaper.jpg) no-repeat center center fixed;
+   background-size: cover;
    display: inline-flex;
    justify-content: space-around;
    align-content: flex-start;
@@ -395,9 +397,37 @@
    border-radius: 15px;
    width: 60px;
    height: 60px;
-   background-image: url('./favicon.png');
+   /*background-image: url('./favicon.png');
    background-repeat: no-repeat;
-   background-size:100% 100%;
+   background-size:100% 100%*/;
+}
+
+ .app:nth-child(6n + 1) .app-icon {
+   background-image: linear-gradient(#eddf44, #ecba45);
+}
+ .app:nth-child(6n + 2) .app-icon {
+   background-image: linear-gradient(#eddf44, #ecba45);
+}
+ .app:nth-child(6n + 3) .app-icon {
+   background-image: linear-gradient(#82e8d1, #25ce93);
+}
+ .app:nth-child(6n + 4) .app-icon {
+   background-image: linear-gradient(#ff9eed, #e06bfe);
+}
+ .app:nth-child(6n + 5) .app-icon {
+   background-image: linear-gradient(#c5ca6c, #4ebf63);
+}
+ .app:nth-child(6n + 6) .app-icon {
+   background-image: linear-gradient(#be75ff, #a43ffd);
+}
+ .app:nth-child(6n + 7) .app-icon {
+   background-image: linear-gradient(#fa4, #ff8f44);
+}
+ .app:nth-child(6n + 8) .app-icon {
+   background-image: linear-gradient(#ff7074, #fe5242);
+}
+ .app:nth-child(6n + 9) .app-icon {
+   background-image: linear-gradient(#70e4ff, #0aa5ff);
 }
  .app-icon-bt1 {
    //background-image: linear-gradient(#dde, #aab);
@@ -435,30 +465,6 @@
    background-repeat: no-repeat;
    background-size:100% 100%;
 }
-/* .app:nth-child(6n + 2) .app-icon {
-   background-image: linear-gradient(#eddf44, #ecba45);
-}
- .app:nth-child(6n + 3) .app-icon {
-   background-image: linear-gradient(#82e8d1, #25ce93);
-}
- .app:nth-child(6n + 4) .app-icon {
-   background-image: linear-gradient(#ff9eed, #e06bfe);
-}
- .app:nth-child(6n + 5) .app-icon {
-   background-image: linear-gradient(#c5ca6c, #4ebf63);
-}
- .app:nth-child(6n + 6) .app-icon {
-   background-image: linear-gradient(#be75ff, #a43ffd);
-}
- .app:nth-child(6n + 7) .app-icon {
-   background-image: linear-gradient(#fa4, #ff8f44);
-}
- .app:nth-child(6n + 8) .app-icon {
-   background-image: linear-gradient(#ff7074, #fe5242);
-}
- .app:nth-child(6n + 9) .app-icon {
-   background-image: linear-gradient(#70e4ff, #0aa5ff);
-}*/
  .bg-blur {
    backdrop-filter: blur(0px);
    -webkit-backdrop-filter: blur(0px);
@@ -645,7 +651,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page" style="background-color: black;">
+        <div class="page">
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo I</div>
@@ -685,7 +691,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page" style="background-color: black;">
+        <div class="page">
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo I</div>
@@ -724,7 +730,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page" style="background-color: black;">
+        <div class="page">
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo I</div>
@@ -762,7 +768,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page" style="background-color: black;">
+        <div class="page">
           <div class="app">
             <div class="app-icon"></div>
             <div class="app-name">Diablo I</div>
@@ -798,19 +804,19 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       <div class="bottom-bar">
       <div class="bottom-bar-item">
       <div onClick="goScreen(0)" class="app">
-        <div class="app-icon app-icon-bt1"></div>
+        <div class="app-icon-bt1"></div>
             <div class="app-name">Diablo I</div>
       </div>
       <div onClick="goScreen(1)" class="app">
-        <div class="app-icon app-icon-bt2"></div>
+        <div class="app-icon-bt2"></div>
             <div class="app-name">Diablo II</div>
       </div>
       <div onClick="goScreen(2)" class="app">
-        <div class="app-icon app-icon-bt3"></div>
+        <div class="app-icon-bt3"></div>
             <div class="app-name">Diablo III</div>
       </div>
       <div onClick="goScreen(3)" class="app">
-        <div class="app-icon app-icon-bt4"></div>
+        <div class="app-icon-bt4"></div>
             <div class="app-name">Diablo IV</div>
       </div>
       </div>
