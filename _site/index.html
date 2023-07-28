@@ -545,6 +545,14 @@
  .folder-apps:focus .app-name {
    display: inherit;
 }
+.app-name {
+  margin: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+  height: 20px;
+}
  .folder-apps .app {
    margin: 0 8px 16px 8px;
 }
@@ -560,7 +568,7 @@
  .app-name, .folder-name {
    text-align: center;
    color : white;
-   font-size: 10px;
+   font-size: 13px;
 }
  .folder-name {
    transform: translateY(-244px);
