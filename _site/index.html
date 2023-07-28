@@ -545,14 +545,6 @@
  .folder-apps:focus .app-name {
    display: inherit;
 }
-.app-name {
-  margin: auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100px;
-  height: 20px;
-}
  .folder-apps .app {
    margin: 0 8px 16px 8px;
 }
@@ -1159,7 +1151,13 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       swiper.slideTo(index);
     }
 
-    var diablo4List = [{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},{"type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"},{"type":"diablo4","title":"Inven (Freeboard)","url":"https://m.inven.co.kr/board/diablo4/6025"},{"type":"diablo4","title":"Inven (Babarian)","url":"https://www.inven.co.kr/board/diablo4/6029"},{"type":"diablo4","title":"Inven (Druid)","url":"https://www.inven.co.kr/board/diablo4/6030"},{"type":"diablo4","title":"Inven (Necromancer)","url":"https://m.inven.co.kr/board/diablo4/6031"},{"type":"diablo4","title":"Inven (Rogue)","url":"https://m.inven.co.kr/board/diablo4/6032"},{"type":"diablo4","title":"Inven (Mage)","url":"https://m.inven.co.kr/board/diablo4/6033"}];
+    var diablo4List = [{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},
+      {"type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},
+      {"type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"},{"type":"diablo4","title":"Inven<br>(Freeboard)","url":"https://m.inven.co.kr/board/diablo4/6025"},
+      {"type":"diablo4","title":"Inven<br>(Babarian)","url":"https://www.inven.co.kr/board/diablo4/6029"},{"type":"diablo4","title":"Inven<br>(Druid)","url":"https://www.inven.co.kr/board/diablo4/6030"},
+      {"type":"diablo4","title":"Inven<br>(Necromancer)","url":"https://m.inven.co.kr/board/diablo4/6031"},
+      {"type":"diablo4","title":"Inven<br>(Rogue)","url":"https://m.inven.co.kr/board/diablo4/6032"},
+      {"type":"diablo4","title":"Inven<br>(Mage)","url":"https://m.inven.co.kr/board/diablo4/6033"}];
 
     for(i in diablo4List){
       var diablo4Item = diablo4List[i]
