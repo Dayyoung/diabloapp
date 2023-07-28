@@ -258,6 +258,7 @@
    z-index: 2;
 }
  .page {
+   padding-top: 20px;
       background-color: rgba(255, 255, 255, 0.0); 
 //   background: url(./D4_LilithWallpaper.jpg) no-repeat center center fixed;
 //   background-size: cover;
@@ -265,7 +266,7 @@
    justify-content: space-around;
    align-content: flex-start;
    flex-wrap: wrap;
-   padding: 27px 8px 7px 8px;
+   //padding: 27px 8px 7px 8px;
    //width: 320px;
    width: 100%;
    max-width: 1024px;
@@ -393,25 +394,32 @@
 }
 /** Apps **/
  .app, .folder {
-   margin: 0 8px 7px 8px;
-   max-width: 60px;
-   max-height: 80px;
+   //padding: 10px;
+   //max-width: 60px;
+   //max-height: 80px;
+  flex: 1 0 21%; /* explanation below */
+  margin: 5px;
+  //height: 100px;
+  //background-color: blue;
 }
  .app-icon, .folder-apps {
    margin: auto;
+   max-width: 60px;
+   max-height: 80px;
 }
  .app-icon {
    //background-image: linear-gradient(#dde, #aab);
    border-radius: 15px;
    width: 60px;
    height: 60px;
+   display: none;
    /*background-image: url('./favicon.png');
    background-repeat: no-repeat;
    background-size:100% 100%*/;
 }
 
  .app:nth-child(6n + 1) .app-icon {
-   background-image: linear-gradient(#eddf44, #ecba45);
+    background-image: linear-gradient(#dde, #aab);
 }
  .app:nth-child(6n + 2) .app-icon {
    background-image: linear-gradient(#eddf44, #ecba45);
@@ -445,6 +453,9 @@
    background-image: url('./dia1ico.png');
    background-repeat: no-repeat;
    background-size:100% 100%;
+   margin: auto;
+   max-width: 60px;
+   max-height: 80px;
 }
  .app-icon-bt2 {
    //background-image: linear-gradient(#dde, #aab);
@@ -454,6 +465,9 @@
    background-image: url('./dia2ico.png');
    background-repeat: no-repeat;
    background-size:100% 100%;
+   margin: auto;
+   max-width: 60px;
+   max-height: 80px;
 }
  .app-icon-bt3 {
    //background-image: linear-gradient(#dde, #aab);
@@ -463,6 +477,9 @@
    background-image: url('./dia3ico.png');
    background-repeat: no-repeat;
    background-size:100% 100%;
+   margin: auto;
+   max-width: 60px;
+   max-height: 80px;
 }
  .app-icon-bt4 {
    //background-image: linear-gradient(#dde, #aab);
@@ -472,6 +489,9 @@
    background-image: url('./dia4ico.png');
    background-repeat: no-repeat;
    background-size:100% 100%;
+   margin: auto;
+   max-width: 60px;
+   max-height: 80px;
 }
  .bg-blur {
    backdrop-filter: blur(0px);
@@ -540,7 +560,7 @@
  .app-name, .folder-name {
    text-align: center;
    color : white;
-   font-size: 15px;
+   font-size: 13px;
 }
  .folder-name {
    transform: translateY(-244px);
@@ -639,7 +659,6 @@
   }
 }
  
-
   </style>
      
   </head>
@@ -663,25 +682,93 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page">
+        <div class="page diablo1">
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
-          </div>
+            <div class="app-name"></div>
           </div>
 
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+        </div>
     </div>
 
           </div>
@@ -703,24 +790,93 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page">
+        <div class="page diablo2">
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
+            <div class="app-name"></div>
           </div>
+
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
+            <div class="app-name"></div>
           </div>
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+        </div>
 
 
     </div>
@@ -742,24 +898,93 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page">
+        <div class="page diablo3">
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
+            <div class="app-name"></div>
           </div>
+
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
+            <div class="app-name"></div>
           </div>
           <div class="app">
             <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name"></div>
+          </div>
+        </div>
 
     </div>
 
@@ -780,24 +1005,93 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
       <div class="pages">
-        <div class="page">
+        <div class="page diablo4">
           <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo I</div>
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
           </div>
+
           <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo II</div>
-          </div>
-          <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo III</div>
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
           </div>
           <div class="app">
-            <div class="app-icon"></div>
-            <div class="app-name">Diablo IV</div>
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
           </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon d4icon"></div>
+            <div class="app-name"></div>
+          </div>
+        </div>
 
     </div>
 
@@ -850,12 +1144,73 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       },
     });
 
-      swiper.slideTo(3);
+    swiper.slideTo(3);
 
     function goScreen(index){
       console.log(index);
       swiper.slideTo(index);
     }
+
+    var diablo4List = [{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},{"type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"}];
+
+    for(i in diablo4List){
+      var diablo4Item = diablo4List[i]
+      console.log(diablo4Item.type)
+      if(diablo4Item.type == "diablo4"){
+        var diablo4Icon = $(".diablo4").find(".app").eq(i);
+        diablo4Icon.find(".app-name").html(diablo4Item.title);
+        diablo4Icon.find(".app-icon").show();
+        diablo4Icon.click(function function_name(argument) {
+          window.open(diablo4Item.url, "_blank");
+        })
+       }
+      }
+
+      var diablo3List = [{"type":"diablo3","title":"Diablo3 OST","url":"https://youtube.com/playlist?list=PLD80CC3FEBE323161&feature=sharec"},{"type":"diablo3","title":"Diablo3 profile","url":"https://vue-diablo3-app.netlify.app/profile-finder"},{"type":"diablo3","title":"Diablo3 Inven","url":"https://m.inven.co.kr/diablo3/"}];
+
+          for(i in diablo3List){
+            var diablo3Item = diablo3List[i]
+            console.log(diablo3Item.type)
+            if(diablo3Item.type == "diablo3"){
+              var diablo3Icon = $(".diablo3").find(".app").eq(i);
+              diablo3Icon.find(".app-name").html(diablo3Item.title);
+              diablo3Icon.find(".app-icon").show();
+              diablo3Icon.click(function function_name(argument) {
+                window.open(diablo3Item.url, "_blank");
+              })
+             }
+            }
+
+      var diablo2List = [{"type":"diablo2","title":"Diablo1 OST","url":"https://youtube.com/playlist?list=PLD80CC3FEBE323161&feature=sharec"},{"type":"diablo2","title":"Diablo2.io","url":"https://diablo2.io/index.php"},{"type":"diablo2","title":"Diablo2 Inven","url":"https://m.inven.co.kr/diablo2/"}];
+
+          for(i in diablo2List){
+            var diablo2Item = diablo2List[i]
+            console.log(diablo2Item.type)
+            if(diablo2Item.type == "diablo2"){
+              var diablo2Icon = $(".diablo2").find(".app").eq(i);
+              diablo2Icon.find(".app-name").html(diablo2Item.title);
+              diablo2Icon.find(".app-icon").show();
+              diablo2Icon.click(function function_name(argument) {
+                window.open(diablo2Item.url, "_blank");
+              })
+             }
+            }
+
+      var diablo1List = [{"type":"diablo1","title":"Diablo1 OST","url":"https://www.youtube.com/playlist?list=PL4C4D2047A5B1423D"},{"type":"diablo1","title":"Diablo1 Web","url":"https://d07riv.github.io/diabloweb"}];
+
+    for(i in diablo1List){
+      var diablo1Item = diablo1List[i]
+      console.log(diablo1Item.type)
+      if(diablo1Item.type == "diablo1"){
+        var diablo1Icon = $(".diablo1").find(".app").eq(i);
+        diablo1Icon.find(".app-name").html(diablo1Item.title);
+        diablo1Icon.find(".app-icon").show();
+        diablo1Icon.click(function function_name(argument) {
+          window.open(diablo1Item.url, "_blank");
+        })
+       }
+      }
+
   </script>
   </body>
   </html>  
