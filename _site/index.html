@@ -560,7 +560,7 @@
  .app-name, .folder-name {
    text-align: center;
    color : white;
-   font-size: 13px;
+   font-size: 10px;
 }
  .folder-name {
    transform: translateY(-244px);
@@ -1180,9 +1180,13 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
               var diablo3Icon = $(".diablo3").find(".app").eq(i);
               diablo3Icon.find(".app-name").html(diablo3Item.title);
               diablo3Icon.find(".app-icon").show();
-              diablo3Icon.click(function function_name(argument) {
-                window.open(diablo3Item.url, "_blank");
-              })
+              diablo3Icon.attr('tag', diablo3Item.url)
+
+              diablo3Icon.off('click').on('click',function(){
+                var tag = $(this).attr('tag')
+                //buttonEvent(tag)
+                window.open(tag, "_blank");
+              });
              }
             }
 
@@ -1195,9 +1199,14 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
               var diablo2Icon = $(".diablo2").find(".app").eq(i);
               diablo2Icon.find(".app-name").html(diablo2Item.title);
               diablo2Icon.find(".app-icon").show();
-              diablo2Icon.click(function function_name(argument) {
-                window.open(diablo2Item.url, "_blank");
-              })
+              diablo2Icon.attr('tag', diablo2Item.url)
+
+              diablo2Icon.off('click').on('click',function(){
+                var tag = $(this).attr('tag')
+                //buttonEvent(tag)
+                window.open(tag, "_blank");
+              });
+
              }
             }
 
@@ -1210,9 +1219,13 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         var diablo1Icon = $(".diablo1").find(".app").eq(i);
         diablo1Icon.find(".app-name").html(diablo1Item.title);
         diablo1Icon.find(".app-icon").show();
-        diablo1Icon.click(function function_name(argument) {
-          window.open(diablo1Item.url, "_blank");
-        })
+        diablo1Icon.attr('tag', diablo1Item.url)
+
+        diablo1Icon.off('click').on('click',function(){
+          var tag = $(this).attr('tag')
+          //buttonEvent(tag)
+          window.open(tag, "_blank");
+        });
        }
       }
 
