@@ -1151,7 +1151,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       swiper.slideTo(index);
     }
 
-    var diablo4List = [{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},{"type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"}];
+    var diablo4List = [{"type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},{"type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},{"type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"},{"type":"diablo4","title":"Inven (Freeboard)","url":"https://m.inven.co.kr/board/diablo4/6025"},{"type":"diablo4","title":"Inven (Babarian)","url":"https://www.inven.co.kr/board/diablo4/6029"},{"type":"diablo4","title":"Inven (Druid)","url":"https://www.inven.co.kr/board/diablo4/6030"},{"type":"diablo4","title":"Inven (Necromancer)","url":"https://m.inven.co.kr/board/diablo4/6031"},{"type":"diablo4","title":"Inven (Rogue)","url":"https://m.inven.co.kr/board/diablo4/6032"},{"type":"diablo4","title":"Inven (Mage)","url":"https://m.inven.co.kr/board/diablo4/6033"}];
 
     for(i in diablo4List){
       var diablo4Item = diablo4List[i]
@@ -1160,9 +1160,14 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         var diablo4Icon = $(".diablo4").find(".app").eq(i);
         diablo4Icon.find(".app-name").html(diablo4Item.title);
         diablo4Icon.find(".app-icon").show();
-        diablo4Icon.click(function function_name(argument) {
-          window.open(diablo4Item.url, "_blank");
-        })
+        diablo4Icon.attr('tag', diablo4Item.url)
+
+        diablo4Icon.off('click').on('click',function(){
+          var tag = $(this).attr('tag')
+          //buttonEvent(tag)
+          window.open(tag, "_blank");
+        });
+
        }
       }
 
