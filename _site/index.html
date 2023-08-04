@@ -46,6 +46,16 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="shortcut icon" href="../favicon.png">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7WENGDYNCC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7WENGDYNCC');
+  </script>
+
   <script src="./diabloData.js"></script>
 <!-- 
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
@@ -448,6 +458,20 @@
  .app:nth-child(6n + 9) .app-icon {
    background-image: linear-gradient(#70e4ff, #0aa5ff);
 }
+
+ .hellkaotalk-icon {
+   //background-image: linear-gradient(#dde, #aab);
+   border-radius: 15px;
+   width: 60px;
+   height: 60px;
+   background-image: url('./hicon.png') !important;
+   background-repeat: no-repeat;
+   background-size:100% 100%;
+   margin: auto;
+   max-width: 60px;
+   max-height: 80px;
+}
+
  .app-icon-bt1 {
    //background-image: linear-gradient(#dde, #aab);
    border-radius: 15px;
@@ -1080,7 +1104,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
             <div class="app-name"></div>
           </div>
           <div class="app">
-            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-icon hellkaotalk-icon"><span class="app-logo"></span></div>
             <div class="app-name"></div>
           </div>
 
