@@ -1066,7 +1066,7 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
             <div class="app-name"></div>
           </div>
           <div class="app">
-            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-icon hellkaotalk-icon"><span class="app-logo"></span></div>
             <div class="app-name"></div>
           </div>
           <div class="app">
@@ -1157,6 +1157,138 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
         </div>
 
 
+      <div class="swiper-slide">
+    <div class="screen">
+        <div class="status" style="display:none;">
+          <div class="carrier">Diabloapp.com</div>
+          <div class="clock"><script>var d = new Date();
+var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
+          <div class="battery">
+            <div class="battery-meter">
+              <div class="battery-meter-inner"></div>
+            </div>
+          </div>
+        </div>
+
+      <div class="pages">
+        <div class="page diablo5">
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+          <div class="app">
+            <div class="app-icon"><span class="app-logo"></span></div>
+            <div class="app-name"></div>
+          </div>
+
+
+<!--         <div class="folder">
+        <div class="folder-apps" tabindex="0">
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">App</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">App</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">App</div>
+          </div>
+          <div class="app">
+            <div class="app-icon"></div>
+            <div class="app-name">App</div>
+          </div>
+        </div>
+        <div class="bg-blur"></div>
+        <div class="folder-name">Folder</div>
+      </div> -->
+          
+        </div>
+
+    </div>
+
+          </div>
+        </div>
+
     </div>
   </div>
 
@@ -1208,6 +1340,26 @@ var n = d.toLocaleTimeString(); $('.clock').html(n)</script></div>
       console.log(index);
       swiper.slideTo(index);
     }
+
+    for(i in diablo5List){
+      var diablo5Item = diablo5List[i]
+      console.log(diablo5Item.type)
+      if(diablo5Item.type == "diablo5"){
+        var diablo5Icon = $(".diablo5").find(".app").eq(i);
+        diablo5Icon.find(".app-name").html(diablo5Item.title);
+        diablo5Icon.find(".app-logo").html(diablo5Item.logo.slice(0,1));
+        diablo5Icon.find(".app-icon").css("display","flex")
+        diablo5Icon.find(".app-icon").show();
+        diablo5Icon.attr('tag', diablo5Item.url)
+
+        diablo5Icon.off('click').on('click',function(){
+          var tag = $(this).attr('tag')
+          //buttonEvent(tag)
+          window.open(tag, "_blank");
+        });
+
+       }
+      }
 
     
     for(i in diablo4List){

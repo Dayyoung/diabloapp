@@ -1,20 +1,24 @@
 
+var diablo5List = [
+{"logo":"I","type":"diablo5","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Freeboard)","url":"https://m.inven.co.kr/board/diablo4/6025"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Babarian)","url":"https://m.inven.co.kr/board/diablo4/6029"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Druid)","url":"https://m.inven.co.kr/board/diablo4/6030"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Necromancer)","url":"https://m.inven.co.kr/board/diablo4/6031"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Rogue)","url":"https://m.inven.co.kr/board/diablo4/6032"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Mage)","url":"https://m.inven.co.kr/board/diablo4/6033"},
+{"logo":"I","type":"diablo5","title":"Inven<br>(Skilltree)","url":"https://diablo4.inven.co.kr/db/paragon"},
+{"logo":"R","type":"diablo5","title":"Ruliweb<br>(Board)","url":"https://m.ruliweb.com/family/2086/board/185248"},
+{"logo":"R","type":"diablo5","title":"Ruliweb<br>(Wiki)","url":"https://m.ruliweb.com/game/85248/read/61?"},
+];
 var diablo4List = [{"logo":"H","type":"diablo4","title":"Helltides.com","url":"https://helltides.com/"},
 {"logo":"M","type":"diablo4","title":"Diablo4 map","url":"https://diablo4.tactiks.info"},
 {"logo":"P","type":"diablo4","title":"Diablo4 profile","url":"https://d4armory.io"},
-{"logo":"I","type":"diablo4","title":"Diablo4 Inven","url":"https://m.inven.co.kr/diablo4/"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Freeboard)","url":"https://m.inven.co.kr/board/diablo4/6025"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Babarian)","url":"https://m.inven.co.kr/board/diablo4/6029"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Druid)","url":"https://m.inven.co.kr/board/diablo4/6030"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Necromancer)","url":"https://m.inven.co.kr/board/diablo4/6031"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Rogue)","url":"https://m.inven.co.kr/board/diablo4/6032"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Mage)","url":"https://m.inven.co.kr/board/diablo4/6033"},
-{"logo":"I","type":"diablo4","title":"Inven<br>(Skilltree)","url":"https://diablo4.inven.co.kr/db/paragon"},
 {"logo":"O","type":"diablo4","title":"Diablo4 OST","url":"https://www.youtube.com/watch?v=uRqjKZfLU7M&list=PLsQpV9OLWf1L7xNT1ApnCmxGfqCsbP4fT&index=1"},
 {"logo":"T","type":"diablo4","title":"Diablo4<br>(Trailer)","url":"https://www.youtube.com/watch?v=M_gXds_w9xs"},
-{"logo":"R","type":"diablo4","title":"Ruliweb<br>(Board)","url":"https://m.ruliweb.com/family/2086/board/185248"},
-{"logo":"R","type":"diablo4","title":"Ruliweb<br>(Wiki)","url":"https://m.ruliweb.com/game/85248/read/61?"},
-{"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/g6yPCGxf"}];
+{"logo":"Q","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
+{"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/glSn6ozf"},
+];
 
 var diablo3List = [{"logo":"O","type":"diablo3","title":"Diablo3 OST","url":"https://www.youtube.com/watch?v=XhrKNPHGR8E&list=PLBF5FDBFF7A2EB549"},
 {"logo":"T","type":"diablo3","title":"Diablo3<br>(Trailer)","url":"https://www.youtube.com/watch?v=M_c1q2oMHlk"},
