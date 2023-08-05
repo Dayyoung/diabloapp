@@ -18,6 +18,7 @@ var diablo4List = [{"logo":"H","type":"diablo4","title":"Helltides.com","url":"h
 {"logo":"T","type":"diablo4","title":"Diablo4<br>(Trailer)","url":"https://www.youtube.com/watch?v=M_gXds_w9xs"},
 {"logo":"Q","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
 {"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/glSn6ozf"},
+{"logo":"","type":"diablo4","title":"Legiontalk","url":"https://open.kakao.com/o/gNwoovzf"},
 {"logo":"T","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},             
 ];
 
