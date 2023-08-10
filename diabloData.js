@@ -17,12 +17,12 @@ var diablo4List = [{"logo":"H","type":"diablo4","title":"Helltides.com","url":"h
 {"logo":"P","type":"diablo4","title":"Diablo4 profile","url":"https://d4armory.io"},
 {"logo":"O","type":"diablo4","title":"Diablo4 OST","url":"https://www.youtube.com/watch?v=uRqjKZfLU7M&list=PLsQpV9OLWf1L7xNT1ApnCmxGfqCsbP4fT&index=1"},
 {"logo":"T","type":"diablo4","title":"Diablo4<br>(Trailer)","url":"https://www.youtube.com/watch?v=M_gXds_w9xs"},
-{"logo":"Q","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
+{"logo":"?","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
 {"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/glSn6ozf"},
 {"logo":"","type":"diablo4","title":"Legiontalk","url":"https://open.kakao.com/o/gNwoovzf"},
-{"logo":"T","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},           
-{"logo":"C","type":"diablo4","title":"Countdown","url":"https://diabloapp.com/d4/countdown/"},
-{"logo":"P","type":"diablo4","title":"Party play","url":"https://open.kakao.com/o/g0d7SpAf"},                 
+{"logo":"$","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},           
+{"logo":"⏲","type":"diablo4","title":"Countdown","url":"https://diabloapp.com/d4/countdown/"},
+{"logo":"@","type":"diablo4","title":"Party play","url":"https://open.kakao.com/o/g0d7SpAf"},                 
 ];
 
 var diablo3List = [{"logo":"O","type":"diablo3","title":"Diablo3 OST","url":"https://www.youtube.com/watch?v=XhrKNPHGR8E&list=PLBF5FDBFF7A2EB549"},
