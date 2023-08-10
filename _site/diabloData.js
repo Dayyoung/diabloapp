@@ -19,7 +19,8 @@ var diablo4List = [{"logo":"H","type":"diablo4","title":"Helltides.com","url":"h
 {"logo":"Q","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
 {"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/glSn6ozf"},
 {"logo":"","type":"diablo4","title":"Legiontalk","url":"https://open.kakao.com/o/gNwoovzf"},
-{"logo":"T","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},             
+{"logo":"T","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},           
+{"logo":"C","type":"diablo4","title":"Countdown","url":"https://diabloapp.com/d4/countdown/"},               
 ];
 
 var diablo3List = [{"logo":"O","type":"diablo3","title":"Diablo3 OST","url":"https://www.youtube.com/watch?v=XhrKNPHGR8E&list=PLBF5FDBFF7A2EB549"},
@@ -30,7 +31,9 @@ var diablo3List = [{"logo":"O","type":"diablo3","title":"Diablo3 OST","url":"htt
 var diablo2List = [{"logo":"O","type":"diablo2","title":"Diablo2 OST","url":"https://youtube.com/playlist?list=PLD80CC3FEBE323161&feature=sharec"},
 {"logo":"T","type":"diablo2","title":"Diablo2<br>(Trailer)","url":"https://www.youtube.com/watch?v=UFVIjMSsB70&list=PLBZDjdoBMq20y1NuftFeezY07VIUUYmjj"},
 {"logo":"D","type":"diablo2","title":"Diablo2.io","url":"https://diablo2.io/index.php"},
-{"logo":"I","type":"diablo2","title":"Diablo2 Inven","url":"https://m.inven.co.kr/diablo2/"}];
+{"logo":"I","type":"diablo2","title":"Diablo2 Inven","url":"https://m.inven.co.kr/diablo2/"},
+{"logo":"P","type":"diablo2","title":"Diablo2 profile","url":"https://diabloapp.com/d2r/profile"},
+];
 
 var diablo1List = [{"logo":"O","type":"diablo1","title":"Diablo1 OST","url":"https://www.youtube.com/playlist?list=PL4C4D2047A5B1423D"},
 {"logo":"T","type":"diablo1","title":"Diablo1<br>(Trailer)","url":"https://www.youtube.com/watch?v=fnoSaoHlsEM"},
