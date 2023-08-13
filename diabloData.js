@@ -20,7 +20,7 @@ var diablo4List = [{"logo":"🔔","type":"diablo4","title":"Helltides.com","url"
 {"logo":"⁉️","type":"diablo4","title":"Q&A","url":"https://open.kakao.com/o/gPMF7ozf"},
 {"logo":"","type":"diablo4","title":"Hellkaotalk","url":"https://open.kakao.com/o/glSn6ozf"},
 {"logo":"","type":"diablo4","title":"Legiontalk","url":"https://open.kakao.com/o/gNwoovzf"},
-{"logo":"$","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},           
+{"logo":"⚖️","type":"diablo4","title":"Trade","url":"https://d4.tradurs.com/"},           
 {"logo":"⏱️","type":"diablo4","title":"Countdown","url":"https://diabloapp.com/d4/countdown/"},
 {"logo":"🫂","type":"diablo4","title":"Party play","url":"https://d4matchmaker.com"},                 
 ];
