@@ -24,7 +24,7 @@
 
       <!-- <a data-v-e46e6cfe="" href="https://diablo4countdown.com/Helltide" class="">Helltide</a> -->
 
-      <a data-v-e46e6cfe="" href="" class="router-link-active router-link-exact-active" aria-current="page">Season 2</a>
+      <a data-v-e46e6cfe="" href="" class="router-link-active router-link-exact-active" aria-current="page">Season 3</a>
 
       <!-- <a data-v-e46e6cfe="" href="https://diablo4countdown.com/Livestream" class="">Livestream</a> -->
 
@@ -42,7 +42,7 @@
 
         //var launchTime = new Date(2023, 6, 21, 2, 0, 0); 
 
-        launchTime = new Date(2023, 9, 18, 2, 0, 0); 
+        launchTime = new Date(2024, 0, 24, 3, 0, 0); 
 
         console.log(nowTime);
         console.log(launchTime);
@@ -88,15 +88,21 @@
          var con = document.getElementById("timeDiv");  
             if(con.style.display=='none'){    
               con.style.display = 'block';  
+
+              if(nowTime > launchTime){
               document.getElementById("Day").innerHTML = "+" + days;
+            }else{
+              document.getElementById("Day").innerHTML = days;
+            }
+
             }
         }
 
-},1000)
+},100)
 
       </script>
      
-      <div data-v-e27353fe="" class="countdown"><h1 data-v-e27353fe=""><!---->The Start Of Season2 : Seanson of Blood</h1><p data-v-e27353fe="" class="localtime">18 Oct 2023</p><!----><!----><div data-v-e27353fe="" class="countdownTimer"><!----><!----><!---->
+      <div data-v-e27353fe="" class="countdown"><h1 data-v-e27353fe=""><!---->The Start Of Season3 : SEASON OF THE CONSTRUCT</h1><p data-v-e27353fe="" class="localtime">January 2024</p><!----><!----><div data-v-e27353fe="" class="countdownTimer"><!----><!----><!---->
 
         <section data-v-e27353fe="" id="timeDiv" style="display: none;"><time data-v-e27353fe="" class="time" id="Day"></time><p data-v-e27353fe="" class="timeDescr">Days</p></section>
 
