@@ -50,28 +50,13 @@
  -->
 
     <script>
-      // setTimeout(
-      //   () => {
-      //     //clearInterval(timerId);
-      //     //alert("정지");
-      //     var iframeSrc =
-      //       "https://docs.google.com/presentation/d/e/2PACX-1vQtatC0SnnOUvqKU95stLI0NrgAq0WwHlZNbqYKdROg8xIacB1RU1IAhZ_oOuKktwb04rTxY2JWIN7h/embed?start=true&loop=true&delayms=3000";
-      //     $("iframe").attr("src", iframeSrc);
-      //     //location.href = "https://32dmg2-1234.csb.app/";
-
-      //     setTimeout(
-      //       () => {
-      //         var nowPage = $("iframe").attr("src");
-      //         console.log(nowPage);
-      //         location.href = "https://diabloapp.com/zaksim.html";
-      //       },
-      //       //5000
-      //       1000 * 60 * 2,
-      //     );
-      //   },
-      //   //10000
-      //   1000 * 60 * 1,
-      // );
+         
+setInterval(function() {
+  if (navigator.onLine){
+        location.href = "file:///Users/mogi/diabloapp/zaksim.html";
+  }
+}, 1000);
+     
     </script>
   </body>
 </html>
