@@ -98,17 +98,22 @@ function checkApplicationInstall() {
         _openiOSSchemeUrl_ = appScheme;
         _openiOSDownUrl_ = appUrl;
 
-        alert("1")
+        //alert("1")
         
-        window.open("../events/iosError.html", "_blank", "", false);
+        //window.open("../events/iosError.html", "_blank", "", false);
+        //window.open("https://campus.heyoung.co.kr/events/iosError.html", "_blank", "", false);
+        window.open("./runApp.html", "_blank", "", false);
       }
       function runApp2(appScheme, appUrl) {
         _openiOSSchemeUrl_ = appScheme;
         _openiOSDownUrl_ = appUrl;
         
-        alert("2")
+        //alert("2")
 
-        window.open("../events/iosError2.html", "_blank", "", false);
+        //window.open("../events/iosError2.html", "_blank", "", false);
+        //window.open("https://campus.heyoung.co.kr/events/iosError2.html", "_blank", "", false);
+        //
+        window.open("./runApp2.html", "_blank", "", false);
       }
       if (iosVersion >= 9) {
         scheme = scheme + sQuery;
@@ -122,7 +127,7 @@ function checkApplicationInstall() {
       }
 
     } else {
-      console.log("아이폰/안드로이드 둘다 아님.")
+      console.log("PC - 아이폰/안드로이드 둘다 아님.")
       //window.close();
     }
   }
@@ -130,9 +135,7 @@ function checkApplicationInstall() {
   <body>
     <center>
     <h1>Test</h1><br><br><br>
-<p>헤이영 설치 또는 실행 (Android) :</p>    
-<button class="button" onclick="checkApplicationInstall()"><span>Go</span></button>
-<p>헤이영 설치 또는 실행 (iOS):</p>    
+<p>헤이영 설치 또는 실행 (Android / iOS) :</p>    
 <button class="button" onclick="checkApplicationInstall()"><span>Go</span></button>
 
 </center>

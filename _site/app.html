@@ -1,456 +1,181 @@
-  <!DOCTYPE html>
 
-   <html lang="ko">
+<html>
   <head>
-      <title>Diablo2</title> 
-  <meta charset="utf-8" />
-  <meta name="application-name" content="coreflex"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
-  <meta name="description" content="Diablo2 Profile">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="Diablo2 Profile" />
+    <title>Web Push Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="manifest" href="/manifest.json">
 
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Diablo2 Profile Page.">
-  <meta property="og:site_name" content="Diablo2 Profile">
-  <meta property="og:url" content="https://dayyoung.github.io/diabloapp/d2/">
-  <meta property="og:title" content="Diablo2 Profile">
-  <meta property="og:image" content="https://dayyoung.github.io/diabloapp/d2/previewlogo.jpg">
-  <meta property="og:locale" content="ko_KR">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
-  <!-- Chrome, Firefox OS, Opera -->
-  <meta name="theme-color" content="#484848">
-  <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
-  <meta HTTP-EQUIV="Expires" CONTENT="-1">
-  <meta http-equiv="refresh" content="-1">
-
-  <link rel="apple-touch-icon-precomposed" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-startup-image" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="shortcut icon" href="../favicon.png">
-
-
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
-
-  <style>
-
-.tabbar:not(.tabbar--top) {
-    padding-bottom: 0;
-    position: fixed;
-}
-
-
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-color: #484848; 
-  }
-
-
-  #captionLayout {
-    //background-color:transparent !important; 
-    cursor : pointer;
-  }
-
-
-  #myImg{
-      height: 100%;
-      width: 100%;
-  }
-
-
-   /* 메인 컨테이너에 다음과 같이 설정 */
-  #mainLayout {
-    padding:
-      env(safe-area-inset-top)
-      env(safe-area-inset-right)
-      env(safe-area-inset-bottom)
-      env(safe-area-inset-left);
-  }
-
-  :root {
-      --sat2: 100;
-      --sat: env(safe-area-inset-top);
-      --sar: env(safe-area-inset-right);
-      --sab: env(safe-area-inset-bottom);
-      --sal: env(safe-area-inset-left);
-  }
-
-  </style>
-     
   </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery-loadingModal@1.0.2/js/jquery.loadingModal.min.js
+  "></script>
+  <link href="
+  https://cdn.jsdelivr.net/npm/jquery-loadingModal@1.0.2/css/jquery.loadingModal.min.css
+  " rel="stylesheet">
+
+    <script src="/js/webpush-client.js"></script>
+    <script>
+
+
+function chkHeyoungCallback(data){
+   console.log(data);
+   data = JSON.parse(data);
+   $(".wrap").attr("class","wrap full");
+   $(".wrap").hide();
+   location.href = "smartq-ewha://ewha?action=hideBottomMenu";
+   if(mobile.isIos() && !mobile.isAndroid()){
+      /*if(data.isSuccess == "Y"){
+         location.href = "smartq-ewha://ewha?action=runApp&id=" + urlencode("heyoung://");
+      }else{
+         alert('헤이영 앱이 설치되지 않았습니다. 헤이영 설치 화면으로 이동합니다.', function(){
+            location.href = "
+https://apps.apple.com/kr/app/%ED%97%A4%EC%9D%B4%EC%98%81-%EC%BA%A0%ED%8D%BC%EC%8A%A4-%EB%8C%80%ED%95%99%EC%83%9D%ED%99%9C-%ED%95%84%EC%88%98-%ED%86%B5%ED%95%A9-%EC%95%B1/id1605688685";
+         });
+      }*/
+      location.href = "smartq-ewha://ewha?action=runApp&id=heyoung://&fallbackUrl=https://apps.apple.com/kr/app/%ED%97%A4%EC%9D%B4%EC%98%81-%EC%BA%A0%ED%8D%BC%EC%8A%A4-%EB%8C%80%ED%95%99%EC%83%9D%ED%99%9C-%ED%95%84%EC%88%98-%ED%86%B5%ED%95%A9-%EC%95%B1/id1605688685";
+   }
+   else if(mobile.isAndroid() && !mobile.isIos()){
+      //location.href = "smartq-ewha://ewha?action=checkApp&id=com.shinhan.heyoung&cbfn=chkHeyoungCallback";
+      /*if(data.isSuccess == "Y"){
+         location.href = "smartq-ewha://ewha?action=runApp&id=com.shinhan.heyoung";
+      }else{
+         alert('헤이영 앱이 설치되지 않았습니다. 헤이영 설치 화면으로 이동합니다.', function(){
+            location.href = "
+https://play.google.com/store/apps/details?id=com.shinhan.heyoung&hl=ko-KR";
+         });
+      }*/
+      location.href = "smartq-ewha://ewha?action=runApp&id=com.shinhan.heyoung&fallbackUrl=https://play.google.com/store/apps/details?id=com.shinhan.heyoung&hl=ko-KR";
+   }
+}
+
+
+var _openiOSSchemeUrl_ = "";
+var _openiOSDownUrl_ = "";
+
+function checkApplicationInstall() {
+    var reqUrlInco = window.location.href;
+    var transParamValue = "";
+    try {
+      var reqIUrlInfos = reqUrlInco.split('?');
+      var reqParam = reqIUrlInfos[1].split('&');
+      var vIdx = 0;
+
+      for (var i = 0; i < reqParam.length; i++) {
+        vIdx = reqParam[i].indexOf("=");
+        var paramName = "";
+        var paramValue = "";
+
+        if (vIdx >= 1) {
+          paramName = reqParam[i].substr(0, vIdx);
+          paramValue = reqParam[i].substr(vIdx + 1);
+        } else {
+          paramName = reqParam[i];
+        }
+        transParamValue += paramName + "=" + paramValue + "&";
+      }
+      transParamValue = transParamValue.substr(0, transParamValue.length - 1);
+    }catch(e){
+      transParamValue = ""
+    }
+    var pkg = "com.shinhan.heyoung";
+    var scheme = "heyoung://";
+    var and_scheme = "heyoung";
+    var openAt = (new Date()).getTime();
+    var sQuery = "event?" + transParamValue + "&openAt=" + openAt ;
+    var downUrl = "https://itunes.apple.com/app/id1605688685";
+
+    var uagentLow = navigator.userAgent.toLocaleLowerCase();
+
+    if (uagentLow.indexOf("android") > -1) {
+      document.location.href = "intent://" + sQuery + "#Intent;scheme=" + and_scheme + ";package=" + pkg + ";S.market_referrer=" + sQuery + ";end";
+    } else if (uagentLow.indexOf("ipad") > -1 || uagentLow.indexOf("iphone") > -1 || uagentLow.indexOf("ipod") > -1) {
+
+      var iosVersion = uagentLow.substr(uagentLow.search(/ipad|iphone/), 30).match(/\d+\_+\d+/)[0].replace('_', '.');
+
+      function runApp(appScheme, appUrl) {
+        _openiOSSchemeUrl_ = appScheme;
+        _openiOSDownUrl_ = appUrl;
+
+        alert("1")
+        
+        window.open("../events/iosError.html", "_blank", "", false);
+      }
+      function runApp2(appScheme, appUrl) {
+        _openiOSSchemeUrl_ = appScheme;
+        _openiOSDownUrl_ = appUrl;
+        
+        alert("2")
+
+        window.open("../events/iosError2.html", "_blank", "", false);
+      }
+      if (iosVersion >= 9) {
+        scheme = scheme + sQuery;
+        if(sQuery.indexOf("luckyBox") > -1){
+          runApp2(scheme, downUrl);
+        } else {
+          runApp(scheme, downUrl);
+        }
+      } else {
+        window.location = scheme;
+      }
+
+    } else {
+      console.log("아이폰/안드로이드 둘다 아님.")
+      //window.close();
+    }
+  }
+    </script>
   <body>
+    <center>
+    <h1>Test</h1><br><br><br>
+<p>헤이영 설치 또는 실행 (Android) :</p>    
+<button class="button" onclick="checkApplicationInstall()"><span>Go</span></button>
+<p>헤이영 설치 또는 실행 (iOS):</p>    
+<button class="button" onclick="checkApplicationInstall()"><span>Go</span></button>
 
-  <div id="mainLayout">
+</center>
+<style>
 
-  <div id="captionLayout" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;">
-          <span class="tooltiptext" onclick="addNewLayout()">!!!</span>
-  </div> 
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
 
-  </div>
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
 
-  <div id="mainLayout2">
+.button:hover span {
+  padding-right: 25px;
+}
 
-  <center>
-  <div id="header" style="position: absolute; width : 100% ">
-   <font color="black"><h3 style="background-color: white; width: 200px">- Diablo2 - <br> Skywalker#13454</h3></font>
-   <input type="button" value="Share" onclick="clip()" style="width:60px; height: 40px;" />
-  </div>
+</stle>  
+
   </center>
-
-
-  <img onload="onCreate()" id="myImg" src="" height="100%" width="100%" class="fixed" style="max-width: 1800px; z-index: 100; position:block;">
-  
-  </img>
-
-  </div>
-
-  <ons-tabbar position="auto" animation="none">
-    <ons-tab onClick="goHome()" label="Home" icon="fa-home" page2="home.html">
-    </ons-tab>
-    <ons-tab onClick="goWallet()" label="Wallet" icon="fa-wallet" page2="home.html">
-    </ons-tab>
-    <ons-tab onClick="goMining()" label="Mining" icon="fa-mountain" page2="home.html">
-    </ons-tab>
-    <ons-tab onClick="goTrade()" label="Trade" icon="fa-balance-scale" page2="home.html" >
-    </ons-tab>
-    <ons-tab onClick="goMetabus()" label="Metabus" icon="fa-globe" page2="home.html" >
-    </ons-tab>
-<!--     <ons-tab onClick="goBlockChain()" label="BlockChain" icon="fa-dice-d20" page="chain.html">
-    </ons-tab>
- -->    
-
-  <script>
-
-  function clip(){
-
-    var url = '';
-    var textarea = document.createElement("textarea");
-    document.body.appendChild(textarea);
-    url = window.document.location.href;
-    textarea.value = url;
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    alert("Copied.")
-  }
-
-  var itemList = [{"id":1,"w":103,"h":196,"x":1051,"y":213,"caption":""},{"id":2,"w":104,"h":103,"x":1051,"y":421,"caption":""},{"id":3,"w":53,"h":57,"x":1170,"y":467,"caption":""},{"id":4,"w":102,"h":101,"x":1236,"y":188,"caption":""},{"id":5,"w":102,"h":151,"x":1234,"y":302,"caption":""},{"id":6,"w":99,"h":56,"x":1237,"y":468,"caption":""},{"id":7,"w":57,"h":54,"x":1348,"y":266,"caption":""},{"id":8,"w":57,"h":54,"x":1346,"y":468,"caption":""},{"id":9,"w":101,"h":191,"x":1420,"y":215,"caption":""},{"id":10,"w":99,"h":96,"x":1419,"y":424,"caption":""}];
-
-  // url 에서 parameter 추출
-
-  function getParam(sname) {
-
-      var params = location.search.substr(location.search.indexOf("?") + 1);
-
-      var sval = "";
-
-      params = params.split("&");
-
-      for (var i = 0; i < params.length; i++) {
-
-          temp = params[i].split("=");
-
-          if ([temp[0]] == sname) { sval = temp[1]; }
-
-      }
-      return sval;
-
-  }
-
-  var copyList = []
-
-  function addNewLayout(){
-        //var captionItem = cationpList[i]
-
-        //if($('.caption'+i).length == 0){
-          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span></div>').clone();
-          //copyCaption.hide()
-
-          copyCaption.css("z-index",99)
-          copyCaption.attr('caption', (copyList.length+1))
-
-
-          // copyCaption.hover(function(){
-          //     console.log(JSON.stringify(copyList))
-
-          //     var index = copyCaption.attr('caption')
-
-          //     $("#myImg").attr("src","./"+index+".png")
-
-          // }, function() {
-          //     //console.log(cationpList)
-          // });
-
-          $("#mainLayout").append(copyCaption)
-
-          copyCaption.resizable();
-          copyCaption.draggable();
-          //cationpList.push(copyCaption)
-
-          var obj = copyCaption
-          var width = obj.width();
-          var height = obj.height();
-          var offset = copyCaption.offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
-
-          captionItem = {};
-          captionItem.id = copyList.length+1;
-          captionItem.w = width;
-          captionItem.h = height;
-          captionItem.x = xPos;
-          captionItem.y = yPos;
-          captionItem.caption = ''; 
-
-
-          copyList.push(captionItem)
-  }
-
-
-var images = [
-      "./0.png",
-      "./1.png",
-      "./2.png",
-      "./3.png",
-      "./4.png",
-      "./5.png",
-      "./6.png",
-      "./7.png",
-      "./8.png",
-      "./9.png",
-      "./10.png"];
-
-
-const preload = (imageArray, index) => {
-    index = index || 0;
-    if (imageArray && imageArray.length > index) {
-        const img = new Image();
-        img.onload = () => {
-            if(index+1 == imageArray.length){
-              console.log("end2")
-            }
-            preload(imageArray, index + 1);
-        }
-        img.src = imageArray[index];
-    }
-}
-
-console.log("start")
-preload(images);
-
-console.log("end1")
-
-
-  $(function(){
-
-    // 실행할 기능을 정의해주세요.
-    var mode = getParam('mode')
-
-    if(mode){
-        $("#myImg").attr("src","./0.png")
-    }else{
-        $("#myImg").attr("src","./0.png")
-    }
-  });
-
-  var refreshTimer;
-  
-  $(window).resize(function() { 
-      onCreate()
-  });
-
-  var isFirst = true;
-  var weightRate = 1;
-  var marginTopForIphoneX = getComputedStyle(document.documentElement).getPropertyValue("--sat")
-
-  function onCreate() {
-
-  marginTopForIphoneX = parseInt($("#mainLayout").css("padding-top"))
-  //marginTopForIphoneX += parseInt($("#header").height())
-
-  console.log("marginTop " + marginTopForIphoneX)
-
-  var size = {
-    width: document.body.innerWidth || document.body.clientWidth, // for except scroll
-    //width: window.innerWidth || document.body.clientWidth,
-    height: window.innerHeight || document.body.clientHeight 
-  };
-
-  var myImg = document.getElementById("myImg");
-  var pageWidth  = size.width;
-  //var pageWidth  = myImg.width;
-  var pageHeight = myImg.height;
-
-
-  if(size.width<size.height){
-    pageWidth = pageWidth * 2
-    $(myImg).css("width" , pageWidth);  
-  }else{
-    $(myImg).css("width" , pageWidth);  
-  }
-
-// console.log()
-//   $('#home').height(pageHeight)
-
-  weightRate = pageWidth / 1680
-
-  //console.log(pageWidth)
-  //console.log(pageHeight)
-  console.log(marginTopForIphoneX)
-
-  var marginWidth = (size.width - pageWidth ) / 2
-  var marginHeight = pageHeight - size.height
-
-  if(!isFirst){ 
-    drawItem()
-    return;
-  }
-
-  isFirst = false;
-
-     // $( "#captionLayout" ).draggable({
-     //    start: function() {
-          
-     //    },
-     //    drag: function() {
-          
-
-     //      var obj = $(this)
-     //      var width = obj.width();
-     //      var height = obj.height();
-     //      var offset = $(this).offset();
-     //      var xPos = offset.left;
-     //      var yPos = offset.top;
-
-     //      $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-     //      var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-     //      console.log(JSON.stringify(sample))
-
-     //    },
-     //    stop: function() {
-     //    }
-     //  });
-
-     // $( "#captionLayout" ).resizable({
-     //    start: function() {
-          
-     //    },
-     //    resize: function() {
-          
-
-     //      var obj = $(this)
-     //      var width = obj.width();
-     //      var height = obj.height();
-     //      var offset = $(this).offset();
-     //      var xPos = offset.left;
-     //      var yPos = offset.top;
-
-     //      $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-     //      var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-     //      console.log(JSON.stringify(sample))
-
-     //    },
-     //    stop: function() {
-     //    }
-     //  });
-$( "#captionLayout" ).resizable();
-$( "#captionLayout" ).draggable();
-     drawItem();
-}
-
-  function drawItem(){
-
-        for(i in itemList)
-        {
-        var captionItem = itemList[i]
-
-        if($('.caption'+i).length == 0){
-          var copyCaption = $('<div id="" class="tooltip" style="display: block;  width: 100px;height: 100px;  position:absolute;background-color:greenyellow;opacity:0.7;z-index: 100;top: 0; margin-left: 10; margin-top: 0;"><span class="tooltiptext" onclick="addNewLayout()">!!!</span></div>').clone();
-          copyCaption.addClass('caption'+i)
-          $("#mainLayout").append(copyCaption)
-        }else{
-          var copyCaption = $('.caption'+i)
-        }
-        copyCaption.attr('caption', captionItem.id);
-
-        copyCaption.css("width", captionItem.w * weightRate);
-        copyCaption.css("height", captionItem.h * weightRate);
-        copyCaption.css("left", captionItem.x * weightRate);
-        copyCaption.css("margin-top", captionItem.y * weightRate + marginTopForIphoneX);
-
-        copyCaption.find(".tooltiptext").html(captionItem.caption)
-        copyCaption.draggable();  
-        copyCaption.resizable();  
-
-
-     copyCaption.resizable({
-        start: function() {
-          
-        },
-        resize: function() {
-          
-
-          var obj = $(this)
-          var width = obj.width();
-          var height = obj.height();
-          var offset = $(this).offset();
-          var xPos = offset.left;
-          var yPos = offset.top;
-
-          $(this).find(".captionText").html("size : " + width + " / " + height + "<br>" + "position : " + xPos + " / " + yPos)
-          var sample = {'id':'','w':width,'h':height,'x':xPos,'y':yPos,'caption':''}
-          console.log(JSON.stringify(sample))
-
-        },
-        stop: function() {
-        }
-      });
-
-        copyCaption.show()
-
-        // copyCaption.hover(function(){
-       
-        //     var index = $(this).attr('caption')
-
-        //     $("#myImg").attr("src","./"+index+".png")
-
-        // }, function() {
-        //     $("#myImg").attr("src","./0.png")
-        // });
-
-      }
-  }
-    
-  </script>
-
-
   </body>
-  </html>  
+</html>
+
